@@ -11,3 +11,6 @@ But if you add significant text, please keep lines relatively short.
 - Push directly to this repo (no need to fork).
 - I will likely make branches for journal/arxiv submissions, otherwise
 branches probably won't be necessary.
+- Don't add any of the log or aux files. Don't even add the pdf.
+- BUT! Make sure the code does compile and that you can produce the pdf
+before pushing.
