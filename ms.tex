@@ -181,62 +181,202 @@ refine the power spectrum measurement in early build-out stages, but will ultima
 capable of imaging the ionized bubbles of reionization in its later stages 
 \citep{Beardsley:2015,Malloy:2013}.
 
-Using the first generation of instruments, several upper limits have been placed on the 21 cm EoR signal \citep{Ali:2015, Dillon:2014, Parsons:2014, Jacobs:2015, Paciga:2013}, and \citealt{Pober:2015} was able to place constraints on physical reionization models. However, much work is to be done to understand the data produced by these arrays. Foreground subtraction and isolation has emerged as a priority in the field. Central to most analysis strategies is the concept of an ``EoR window" -- the region of Fourier space where spectrally smooth foregrounds have been isolated from the isotropic (spherically symmetric in Fourier space) cosmological signal \citep{Morales:2006, Bowman:2009}. More recent studies have shown the existence of a foreground ``wedge", the result of instrumental mode mixing, throwing power from spectrally smooth foregrounds to higher Fourier modes \citep{Thyagarajan:2015b, Thyagarajan:2015, Trott:2014, Liu:2014a, Liu:2014b, Hazelton:2013, Pober:2013, Vedantham:2012, Morales:2012, Datta:2010}. Despite this setback, the EoR window is preserved above the wedge, and the field is pushing forward with several analysis pipelines under active development \citep[e.g. B.~J.~Hazelton et al. 2016, in prep; D.~A.~Mitchell et al. 2016, in prep; D.~C.~Jacobs et al. 2016, in review; ][]{Trott:2016, Dillon:2013, Trott:2012}.
+Using the first generation of instruments, several upper limits have been placed on the 21 
+cm EoR signal \citep{Ali:2015, Dillon:2014, Parsons:2014, Jacobs:2015, Paciga:2013}, and 
+\citealt{Pober:2015} was able to place constraints on physical reionization models. 
+However, much work is to be done to understand the data produced by these arrays. 
+Foreground subtraction and isolation has emerged as a priority in the field. Central to most 
+analysis strategies is the concept of an ``EoR window" -- the region of Fourier space where 
+spectrally smooth foregrounds have been isolated from the isotropic (spherically symmetric 
+in Fourier space) cosmological signal \citep{Morales:2006, Bowman:2009}. More recent 
+studies have shown the existence of a foreground ``wedge", the result of instrumental mode 
+mixing, throwing power from spectrally smooth foregrounds to higher Fourier modes 
+\citep{Thyagarajan:2015b, Thyagarajan:2015, Trott:2014, Liu:2014a, Liu:2014b, 
+Hazelton:2013, Pober:2013, Vedantham:2012, Morales:2012, Datta:2010}. Despite this 
+setback, the EoR window is preserved above the wedge, and the field is pushing forward with 
+several analysis pipelines under active development \citep[e.g. B.~J.~Hazelton et al. 2016, in 
+prep; D.~A.~Mitchell et al. 2016, in prep; D.~C.~Jacobs et al. 2016, in review; ][]{Trott:2016, 
+Dillon:2013, Trott:2012}.
 
-This paper serves two purposes: to demonstrate several new analysis techniques and their impact on power spectrum estimation, and to present the first attempt at a deep integration power spectrum from the MWA. Using a three hour test set of data, we introduce several novel techniques including calibration of cable reflection contamination, high resolution gridding kernels, subtraction of a diffuse foreground model, and development of quality control methods which will be crucial for deeper integrations. We apply these new techniques to a deep integration of data from the first semester of MWA observations (August, 2013 -- November, 2013) on a single EoR field and redshift range, $6.2<z<7.5$. While not expecting to detect the EoR with less than a hundred hours of observations, this intermediate integration will serve to identify and diagnose systematics, allowing for improved analysis in future work.
+This paper serves two purposes: to demonstrate several new analysis techniques and their 
+impact on power spectrum estimation, and to present the first attempt at a deep integration 
+power spectrum from the MWA. Using a three hour test set of data, we introduce several 
+novel techniques including calibration of cable reflection contamination, high resolution 
+gridding kernels, subtraction of a diffuse foreground model, and development of quality 
+control methods which will be crucial for deeper integrations. We apply these new 
+techniques to a deep integration of data from the first semester of MWA observations 
+(August, 2013 -- November, 2013) on a single EoR field and redshift range, $6.2<z<7.5$. 
+While not expecting to detect the EoR with less than a hundred hours of observations, this 
+intermediate integration will serve to identify and diagnose systematics, allowing for 
+improved analysis in future work.
 
-The remainder of this paper is organized as follows. In Section~\ref{sec:MWA} we briefly describe the MWA instrument and the observations used in this work, in Section~\ref{sec:analysis} we describe our analysis pipeline, in Section~\ref{sec:techniques} we describe several novel techniques in our analysis, in Section~\ref{sec:deep} we discuss our efforts to apply the analysis pipeline to a deep data integration, and we discuss future work in Section~\ref{sec:discussion}. Throughout this paper we use a $\Lambda$CDM cosmology with $\Omega_m=0.73$, $\Omega_\Lambda=0.27$, and $h = 0.7$, consistent with WMAP seven year results \citep{Komatsu:2011}. All distances and wavenumbers are in comoving coordinates.
+The remainder of this paper is organized as follows. In Section~\ref{sec:MWA} we briefly 
+describe the MWA instrument and the observations used in this work, in Section~
+\ref{sec:analysis} we describe our analysis pipeline, in Section~\ref{sec:techniques} we 
+describe several novel techniques in our analysis, in Section~\ref{sec:deep} we discuss our 
+efforts to apply the analysis pipeline to a deep data integration, and we discuss future work 
+in Section~\ref{sec:discussion}. Throughout this paper we use a $\Lambda$CDM 
+cosmology with $\Omega_m=0.73$, $\Omega_\Lambda=0.27$, and $h = 0.7$, consistent 
+with WMAP seven year results \citep{Komatsu:2011}. All distances and wavenumbers are in 
+comoving coordinates.
 
 \section{The Murchison Widefield Array and Observations}\label{sec:MWA}
-The Murchison Widefield Array is one of several first generation radio interferometers with a primary science goal of detecting the 21cm EoR power spectrum. The remote Australian outback offers relative isolation from man-made radio frequency interference (RFI) such as FM radio, or TV stations. A recent study of the RFI environment at the Murchison Radio Observatory can be found in \citealt{Offringa:2015}.
+The Murchison Widefield Array is one of several first generation radio interferometers with 
+a primary science goal of detecting the 21cm EoR power spectrum. The remote Australian 
+outback offers relative isolation from man-made radio frequency interference (RFI) such as 
+FM radio, or TV stations. A recent study of the RFI environment at the Murchison Radio 
+Observatory can be found in \citealt{Offringa:2015}.
 
-While the 21 cm EoR signal is priority, the MWA is a general observatory serving several science programs beyond cosmology including galactic and extragalactic surveys, time domain astrophysics, solar monitoring, and ionospheric science. The array was thus designed with these programs in consideration and the layout was optimized using a pseudo-random antenna placement algorithm \citep{Beardsley:2012} to obtain a well behaved point spread function while retaining a dense core for EoR sensitivity \citep{Beardsley:2013}. This is in contrast to more pointed EoR experiments like PAPER, which utilize a highly redundant layout to enhance sensitivity. Redundant arrays can leverage symmetries of the instrument for quick calibration and analysis, but have poor point spread functions, making foregrounds more difficult to characterize. Conversely we use the high imaging capability of the MWA to calibrate and subtract foregrounds based on sky models. A full description of the science capabilities of the array is found in \citealt{Bowman:2013}. 
+While the 21 cm EoR signal is priority, the MWA is a general observatory serving several 
+science programs beyond cosmology including galactic and extragalactic surveys, time 
+domain astrophysics, solar monitoring, and ionospheric science. The array was thus 
+designed with these programs in consideration and the layout was optimized using a 
+pseudo-random antenna placement algorithm \citep{Beardsley:2012} to obtain a well 
+behaved point spread function while retaining a dense core for EoR sensitivity 
+\citep{Beardsley:2013}. This is in contrast to more pointed EoR experiments like PAPER, 
+which utilize a highly redundant layout to enhance sensitivity. Redundant arrays can 
+leverage symmetries of the instrument for quick calibration and analysis, but have poor 
+point spread functions, making foregrounds more difficult to characterize. Conversely we 
+use the high imaging capability of the MWA to calibrate and subtract foregrounds based on 
+sky models. A full description of the science capabilities of the array is found in 
+\citealt{Bowman:2013}. 
 
-The technical design of the MWA is reviewed in \citealt{Tingay:2013}, and we highlight a few key characteristics that will become important in our analysis of the data. Each antenna of the MWA comprises 16 dual-polarization dipoles placed on a regular grid, lying on a ground screen. The radio frequency signals from these dipoles feed into an analog beamformer which uses physical delays to ``point" the antenna. The MWA contains 128 of these antennas, with a tightly packed core of radius 50 m, and extending out to a radius 1.5 km for higher resolution calibration and imaging.
+The technical design of the MWA is reviewed in \citealt{Tingay:2013}, and we highlight a 
+few key characteristics that will become important in our analysis of the data. Each 
+antenna of the MWA comprises 16 dual-polarization dipoles placed on a regular grid, lying 
+on a ground screen. The radio frequency signals from these dipoles feed into an analog 
+beamformer which uses physical delays to ``point" the antenna. The MWA contains 128 of 
+these antennas, with a tightly packed core of radius 50 m, and extending out to a radius 
+1.5 km for higher resolution calibration and imaging.
 
-The beamformed signals (one for each polarization) are then transmitted to receivers in the field, which digitize the signal and perform a first stage coarse frequency channelization of the data (1.28 MHz sub-bands)\citep{Prabu:2015}. This channelization applies a filter shape and aliases edge channels, which will later be flagged in our analysis. The observer now selects 24 sub-bands (30.72 MHz total bandwidth) to pass onto the correlator via fiber optic link. The correlator further channelizes the data to 10 kHz resolution, cross multiplies signals between antennas to form visibilities, and averages in time and frequency to a resolution specified by the observer. For the data in this work, the correlator output resolutions were 0.5 seconds in time and 40 kHz in frequency. The data are then written to disk on a cadence of 112 seconds, constituting a single observation, or snapshot.
+The beamformed signals (one for each polarization) are then transmitted to receivers in 
+the field, which digitize the signal and perform a first stage coarse frequency 
+channelization of the data (1.28 MHz sub-bands)\citep{Prabu:2015}. This channelization 
+applies a filter shape and aliases edge channels, which will later be flagged in our analysis. 
+The observer now selects 24 sub-bands (30.72 MHz total bandwidth) to pass onto the 
+correlator via fiber optic link. The correlator further channelizes the data to 10 kHz 
+resolution, cross multiplies signals between antennas to form visibilities, and averages in 
+time and frequency to a resolution specified by the observer. For the data in this work, the 
+correlator output resolutions were 0.5 seconds in time and 40 kHz in frequency. The data 
+are then written to disk on a cadence of 112 seconds, constituting a single observation, or 
+snapshot.
 
-The EoR observing campaign has adopted a ``drift and shift" tracking strategy -- we point the telescope towards a sky field of interest, allow the field to drift overhead for about 30 minutes until it begins to leave our field of view, then repoint the instrument at the field. The telescope is thus only pointed at discrete positions, or ``pointings". This tracking is repeated until the field is too low in the sky to track. We have identified three EoR fields relatively devoid of galactic emission and bright extragalactic sources for observing: ``EoR0" (RA $=0.00$ h, dec $= -27^\circ$), ``EoR1" (RA $=4.00$ h, dec $= -27^\circ$), and ``EoR2" (RA $=11.33$ h, dec $= -10^\circ$). In addition, we observe these fields in high and low bands centered at 182 MHz ($z\approx6.8$) and 154 MHz ($z\approx8.2$) respectively.
+The EoR observing campaign has adopted a ``drift and shift" tracking strategy -- we point 
+the telescope towards a sky field of interest, allow the field to drift overhead for about 30 
+minutes until it begins to leave our field of view, then repoint the instrument at the field. The 
+telescope is thus only pointed at discrete positions, or ``pointings". This tracking is 
+repeated until the field is too low in the sky to track. We have identified three EoR fields 
+relatively devoid of galactic emission and bright extragalactic sources for observing: 
+``EoR0" (RA $=0.00$ h, dec $= -27^\circ$), ``EoR1" (RA $=4.00$ h, dec $= -27^\circ$), 
+and ``EoR2" (RA $=11.33$ h, dec $= -10^\circ$). In addition, we observe these fields in 
+high and low bands centered at 182 MHz ($z\approx6.8$) and 154 MHz ($z\approx8.2$) 
+respectively.
 
-The data for this work includes two sets. First we use a set of 94 high band observations of the EoR0 field from August 23, 2013, which were taken early in telescope operations and found to be particularly well behaved. The MWA EoR collaboration has designated this set as a ``golden data set'', which is used to build analysis tools and compare early results. All techniques demonstrated here will use this golden data set. In Section~\ref{sec:deep} we will use a larger data set to move toward a deep integration. This data set consists of all EoR0 high band observations beginning August 23, 2013 (including the golden data set), and concluding when the field was no longer accessible for the season: when the sun was above the horizon for most or all of the field's transit. The final observation of this set was on November 29, 2013. The individual snapshots are 112 seconds of data at 0.5 second, 40 kHz resolution. In total we analyze 2,780 snapshots, or about 86.5 hours of data.
+The data for this work includes two sets. First we use a set of 94 high band observations of 
+the EoR0 field from August 23, 2013, which were taken early in telescope operations and 
+found to be particularly well behaved. The MWA EoR collaboration has designated this set 
+as a ``golden data set'', which is used to build analysis tools and compare early results. All 
+techniques demonstrated here will use this golden data set. In Section~\ref{sec:deep} we 
+will use a larger data set to move toward a deep integration. This data set consists of all 
+EoR0 high band observations beginning August 23, 2013 (including the golden data set), 
+and concluding when the field was no longer accessible for the season: when the sun was 
+above the horizon for most or all of the field's transit. The final observation of this set was 
+on November 29, 2013. The individual snapshots are 112 seconds of data at 0.5 second, 
+40 kHz resolution. In total we analyze 2,780 snapshots, or about 86.5 hours of data.
 
 \section{Analysis Pipeline}\label{sec:analysis}
-In order to ensure consistency in analysis, the international MWA EoR collaboration has defined two independent reference analysis pipelines. The details of this strategy are outlined in D.~C.~Jacobs et al. 2016 (in review). This study is based on the FHD-to-\eppsilon pipe, which is in turn based on the Fast Holographic Deconvolution (FHD\footnote{\url{https://github.com/miguelfmorales/FHD}}, \citealt{Sullivan:2012}) and Error Propagated Power Spectrum with Interleaved Observed Noise (\eppsilon\footnote{\url{https://github.com/miguelfmorales/eppsilon}}, B.~J.~Hazelton et al. 2016, in prep) packages. The general flow of the pipeline is shown in Figure~\ref{fig:pipe}, and we give an overview below.
+In order to ensure consistency in analysis, the international MWA EoR collaboration has 
+defined two independent reference analysis pipelines. The details of this strategy are 
+outlined in D.~C.~Jacobs et al. 2016 (in review). This study is based on the FHD-to-
+\eppsilon pipe, which is in turn based on the Fast Holographic Deconvolution (FHD
+\footnote{\url{https://github.com/miguelfmorales/FHD}}, \citealt{Sullivan:2012}) and Error 
+Propagated Power Spectrum with Interleaved Observed Noise (\eppsilon
+\footnote{\url{https://github.com/miguelfmorales/eppsilon}}, B.~J.~Hazelton et al. 2016, in 
+prep) packages. The general flow of the pipeline is shown in Figure~\ref{fig:pipe}, and we 
+give an overview below.
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=\columnwidth]{pipe.pdf}
 \caption[Pipeline diagram]{
-Schematic of the analysis pipeline used in this work. The raw correlator data is preprocessed by performing RFI and other flagging. Then the data are calibrated and imaged using an iterative foreground modeling approach with the FHD package. Finally, a power spectrum is formed using the \eppsilon package.
+Schematic of the analysis pipeline used in this work. The raw correlator data is 
+preprocessed by performing RFI and other flagging. Then the data are calibrated and 
+imaged using an iterative foreground modeling approach with the FHD package. Finally, a 
+power spectrum is formed using the \eppsilon package.
 \label{fig:pipe}
 }
 \end{center}
 \end{figure}
 
 \subsection{Preprocessing}\label{subsec:preprocessing}
-The preprocessing step converts the data from the non-standard memory dump format from the correlator's GPUs to a standard UVFITS format \citep{Greisen:2012}, performs flagging, averages in time and freqeuncy, and writes to disk. For this step we use the \cotter package, which in turn calls the \texttt{AOFLAGGER}\footnote{\url{http://aoflagger.sourceforge.net/}} to perform RFI flagging \citep{Offringa:2010}. 
+The preprocessing step converts the data from the non-standard memory dump format 
+from the correlator's GPUs to a standard UVFITS format \citep{Greisen:2012}, performs 
+flagging, averages in time and freqeuncy, and writes to disk. For this step we use the 
+\cotter package, which in turn calls the \texttt{AOFLAGGER}\footnote{\url{http://
+aoflagger.sourceforge.net/}} to perform RFI flagging \citep{Offringa:2010}. 
 
-Besides RFI, we manually flag data to remove three other effects. As mentioned in Section~\ref{sec:MWA}, the edges of the coarse bands contain high levels of aliasing from the filter applied in the digital receivers. We flag two 40 kHz channels on either side of the coarse band edges (total of four channels per coarse band edge). In principle the aliasing could be calibrated out and these channels could be recovered, but this is left for future work. Second, early data from the MWA also contained some instances where antennas were not pointed properly at the beginning of observations due to a beamformer error. This problem has since been resolved, but exists in our data. We therefore flag the first two seconds of each observation to avoid any potentially mis-pointed data. Finally, we flag the central fine channel of each coarse band because it corresponds to the DC mode of that sub-band and can easily float, washing out useful information.
+Besides RFI, we manually flag data to remove three other effects. As mentioned in 
+Section~\ref{sec:MWA}, the edges of the coarse bands contain high levels of aliasing from 
+the filter applied in the digital receivers. We flag two 40 kHz channels on either side of the 
+coarse band edges (total of four channels per coarse band edge). In principle the aliasing 
+could be calibrated out and these channels could be recovered, but this is left for future 
+work. Second, early data from the MWA also contained some instances where antennas 
+were not pointed properly at the beginning of observations due to a beamformer error. This 
+problem has since been resolved, but exists in our data. We therefore flag the first two 
+seconds of each observation to avoid any potentially mis-pointed data. Finally, we flag the 
+central fine channel of each coarse band because it corresponds to the DC mode of that 
+sub-band and can easily float, washing out useful information.
 
-In the final step of preprocessing, \cotter averages the data to 2 second, 80 kHz resolution and writes to disk. At this stage each snapshot is contained in a single UVFITS file, which serves as the base unit for calibration and imaging.
+In the final step of preprocessing, \cotter averages the data to 2 second, 80 kHz resolution 
+and writes to disk. At this stage each snapshot is contained in a single UVFITS file, which 
+serves as the base unit for calibration and imaging.
 
 
 \subsection{Calibration and Imaging}\label{subsec:cal_imaging}
-The next step in our pipeline is to calibrate the visibilities. As shown in Figure~\ref{fig:pipe}, a sky model is derived from our imaged data, which feeds back into the calibration. This is naturally an iterative process as the sky model is refined with improved calibration solutions. We will describe the sky model in detail in Section~\ref{sec:techniques}, but here we present the production mode of analysis after the model has been determined.
+The next step in our pipeline is to calibrate the visibilities. As shown in Figure~\ref{fig:pipe}, 
+a sky model is derived from our imaged data, which feeds back into the calibration. This is 
+naturally an iterative process as the sky model is refined with improved calibration 
+solutions. We will describe the sky model in detail in Section~\ref{sec:techniques}, but here 
+we present the production mode of analysis after the model has been determined.
 
-Calibration is accomplished within the FHD package in two steps. First we match the raw data to model visibilities formed using a realistic simulation of the array response to our foreground model. This step results in independent complex gains for each antenna, frequency channel, and polarization. In the second step we impose restrictions on these gains motivated by our understanding of the spectral response of the instrument. By reducing the number of free parameters in this step we increase our signal to noise on calibration solutions and avoid absorbing unmodeled confusion source flux into our gain solutions which has been shown to contaminate the EoR window \citep{Barry:2016}. 
+Calibration is accomplished within the FHD package in two steps. First we match the raw 
+data to model visibilities formed using a realistic simulation of the array response to our 
+foreground model. This step results in independent complex gains for each antenna, 
+frequency channel, and polarization. In the second step we impose restrictions on these 
+gains motivated by our understanding of the spectral response of the instrument. By 
+reducing the number of free parameters in this step we increase our signal to noise on 
+calibration solutions and avoid absorbing unmodeled confusion source flux into our gain 
+solutions which has been shown to contaminate the EoR window \citep{Barry:2016}. 
 
-In the first calibration step we allow our complex gains to account for any direction-independent response on a per antenna, per frequency channel, per polarization basis. To define our gains in this way, we have made two simplifications. First we push all direction-dependence of the antenna response into the model of the primary beam. FHD is capable of using separate models for each antenna, though this has not yet been implemented for the MWA due to lack of individual models. The second simplification is to ignore any cross terms between our different axes, for example a mutual coupling between two antennas. In principle these terms would introduce baseline dependent gains, rather than antenna dependent. The MWA has not yet seen evidence of these terms, and so we currently neglect them in our solutions.
+In the first calibration step we allow our complex gains to account for any direction-
+independent response on a per antenna, per frequency channel, per polarization basis. To 
+define our gains in this way, we have made two simplifications. First we push all direction-
+dependence of the antenna response into the model of the primary beam. FHD is capable 
+of using separate models for each antenna, though this has not yet been implemented for 
+the MWA due to lack of individual models. The second simplification is to ignore any cross 
+terms between our different axes, for example a mutual coupling between two antennas. In 
+principle these terms would introduce baseline dependent gains, rather than antenna 
+dependent. The MWA has not yet seen evidence of these terms, and so we currently 
+neglect them in our solutions.
 
-Under these assumptions we can express the measured, uncalibrated visibility for an antenna pair $(i,j)$ as
+Under these assumptions we can express the measured, uncalibrated visibility for an 
+antenna pair $(i,j)$ as
 \begin{equation}
 V'_{ij}(\nu) \approx g_i(\nu)g^*_jV_{ij}(\nu),
 \end{equation}
-where $g_i(\nu)$ and $g_j(\nu)$ are the complex gains for antennas $i$ and $j$ respectively. Because we are treating polarizations independently, we allow the antenna subscript to run over both East-West (E-W) and North-South (N-S) polarizations.
+where $g_i(\nu)$ and $g_j(\nu)$ are the complex gains for antennas $i$ and $j$ 
+respectively. Because we are treating polarizations independently, we allow the antenna 
+subscript to run over both East-West (E-W) and North-South (N-S) polarizations.
 
-FHD utilizes the StEFCal algorithm described in \citealt{Salvini:2014} to find the minimum $\chi^2$ estimate with respect to the complex gains. The result of this operation is estimated gains for every antenna, frequency channel, and polarization. However, with certain known properties of the antenna response we can reduce the number of free parameters in our solution. This takes us to the second step of calibration.
+FHD utilizes the StEFCal algorithm described in \citealt{Salvini:2014} to find the minimum 
+$\chi^2$ estimate with respect to the complex gains. The result of this operation is 
+estimated gains for every antenna, frequency channel, and polarization. However, with 
+certain known properties of the antenna response we can reduce the number of free 
+parameters in our solution. This takes us to the second step of calibration.
 
-Our initial gain model included an amplitude bandpass common to all antennas, $B(\nu)$, and an antenna dependent low order polynomial in frequency. Mathematically we can express our restricted gain as
+Our initial gain model included an amplitude bandpass common to all antennas, $B(\nu)$, 
+and an antenna dependent low order polynomial in frequency. Mathematically we can 
+express our restricted gain as
 \begin{equation}\label{eq:cal1}
 \hat{g}_i(\nu)=B(\nu)P_i(\nu),
 \end{equation}
