@@ -820,7 +820,9 @@ analysis tools to include it, we leave this to future work.
 
 \begin{figure*}
 \begin{center}
+%\subfigure{\includegraphics[width=\textwidth]{jackknife.pdf}}
 \includegraphics[width=\textwidth]{jackknife.pdf}
+%\subfigure{\includegraphics[width=.5\textwidth]{pointing_cartoon.pdf}}
 \caption[Per pointing jackknife]{An example jackknife test. For this test we divided the data 
 into days and pointings. This is an example array of power spectra (residual E-W 
 polarization) for a single day, August 26, 2013. The early pointings are heavily contaminated 
@@ -831,6 +833,15 @@ again.
 }
 \end{center}
 \end{figure*}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=\columnwidth]{pointing_cartoon.pdf}
+\caption{\textcolor{red}{caption!}
+\label{fig:pointing}
+}
+\end{center}
+\end{figure}
 
 Motivated by the hand grading done with power spectrum jackknives, we developed 
 another metric to quickly predict power spectrum quality for each snapshot in our data set. 
