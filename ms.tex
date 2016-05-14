@@ -134,9 +134,9 @@ gridding kernels, diffuse foreground model subtraction, and quality control meth
 change to the analysis pipeline is tested against a two dimensional power spectrum figure 
 of merit to demonstrate improvement. We incorporate the new techniques into a deep 
 integration of 32 hours of MWA data. This data set is used to place a systematic-limited 
-upper limit on the cosmological power spectrum of $\Delta^2 \leq 2.17 \times 10^4$ mK
-$^2$ at $k=0.24$ h~Mpc$^{-1}$ and $z=6.8$, consistent with other published limits, and a 
-modest improvement (factor of 1.7) over previous MWA results. While our result is 
+upper limit on the cosmological power spectrum of $\Delta^2 \leq 2.7 \times 10^4$ mK
+$^2$ at $k=0.27$ h~Mpc$^{-1}$ and $z=7.1$, consistent with other published limits, and a 
+modest improvement (factor of 1.4) over previous MWA results. While our result is 
 systematic limited, we identify several strategies to overcome these systematics in future 
 analysis.
 \end{abstract}
@@ -290,9 +290,9 @@ In order to ensure consistency in analysis, the international MWA EoR collaborat
 defined two independent reference analysis pipelines. The details of this strategy are 
 outlined in D.~C.~Jacobs et al. 2016 (in review). This study is based on the FHD-to-
 \eppsilon pipe, which is in turn based on the Fast Holographic Deconvolution (FHD
-\footnote{\url{https://github.com/miguelfmorales/FHD}}, \citealt{Sullivan:2012}) and Error 
+\footnote{\url{https://github.com/EoRImaging/FHD}}, \citealt{Sullivan:2012}) and Error 
 Propagated Power Spectrum with Interleaved Observed Noise (\eppsilon
-\footnote{\url{https://github.com/miguelfmorales/eppsilon}}, B.~J.~Hazelton et al. 2016, in 
+\footnote{\url{https://github.com/EoRImaging/eppsilon}}, B.~J.~Hazelton et al. 2016, in 
 prep) packages. The general flow of the pipeline is shown in Figure~\ref{fig:pipe}, and we 
 give an overview below.
 
@@ -363,7 +363,7 @@ neglect them in our solutions.
 Under these assumptions we can express the measured, uncalibrated visibility for an 
 antenna pair $(i,j)$ as
 \begin{equation}
-V'_{ij}(\nu) \approx g_i(\nu)g^*_jV_{ij}(\nu),
+V'_{ij}(\nu) \approx g_i(\nu)g^*_j(\nu)V_{ij}(\nu),
 \end{equation}
 where $g_i(\nu)$ and $g_j(\nu)$ are the complex gains for antennas $i$ and $j$ 
 respectively. Because we are treating polarizations independently, we allow the antenna 
@@ -409,7 +409,7 @@ a frequency resolution of 160 kHz.
 The gridded $uv$ data are then Fourier transformed to create sky-frame images. To avoid 
 aliasing we image out 90$^\circ$ from phase center (gridding resolution of a half 
 wavelength), and crop the image. We found that cropping the image based on beam value 
-resulting in hard edges in integrated images from different snapshots having beams pointed 
+resulted in hard edges when integrating images from different snapshots having beams pointed 
 in slightly different directions. To avoid the hard edges, we predetermine a set of HEALPix 
 pixels to interpolate to, and use the same set for all snapshots on a given field. The final 
 cropped field of view for this work is a 21$^\circ$ square centered at RA~$=0$ h, dec~
@@ -545,7 +545,7 @@ selecting the mode where the reflection amplitude is largest.
 \caption{
 \emph{Top:} Single polarization dirty power spectrum formed from the golden data set, 
 before implementing cable reflection fitting into the calibration loop. The black arrow points 
-to a horizontal band at $k_{||} \approx 0.6$~h~Mpc$^{-1}$, which cannot be accounted for 
+to a horizontal band at $k_{||} \approx 0.7$~h~Mpc$^{-1}$, which cannot be accounted for 
 by the coarse bands. \emph{Bottom:} After we implement the cable reflection fitting in our 
 calibration solutions, we see the reflection line disappears.
 \label{fig:cables}
@@ -566,7 +566,7 @@ precise diagnosis.
 A similar, low level effect which had the potential to contaminate the EoR window is shown 
 in Figure~\ref{fig:beam_res}. The spectra shown are the \emph{model} spectra -- calculated 
 by propagating the sky model visibilities through the entire pipeline. Despite our foreground 
-model not containing spectral structure, the EoR window in the left panel seems to have a 
+model not containing spectral structure, the EoR window in the top panel seems to have a 
 floor at a level $\sim 10^7$~mK$^2$~h$^{-3}$~Mpc$^3$, comparable to predicted EoR 
 signals. In addition there is a faint line in the upper-left of the plot which has the same slope 
 as the wedge, but seems to originate far beyond the horizon.
@@ -588,7 +588,7 @@ expected EoR signal level.
 \end{center}
 \end{figure}
 
-The source of this floor and super-horizon line ended up being the resolution at which we 
+The source of this floor and super-horizon line was traced to the resolution at which we 
 formed the gridding kernel when gridding visibilities. In the interest of computational speed 
 and efficiency, the kernel is pre-calculated at a high resolution, then a nearest neighbor 
 lookup table is used to approximate the beam values at discrete pixels. The kernel 
@@ -631,7 +631,7 @@ our point source model using additional catalogs. We accomplish this through a h
 catalog pulling from our early KGS catalog, the MWA Commissioning Survey\footnote{The 
 more complete GLEAM Survey \citep[][Hurley-Walker et al., in collaboration review]
 {Wayth:2015} was not available at the time of analysis.} \citep[MWACS, ][]
-{Hurley-Walker:2014}, Culgoora \citep{Slee:1977}, and the Molonglo Reference Catalog 
+{Hurley-Walker:2014}, the Culgoora catalog \citep{Slee:1977}, and the Molonglo Reference Catalog 
 \citep[MRC, ][]{Large:1981}. Source fluxes are prioritized in this order based on our 
 confidence in their predicted flux at 182 MHz. We first cluster the source lists to avoid 
 redundant sources, using a 3.5 arcmin neighborhood radius, then select the flux from the 
@@ -680,8 +680,7 @@ hierarchical catalog spectra. The ratio difference is shown in Figure~\ref{fig:m
 The entire wedge being positive (blue) demonstrates that using the new catalog resulted in 
 successfully subtracting higher fractional power. Not only does this indicate we subtract 
 more power, but it also confirms that our calibrated data is more closely matched to the 
-model, meaning that the higher flux scale seen in the left panel of Figure~
-\ref{fig:mwacs_diff}, and our calibration solutions in general, are more accurate.
+model, meaning that our calibration solutions in general are more accurate.
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{mwacs_ratio.pdf}
@@ -807,7 +806,9 @@ and ``pointing" (which direction the antennas were pointed while tracking the Eo
 We show an example of one day's worth of per-pointing power spectra in Figure~
 \ref{fig:jackknife}. The pointings are labeled sequentially with $-5$ corresponding to five 
 pointing steps prior to zenith transit, $0$ corresponding to zenith, and $+4$ corresponding 
-to four steps after zenith. Early in the night ($-5$ through $-3$) the bulk of the galactic plane 
+to four steps after zenith. 
+This numbering scheme is shown graphically in Figure~\ref{fig:pointing}.
+Early in the night ($-5$ through $-3$) the bulk of the galactic plane 
 was still above the horizon, and despite being very far from our primary field of view, highly 
 contaminated our observations through the sidelobes of the instrument. We then have 
 relatively well behaved pointings, with the EoR window dominated by noise, until the final 
@@ -837,7 +838,11 @@ again.
 \begin{figure}
 \begin{center}
 \includegraphics[width=\columnwidth]{pointing_cartoon.pdf}
-\caption{\textcolor{red}{caption!}
+\caption{This is a cartoon depiction of the numbering scheme used to label pointings in
+Figures~\ref{fig:jackknife} and \ref{fig:wedge_cut}. Looking South, a field transits from the
+East (left), and the telescope begins observing about 5 pointings before zenith (-5). As the
+field drifts overhead, we periodically repoint the telescope to recenter the field. Each shift
+increments the pointing label by one, and the zenith pointing is defined as zero.
 \label{fig:pointing}
 }
 \end{center}
@@ -932,7 +937,7 @@ Residual two dimensional power spectra for the three sub-bands used to place lim
 cosmological signal. The left panels show the low band, centered at 174.7 MHz, or a 
 redshift of 7.1. The middle panels show the mid band, centered at 182.4 MHz, or a redshift 
 of 6.8. The right panels show the high band, centered at 190.1 MHz, or a redshift of 6.5. 
-The red box in the upper left panel shows the window used for averaging to one dimension.
+The contours show the window used for averaging to one dimension.
 \label{fig:2d_ps_subband}
 }
 \end{center}
@@ -956,22 +961,61 @@ solutions.
 
 Between the coarse band harmonic lines and the reflection line, we do see regions where 
 our spectra appear noise-like (positive and negative values). This is encouraging despite 
-the leakage at lower $k_{||}$. The red box in the upper left 2D spectrum shows the region of 
-$\mathbf{k}$-space we use when averaging to one dimension. We exclude any voxels 
-below the solid black horizon line, as well as $k_{||}<0.1$ h Mpc$^{-1}$ due to foreground 
-contamination. We limit the $k_{\perp}$ range due to higher power in the coarse bands at 
-low $k_{\perp}$, and the poor $uv$ coverage at high $k_{\perp}$, leading to the vertical 
-streaks seen on the right side of the 2D spectra. We set our range to be $0.015$ h Mpc
-$^{-1} \leq k_{\perp} \leq 0.03$ h Mpc$^{-1}$. This is an aggressive cut, but confidently 
-avoids the vertical streaks of leaked power.
+the leakage at lower $k_{||}$, and motivates us to be selective when binning to one 
+dimensional power spectra.
 
-One could additionally mask the coarse band harmonic lines when averaging to one 
-dimension. However, because $k_{||} \gg k_{\perp}$ within the red box, our spherical shells 
-are approximately constant $k_{||}$, so the coarse bands are still isolated in our average. 
-We choose to retain them to avoid empty bins, and to help guide the reader when 
-comparing the 2D and 1D spectra. While the red box is shown on the 2D plot, the actual 1D 
-averaging is done by returning to the full three dimensional power cubes and performing a 
-weighted average in shells.
+Figure~\ref{fig:slices} shows slices of power that help isolate the contamination. The two 
+dimensional power spectrum is the N-S, mid band spectrum from 
+Figure~\ref{fig:2d_ps_subband}. We have drawn a horizontal solid blue line to indicate the 
+slice used to plot power as a function of $k_{\perp}$ for a fixed $k_{||}$ (top right), and a 
+vertical dashed line to show the slice used to plot power as a function of $k_{||}$ for a fixed 
+$k_{\perp}$ (bottom right). In the $k_{\perp}$ power plot we can see leakage at low and high
+$k_{\perp}$. On the low end this is due to the width of the coarse band harmonics and the
+exceptionally bright foregrounds at large scales. On the high end we are seeing the residual
+of the vertical streaks due to poor sampling at large $uv$. While the increased noise would
+mean that we will down weight the bins at large $k_{\perp}$, the contamination is even
+larger, meaning it would bias our estimate even though those bins are down weighted. 
+We exclude bins with $u<10\lambda$ and $u>70\lambda$, shown with grey boxes.
+Between these two regimes are many bins consistent with the noise level, which we include
+in our one dimensional averages.
+
+\begin{figure*}
+\begin{center}
+\includegraphics[width=\textwidth]{slices.pdf}
+\caption{
+\emph{Left:} The N-S, $z=6.8$ two dimensional power spectrum repeated from 
+Figure~\ref{fig:2d_ps_subband}. Here we have superimposed blue lines to show slices in
+$k_{\perp}$ (solid) and $k_{||}$ (dashed). \emph{Top right:} Residual power as a function
+of $k_{\perp}$ for fixed $k_{||}$. The grey boxes show regions which will be excluded from
+the one dimensional averages. The red dashed line shows the 1-$\sigma$ noise level, and
+the vertical black dashed line shows the intersection of this slice with the wedge. 
+\emph{Bottom right:} Residual power as a function of $k_{||}$ for fixed $k_{\perp}$. The strong
+foreground contamination is evident at low $k_{||}$, and the coarse band harmonic lines
+appear as expected. 
+\label{fig:slices}
+}
+\end{center}
+\end{figure*}
+
+Similarly we inspect the $k_{||}$ power in the bottom right plot of Figure~\ref{fig:slices}. Here
+we see the huge contamination from foregrounds at low $k_{||}$. While the leakage drops 
+significantly, our measurements do not reach the noise level until after the first coarse
+band harmonic. However, we chose to include bins below the first coarse band with 
+$k_{||}>0.15$ h Mpc$^{-1}$ because the cosmological signal is expected to contain 
+substantially higher power at large scales, and ultimately these low $k_{||}$ bins provide
+our most competitive limits despite being systematic limited. We exclude the coarse band
+harmonics by masking out the harmonic bin itself and two bins on either side (total of five
+bins per harmonic).
+
+The final mask we apply is the wedge. We found that a small buffer beyond the horizon was
+necessary to completely mask out the wedge, consistent with \citealt{Dillon:2015}. We
+implement the buffer by extending the horizon line by 15 degrees. This line is shown as the
+dashed diagonal line in the left panel of Figure~\ref{fig:slices}.
+
+The various masking described above is summarized with the black contours shown on the
+two dimensional power spectra in Figure~\ref{fig:2d_ps_subband}. The contours show
+the cuts in two dimensional space, but the masking is actually performed directly in the
+three dimensional power spectrum cube and averaged directly to one dimension.
 
 The resulting one dimensional power spectra are shown in Figure~\ref{fig:1d_ps}, where 
 the measured power is shown with solid blue, the 1-$\sigma$ noise level is shown with 
@@ -1054,6 +1098,14 @@ highlight lessons learned from the comparison.
 %     by pointing - diff zenith vs +2 
 %	2D PS vs redshift
 %	1D
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{1D_spectra_comparison.pdf}
+\caption{
+\textcolor{red}{Caption!}
+\label{fig:ps_comparison}
+}
+\end{figure}
 
 \section{Discussion}\label{sec:discussion}
 Inspecting our 32 hour integrated power spectra we see two places where we are limited. 
