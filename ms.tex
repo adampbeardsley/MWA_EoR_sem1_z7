@@ -521,7 +521,9 @@ corresponding delay time of the line, $\tau \approx 1.23$~$\mu$s, corresponds al
 exactly to twice the signal travel time through the 150 meter cables (with velocity 0.81c). We 
 therefore introduced a reflection term into our gain model, which allows our restricted gains 
 to account for the interference of the incident signal with a round-trip reflected signal in the 
-cable. The full gain model is expressed as
+cable. 
+A similar approach was taken at lower frequencies in \citealt{Ewall-Wice:2016}.
+The full gain model is expressed as
 \begin{equation}\label{eq:cal2}
 \hat{g}_i(\nu)=B_{\alpha}(\nu)\left(P_i(\nu)+R_i(\nu)\right),
 \end{equation}
@@ -1040,16 +1042,18 @@ in black for reference.
 \end{center}
 \end{figure*}
 
-\textcolor{red}{this needs to be rewritten}
-In all bands and polarizations, we are heavily signal dominated in our most sensitive region 
-(low $k$). This is not surprising based on the 2D spectra we examined earlier. We can see 
-the strong coarse band harmonic lines, and the cable reflection line between the first two 
-coarse band lines. But between these coarse lines there are bins which approach the noise 
-level and are consistent with zero (notably the North-South polarization for the $z=7.1$ and 
-$z=6.8$ bands). These regions are encouraging because they have the potential to 
-continue integrating down with more data.
+In all bands and polarizations, we are heavily signal dominated in our most sensitive region
+(low $k$). This is not surprising based on the 2D spectra we examined earlier. The gaps in
+the data are due to the excised coarse band harmonics. We can see the cable reflection line
+between the first two gaps in all polarizations and sub-bands. Between the coarse band
+harmonic lines, especially at larger $k$, are bins which approach the noise level and are
+consistent with zero (notably the North-South polarization for the low and mid bands). The
+bin just above the first coarse band harmonic is also consistent with zero in the low band.
+These regions are encouraging because they have the potential to continue integrating down
+with more data. Improved suppression of the coarse band harmonic and cable reflection lines
+will also improve the limits presented here.
 
-However, our best upper limits for a cosmological signal are still at low $k$, despite the 
+Our best upper limits for a cosmological signal are at low $k$, despite the 
 strong leakage. Because any foreground leakage should not correlate with the EoR signal, 
 we can assume that the power of the sum of leakage and cosmological signal is greater 
 than the power of the EoR signal alone, allowing us to set an upper limit. We quote the best 
@@ -1068,12 +1072,12 @@ confidence level.
 \tableline\tableline
 Sub-band & $z_0$ & Polarization & $k$ (h Mpc$^{-1}$) & $\Delta^2_{\text{UL}}$ (mK$^2$) \\
 \tableline
-Low & 7.1 & E-W & 0.231 & 3.02 $\times 10^4$\\
-Low & 7.1 & N-S & 0.231 & 2.22 $\times 10^4$\\
-Mid & 6.8 & E-W & 0.2361 & 2.84 $\times 10^4$\\
-Mid & 6.8 & N-S & 0.2361 & 2.17 $\times 10^4$\\
-High & 6.5 & E-W & 0.204 & 5.24 $\times 10^4$\\
-High & 6.5 & N-S & 0.241 & 3.11 $\times 10^4$\\
+Low & 7.1 & E-W & 0.231 & 3.67 $\times 10^4$\\
+Low & 7.1 & N-S & 0.27 & 2.70 $\times 10^4$\\
+Mid & 6.8 & E-W & 0.24 & 3.56 $\times 10^4$\\
+Mid & 6.8 & N-S & 0.24 & 3.02 $\times 10^4$\\
+High & 6.5 & E-W & 0.20 & 4.70 $\times 10^4$\\
+High & 6.5 & N-S & 0.24 & 3.22 $\times 10^4$\\
 \tableline
 \end{tabular}
 \end{center}
