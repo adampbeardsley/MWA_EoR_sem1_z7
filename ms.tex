@@ -1061,27 +1061,28 @@ than the power of the EoR signal alone, allowing us to set an upper limit. We qu
 \ref{tbl:limits}. These limits and their context in the field are further discussed in Section~
 \ref{sec:discussion}.
 
-\begin{table}
-\begin{center}
-\caption[EoR power spectrum limits]{Upper limits on the EoR power spectrum for our three 
+\begin{deluxetable}{ccccccc}
+\tabletypesize{\footnotesize}
+%\tablecolumns{7}
+\tablewidth{\columnwidth}
+\tablecaption{Upper limits on the EoR power spectrum for our three 
 sub-bands and two polarizations. Upper limits, $\Delta^2_{\text{UL}}$, are at 97.7\% 
-confidence level.
+confidence level. Cosmological wavenumbers, $k$, are in units of h~Mpc$^{-1}$ and upper limits are in units of mK$^2$. The last two columns, RTS-CHIPS, are produced from the reference pipeline which is discussed in Section~\ref{subsec:ref_pipe}.
 \label{tbl:limits}
 }
-\begin{tabular}{ccccc}
-\tableline\tableline
-Sub-band & $z_0$ & Polarization & $k$ (h Mpc$^{-1}$) & $\Delta^2_{\text{UL}}$ (mK$^2$) \\
-\tableline
-Low & 7.1 & E-W & 0.231 & 3.67 $\times 10^4$\\
-Low & 7.1 & N-S & 0.27 & 2.70 $\times 10^4$\\
-Mid & 6.8 & E-W & 0.24 & 3.56 $\times 10^4$\\
-Mid & 6.8 & N-S & 0.24 & 3.02 $\times 10^4$\\
-High & 6.5 & E-W & 0.20 & 4.70 $\times 10^4$\\
-High & 6.5 & N-S & 0.24 & 3.22 $\times 10^4$\\
-\tableline
-\end{tabular}
-\end{center}
-\end{table}
+\tablehead{
+& & & \multicolumn{2}{c}{FHD-\eppsilon} & \multicolumn{2}{c}{RTS-CHIPS} \\
+Sub-band & $z_0$ & Pol & $k$  & $\Delta^2_{\text{UL}}$ & $k$ & $\Delta^2_{\text{UL}}$
+}
+\startdata
+Low & 7.1 & E-W & 0.231 & 3.67 $\times 10^4$ & &\\
+Low & 7.1 & N-S & 0.27 & 2.70 $\times 10^4$ & 0.154 & 9.3 $\times 10^4$ \\
+Mid & 6.8 & E-W & 0.24 & 3.56 $\times 10^4$ & &\\
+Mid & 6.8 & N-S & 0.24 & 3.02 $\times 10^4$ & 0.154 & 6.8 $\times 10^4$ \\
+High & 6.5 & E-W & 0.20 & 4.70 $\times 10^4$ & &\\
+High & 6.5 & N-S & 0.24 & 3.22 $\times 10^4$ & 0.154 & 8.1 $\times 10^4$ \\
+\enddata
+\end{deluxetable}
 
 \subsection{Comparison with reference pipeline}\label{subsec:ref_pipe}
 
