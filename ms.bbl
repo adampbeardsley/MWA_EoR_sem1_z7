@@ -1,4 +1,4 @@
-\begin{thebibliography}{64}
+\begin{thebibliography}{65}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Ali {et~al.}(2015)Ali, Parsons, Zheng, Pober, Liu, Aguirre, Bradley,
@@ -159,6 +159,20 @@ Hazelton, B.~J., Morales, M.~F., \& Sullivan, I.~S. 2013, The Astrophysical
   {Klima}, {Liu}, {MacMahon}, {Manley}, {Moore}, {Stefan}, \&
   {Walbrugh}}]{Jacobs:2015}
 {Jacobs}, D.~C., {Pober}, J.~C., {Parsons}, A.~R., {et~al.} 2015, \apj, 801, 51
+
+\bibitem[{{Jacobs} {et~al.}(2016){Jacobs}, {Hazelton}, {Trott}, {Dillon},
+  {Pindor}, {Sullivan}, {Pober}, {Barry}, {Beardsley}, {Bernardi}, {Bowman},
+  {Briggs}, {Cappallo}, {Carroll}, {Corey}, {de Oliveira-Costa}, {Emrich},
+  {Ewall-Wice}, {Feng}, {Gaensler}, {Goeke}, {Greenhill}, {Hewitt},
+  {Hurley-Walker}, {Johnston-Hollitt}, {Kaplan}, {Kasper}, {Kim},
+  {Kratzenberg}, {Lenc}, {Line}, {Loeb}, {Lonsdale}, {Lynch}, {McKinley},
+  {McWhirter}, {Mitchell}, {Morales}, {Morgan}, {Neben}, {Thyagarajan},
+  {Oberoi}, {Offringa}, {Ord}, {Paul}, {Prabu}, {Procopio}, {Riding}, {Rogers},
+  {Roshi}, {Udaya Shankar}, {Sethi}, {Srivani}, {Subrahmanyan}, {Tegmark},
+  {Tingay}, {Waterson}, {Wayth}, {Webster}, {Whitney}, {Williams}, {Williams},
+  {Wu}, \& {Wyithe}}]{Jacobs:2016}
+{Jacobs}, D.~C., {Hazelton}, B.~J., {Trott}, C.~M., {et~al.} 2016, ArXiv
+  e-prints
 
 \bibitem[{Komatsu {et~al.}(2011)Komatsu, Smith, Dunkley, Bennett, Gold,
   Hinshaw, Jarosik, Larson, Nolta, Page, Spergel, Halpern, Hill, Kogut, Limon,
