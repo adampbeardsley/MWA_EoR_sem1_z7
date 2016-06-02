@@ -325,7 +325,7 @@ work. Second, early data from the MWA also contained some instances where antenn
 were not pointed properly at the beginning of observations due to a beamformer error. This 
 problem has since been resolved, but exists in our data. We therefore flag the first two 
 seconds of each observation to avoid any potentially mis-pointed data. 
-Finally, we flag the central fine channel of each coarse band. This channel corresponds
+Finally, we flag the central 40 kHz channel of each coarse band. This channel corresponds
 to the sub-band DC mode, which has been observed to contain anomalous power likely
 due to very low level rounding errors in the polyphase filter bank of the digital receivers.
 
