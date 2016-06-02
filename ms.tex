@@ -1004,7 +1004,7 @@ the one dimensional averages. The red dashed line shows the 1-$\sigma$ noise lev
 the vertical black dashed line shows the intersection of this slice with the wedge. 
 \emph{Bottom right:} Residual power as a function of $k_{||}$ for fixed $k_{\perp}$. The strong
 foreground contamination is evident at low $k_{||}$, and the coarse band harmonic lines
-appear as expected. The thin black line in both right panels is the equivalent power slice from the RTS-CHIPS comparison pipeline, which is discussed in Section~\ref{subsec:ref_pipe}.
+appear as expected. The thin black line in both right panels is the equivalent power slice from the RTS$+$CHIPS comparison pipeline, which is discussed in Section~\ref{subsec:ref_pipe}.
 \label{fig:slices}
 }
 \end{center}
@@ -1078,11 +1078,11 @@ than the power of the EoR signal alone, allowing us to set an upper limit. We qu
 \tablewidth{\columnwidth}
 \tablecaption{Upper limits on the EoR power spectrum for our three 
 sub-bands and two polarizations. Upper limits, $\Delta^2_{\text{UL}}$, are at 97.7\% 
-confidence level. Cosmological wavenumbers, $k$, are in units of h~Mpc$^{-1}$ and upper limits are in units of mK$^2$. The last two columns, RTS-CHIPS, are produced from the reference pipeline which is discussed in Section~\ref{subsec:ref_pipe}.
+confidence level. Cosmological wavenumbers, $k$, are in units of h~Mpc$^{-1}$ and upper limits are in units of mK$^2$. The last two columns, RTS$+$CHIPS, are produced from the reference pipeline which is discussed in Section~\ref{subsec:ref_pipe}.
 \label{tbl:limits}
 }
 \tablehead{
-& & & \multicolumn{2}{c}{FHD-\eppsilon} & \multicolumn{2}{c}{RTS-CHIPS} \\
+& & & \multicolumn{2}{c}{FHD$+$\eppsilon} & \multicolumn{2}{c}{RTS$+$CHIPS} \\
 Sub-band & $z_0$ & Pol & $k$  & $\Delta^2_{\text{UL}}$ & $k$ & $\Delta^2_{\text{UL}}$
 }
 \startdata
@@ -1106,9 +1106,36 @@ as confirmation of results. The analysis discussed so far has been based on the 
 {Trott:2016} pipeline. Below we present a brief overview of the reference pipeline and 
 highlight lessons learned from the comparison.
 
-\textbf{The RTS uses a fundamentally different calibration and foreground subtraction approach than FHD, as well as a different input point source model. The primary differences lie in the bandpass calibration, the use of ionospheric corrections, and the lack of a diffuse model. The calibration model uses a model with 1000 sources, for which ionospheric corrections are estimated and applied, before peeling of those sources from the dataset. The bandpass calibration is fundamentally different to FHD... **BART: please also include a mention of the 150m cable reflection and why we may not expect to see it with RTS**. The CHIPS power spectrum estimator applies a full maximum-likelihood estimator to the data. In its full form, the data are weighted by the thermal noise, and a model for the residual point source signal, within a full frequency-dependent description of the instrument. For this comparison, the foreground weighting is not used, in order for a direct comparison with the weighting scheme used by eppsilon.}
+The RTS uses a fundamentally different calibration and foreground subtraction approach than 
+FHD, as well as a different input point source model. The primary differences lie in the 
+bandpass calibration, the use of ionospheric corrections, and the lack of a diffuse model. The 
+calibration model uses a model with 1000 sources, for which ionospheric corrections are 
+estimated and applied, before peeling of those sources from the dataset. The bandpass 
+calibration is fundamentally different to FHD... \textbf{**BART: please also include a mention of 
+the 150m cable reflection and why we may not expect to see it with RTS**.} The CHIPS power 
+spectrum estimator applies a full maximum-likelihood estimator to the data. In its full form, the 
+data are weighted by the thermal noise, and a model for the residual point source signal, 
+within a full frequency-dependent description of the instrument. For this comparison, the 
+foreground weighting is not used, in order for a direct comparison with the weighting scheme 
+used by \eppsilon.
 
-\textbf{Of the 1,029 observations calibrated and used by the FHD pipeline, the RTS$+$CHIPS pipeline successfully calibrated and included 1,003. The remainder failed to calibrate successfully, potentially due to adverse ionospheric conditions. The data were divided into the same three redshift bins, and the 2D and 1D power spectra formed. Table \ref{tbl:limits} displays comparison 2-sigma upper limits, demonstrating broad consistency between the pipelines. The RTS$+$CHIPS best limits appear at a lower $k$ bin than FHD$+$eppsilon, owing to the different structure of the foreground leakage for the two pipelines. Figure \ref{fig:slices}, which shows the resulting FHD$+$eppsilon slices in $k_\parallel$ and $k_\bot$, also displays the equivalent power profiles for RTS$+$CHIPS. The comparison pipeline shows significantly more power at low $k_\bot$, consistent with no diffuse model being subtracted from the data. Aside from this area, the two pipelines show consistent results. Figure \ref{fig:ps_comparison} compares the 1D power from both pipelines for the three central redshifts studied in this work. The magenta line reproduces the FHD$+$eppsilon results from Figure \ref{fig:1d_ps}, while the blue line plots the equivalent RTS$+$CHIPS results (with coarse band harmonics included). Despite the differences in the two pipelines, they produce consistent power across a range of scales, supporting the robustness of the results.}
+Of the 1,029 observations calibrated and used by the FHD pipeline, the RTS$+$CHIPS 
+pipeline successfully calibrated and included 1,003. The remainder failed to calibrate 
+successfully, potentially due to adverse ionospheric conditions. The data were divided into the 
+same three redshift bins, and the 2D and 1D power spectra formed. Table \ref{tbl:limits} 
+displays comparison 2-sigma upper limits, demonstrating broad consistency between the 
+pipelines. The RTS$+$CHIPS best limits appear at a lower $k$ bin than FHD$+$\eppsilon, 
+owing to the different structure of the foreground leakage for the two pipelines. 
+Figure~\ref{fig:slices}, which shows the resulting FHD$+$\eppsilon slices in $k_\parallel$ and 
+$k_\bot$, also displays the equivalent power profiles for RTS$+$CHIPS. The comparison 
+pipeline shows significantly more power at low $k_\bot$, consistent with no diffuse model 
+being subtracted from the data. Aside from this area, the two pipelines show consistent 
+results. Figure \ref{fig:ps_comparison} compares the 1D power from both pipelines for the 
+three central redshifts studied in this work. The magenta line reproduces the FHD$+$\eppsilon 
+results from Figure \ref{fig:1d_ps}, while the blue line plots the equivalent RTS$+$CHIPS 
+results (with coarse band harmonics included). Despite the differences in the two pipelines, 
+they produce consistent power across a range of scales, supporting the robustness of the 
+results.
 
 % ADAM: Motivation why a pipeline is being discussed
 % MAHSA: Summary of RTS to power spectrum (e.g. calibration, etc)
@@ -1121,7 +1148,14 @@ highlight lessons learned from the comparison.
 \begin{figure}
 \includegraphics[width=\columnwidth]{1D_spectra_comparison.pdf}
 \caption{
-\textcolor{red}{Caption!}
+Here we compare the upper limits from the FHD$+$\eppsilon pipeline with those from the 
+RTS$+$CHIPS pipeline. The magenta lines are repeated from Figure \ref{fig:1d_ps}, and the blue line
+is the power plus two sigma thermal error bars line generated by CHIPS. CHIPS does not 
+excise the coarse band harmonic lines, and so we see their strong effect where there are 
+gaps in the magenta lines. The most notable differences are the ability of the RTS$+$CHIPS pipe
+to access lower $k$ modes, while the FHD$+$\eppsilon pipe suppresses moe power before and
+after the first coarse band harmonic. While the different analysis methods result in slightly
+different upper limits, they are generally in agreement. 
 \label{fig:ps_comparison}
 }
 \end{figure}
