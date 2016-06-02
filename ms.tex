@@ -196,7 +196,7 @@ mixing, throwing power from spectrally smooth foregrounds to higher Fourier mode
 Hazelton:2013, Pober:2013, Vedantham:2012, Morales:2012, Datta:2010}. Despite this 
 setback, the EoR window is preserved above the wedge, and the field is pushing forward with 
 several analysis pipelines under active development \citep[e.g. B.~J.~Hazelton et al. 2016, in 
-prep; D.~A.~Mitchell et al. 2016, in prep; D.~C.~Jacobs et al. 2016, in review; ][]{Trott:2016, 
+prep; D.~A.~Mitchell et al. 2016, in prep; ][]{Jacobs:2016, Trott:2016, 
 Dillon:2013, Trott:2014}.
 
 This paper serves two purposes: to demonstrate several new analysis techniques and their 
@@ -215,7 +215,7 @@ The remainder of this paper is organized as follows. In Section~\ref{sec:MWA} we
 describe the MWA instrument and the observations used in this work, in Section~
 \ref{sec:analysis} we describe our analysis pipeline, in Section~\ref{sec:techniques} we 
 describe several novel techniques in our analysis, in Section~\ref{sec:deep} we discuss our 
-efforts to apply the analysis pipeline to a deep data integration \textbf{and compare with a reference pipeline for robust estimation}, and we discuss future work 
+efforts to apply the analysis pipeline to a deep data integration and compare with a reference pipeline for robust estimation, and we discuss future work 
 in Section~\ref{sec:discussion}. Throughout this paper we use a $\Lambda$CDM 
 cosmology with $\Omega_m=0.73$, $\Omega_\Lambda=0.27$, and $h = 0.7$, consistent 
 with WMAP seven year results \citep{Komatsu:2011}. All distances and wavenumbers are in 
@@ -247,7 +247,7 @@ few key characteristics that will become important in our analysis of the data. 
 antenna of the MWA comprises 16 dual-polarization dipoles placed on a regular grid, lying 
 on a ground screen. The radio frequency signals from these dipoles feed into an analog 
 beamformer which uses physical delays to ``point" the antenna. The MWA contains 128 of 
-these antennas, with a tightly packed core of radius 50 m, and extending out to a radius \textbf{of}
+these antennas, with a tightly packed core of radius 50 m, and extending out to a radius of
 1.5 km for higher resolution calibration and imaging.
 
 The beamformed signals (one for each polarization) are then transmitted to receivers in 
@@ -288,13 +288,13 @@ on November 29, 2013. The individual snapshots are 112 seconds of data at 0.5 se
 \section{Analysis Pipeline}\label{sec:analysis}
 In order to ensure consistency in analysis, the international MWA EoR collaboration has 
 defined two independent reference analysis pipelines. The details of this strategy are 
-outlined in D.~C.~Jacobs et al. 2016 (in review). This study is based on the FHD-to-
-\eppsilon pipe, which is in turn based on the Fast Holographic Deconvolution (FHD
-\footnote{\url{https://github.com/EoRImaging/FHD}}, \citealt{Sullivan:2012}) and Error 
+outlined in \citealt{Jacobs:2016}. This study is based on the FHD-to-
+\eppsilon pipe, which is in turn based on the Fast Holographic Deconvolution 
+(FHD\footnote{\url{https://github.com/EoRImaging/FHD}}, \citealt{Sullivan:2012}) and Error 
 Propagated Power Spectrum with Interleaved Observed Noise (\eppsilon
 \footnote{\url{https://github.com/EoRImaging/eppsilon}}, B.~J.~Hazelton et al. 2016, in 
 prep) packages. The general flow of the pipeline is shown in Figure~\ref{fig:pipe}, and we 
-give an overview below. \textbf{As a point of comparison, and to demonstrate robustness of the results, we compute the output power spectra with an independent calibration and power spectrum estimation pipeline, and demonstrate consistency.}
+give an overview below. As a point of comparison, and to demonstrate robustness of the results, we compute the output power spectra with an independent calibration and power spectrum estimation pipeline, and demonstrate consistency.
 
 \begin{figure}
 \begin{center}
@@ -313,7 +313,7 @@ power spectrum is formed using the \eppsilon package.
 The preprocessing step converts the data from the non-standard memory dump format 
 from the correlator's GPUs to a standard UVFITS format \citep{Greisen:2012}, performs 
 flagging, averages in time and freqeuncy, and writes to disk. For this step we use the 
-\cotter package, which in turn calls the \texttt{AOFLAGGER}\footnote{\url{http://
+\cotter package \citep{Offringa:2015}, which in turn calls the \texttt{AOFLAGGER}\footnote{\url{http://
 aoflagger.sourceforge.net/}} to perform RFI flagging \citep{Offringa:2010}. 
 
 Besides RFI, we manually flag data to remove three other effects. As mentioned in 
@@ -324,9 +324,10 @@ could be calibrated out and these channels could be recovered, but this is left 
 work. Second, early data from the MWA also contained some instances where antennas 
 were not pointed properly at the beginning of observations due to a beamformer error. This 
 problem has since been resolved, but exists in our data. We therefore flag the first two 
-seconds of each observation to avoid any potentially mis-pointed data. Finally, we flag the 
-central fine channel of each coarse band because it corresponds to the DC mode of that 
-sub-band and can easily float, washing out useful information. \textbf{Please reword this sentence. It is not clear what "float" means here. Can you be more specific?}
+seconds of each observation to avoid any potentially mis-pointed data. 
+Finally, we flag the central fine channel of each coarse band. This channel corresponds
+to the sub-band DC mode, which has been observed to contain anomalous power likely
+due to very low level rounding errors in the polyphase filter bank of the digital receivers.
 
 In the final step of preprocessing, \cotter averages the data to 2 second, 80 kHz resolution 
 and writes to disk. At this stage each snapshot is contained in a single UVFITS file, which 
@@ -491,9 +492,7 @@ which contain both positive and negative (indicated by blue on the color bar) pi
 regions are where we have successfully isolated the foregrounds and retained a noise-like 
 EoR window in the three hour integration.
 
-\section{Novel Analysis Methods}\label{sec:techniques}
-\textcolor{red}{Needs a better section title}
-\textbf{Analysis Methods for Testing Data Quality}
+\section{Analysis Methods for Testing Data Quality}\label{sec:techniques}
 
 The two dimensional power spectrum is a useful figure of merit (FoM) \textbf{(the PS is more of a tool than a FoM)} as we improve and 
 refine our analysis pipeline. Foregrounds and systematics often manifest with characteristic 
@@ -645,11 +644,6 @@ $-0.8$. The spectral index was used to extrapolate the flux from the catalog fre
 182 MHz, but a uniform spectral index of $-0.8$ is used within our band when forming 
 model visibilities for calibration and foreground subtraction.
 
-The resulting hierarchical catalog is shown in Figure~\ref{fig:master_catalog}. The EoR0 
-field corresponds to the red FHD source patch. All sources above the horizon and within a 
-primary beam value greater than 1\% maximum (including sidelobes) are included in both 
-our calibration and foreground subtraction models.  
-
 \begin{figure*}
 \begin{center}
 \includegraphics[width=\textwidth]{master_catalog.png}
@@ -663,6 +657,11 @@ other catalogs to fill in the sidelobes of the MWA. The size of each dot is prop
 }
 \end{center}
 \end{figure*}
+
+The resulting hierarchical catalog is shown in Figure~\ref{fig:master_catalog}. The EoR0 
+field corresponds to the red FHD source patch. All sources above the horizon and within a 
+primary beam value greater than 1\% maximum (including sidelobes) are included in both 
+our calibration and foreground subtraction models.  
 
 To show the effect our hierarchical catalog has on the power spectrum figure of merit, we 
 ran our entire analysis pipeline on the golden data set with two foreground models -- first 
@@ -683,7 +682,7 @@ hierarchical catalog spectra. The ratio difference is shown in Figure~\ref{fig:m
 The entire wedge being positive (blue) demonstrates that using the new catalog resulted in 
 successfully subtracting higher fractional power. Not only does this indicate we subtract 
 more power, but it also confirms that our calibrated data is more closely matched to the 
-model, meaning that our calibration solutions in general are more accurate. \textbf{Consider adding a reference and a sentence about Jack's paper here. Her performed quite a few of these type of tests for understanding the impact of having an incomplete point source model.}
+model, meaning that our calibration solutions in general are more accurate.
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{mwacs_ratio.pdf}
@@ -698,6 +697,12 @@ calibration using the new catalog is more accurate.
 \label{fig:mwacs_ratio}
 }
 \end{figure}
+
+J.~L.~B.~Line, et al (2016, in review) performed similar analysis, but with an emphasis on the
+positional accuracy of catalog entries. By using simulations of visibilities they were able to 
+isolate the effect of using perfect versus offset source positions. They confirmed the
+importance of a complete and accurate point source catalog in order to retain a clean EoR
+window.
 
 \subsection{Diffuse Foreground Model Subtraction}
 
@@ -767,10 +772,15 @@ calibration), the calibration solutions were identical and therefore the dirty p
 were identical as well. We compare the model and residual power spectra by direct 
 subtraction in Figure~\ref{fig:diffuse_diff}. The top panel shows the model power with the 
 diffuse subtracted from the model power without. The entire plot is negative (red) because 
-we only added power with the diffuse model. The bottom panel is the difference in residual 
+we only added power with the diffuse model. 
+Even the EoR window is red (albeit at a much lower level than the wedge) because of power
+leakage from non-uniform spectral sampling and from the dynamic range limit of the 
+Blackman-Harris window function.
+The bottom panel is the difference in residual 
 power. The wedge is completely positive (blue), indicating that the diffuse model 
 successfully subtracted from the dirty visibilities. The differences in the window are positive 
-and negative, indicating that any differences are below the three hour noise level.   \textbf{Why is the region in the EoR window red here, particularly when the lower plot shows noise-like differences?}
+and negative, indicating that 
+the differences in the foreground model in this region are below the three hour noise level.
 
 \begin{figure}
 \begin{center}
@@ -1087,7 +1097,7 @@ High & 6.5 & N-S & 0.24 & 3.22 $\times 10^4$ & 0.14 & 2.5 $\times 10^4$ \\
 
 \subsection{Comparison with reference pipeline}\label{subsec:ref_pipe}
 
-As demonstrated in D.~C.~Jacobs et al. 2016 (in review), comparison between independent 
+As demonstrated in \citealt{Jacobs:2016}, comparison between independent 
 analysis pipelines is essential to evaluate the validity of algorithms under active development. 
 Such comparison provides insight into the strengths and weaknesses of the pipelines, as well 
 as confirmation of results. The analysis discussed so far has been based on the FHD to 
