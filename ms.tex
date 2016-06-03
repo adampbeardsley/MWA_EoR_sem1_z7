@@ -494,7 +494,7 @@ EoR window in the three hour integration.
 
 \section{Analysis Methods for Testing Data Quality}\label{sec:techniques}
 
-The two dimensional power spectrum is a useful figure of merit (FoM) \textbf{(the PS is more of a tool than a FoM)} as we improve and 
+The two dimensional power spectrum is a useful figure of merit (FoM) as we improve and 
 refine our analysis pipeline. Foregrounds and systematics often manifest with characteristic 
 shapes in this space, enabling us to diagnose problems and quantify improvements 
 \citep{Morales:2012}. We use the MWA 3 hour ``golden'' data set from August 23, 2013, to 
@@ -1111,8 +1111,13 @@ FHD, as well as a different input point source model. The primary differences li
 bandpass calibration, the use of ionospheric corrections, and the lack of a diffuse model. The 
 calibration model uses a model with 1000 sources, for which ionospheric corrections are 
 estimated and applied, before peeling of those sources from the dataset. The bandpass 
-calibration is fundamentally different to FHD... \textbf{**BART: please also include a mention of 
-the 150m cable reflection and why we may not expect to see it with RTS**.} The CHIPS power 
+calibration is fundamentally different to FHD.
+The bandpass for each antenna is fit to a 2nd order polynomial within each 1.28~MHz coarse 
+band individually. The delay of the 150~m cable reflection discussed earlier is comparable
+to the scale of the polynomial fit, so we expect it to naturally be fit out of the gain
+solutions. Indeed the RTS has not yet seen evidence of the reflection in the processed
+data \citep{Jacobs:2016}.
+The CHIPS power 
 spectrum estimator applies a full maximum-likelihood estimator to the data. In its full form, the 
 data are weighted by the thermal noise, and a model for the residual point source signal, 
 within a full frequency-dependent description of the instrument. For this comparison, the 
