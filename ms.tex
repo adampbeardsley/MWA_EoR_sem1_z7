@@ -12,6 +12,11 @@
 \usepackage{subfigure}
 %\usepackage{bm,upgreek}
 \usepackage{xspace}
+\usepackage{hyperref}
+\hypersetup{
+     colorlinks   = true,
+     allcolors    = blue
+}
 
 \usepackage{mymacros}
 \usepackage{affils} % Peter Williams' affiliation macro
@@ -29,6 +34,7 @@
 \def\myemailtxt{\altaffiltext{*}{e-mail: Adam.Beardsley@asu.edu}}
 
 \DeclareAffil{ASU}{Arizona State University, School of Earth and Space Exploration, Tempe, AZ 85287, USA}
+\DeclareAffil{email}{e-mail: Adam.Beardsley@asu.edu}
 \DeclareAffil{UW}{University of Washington, Department of Physics, Seattle, WA 98195, USA}
 \DeclareAffil{UWeSci}{University of Washington, eScience Institute, Seattle, WA 98195, USA}
 \DeclareAffil{Brown}{Brown University, Department of Physics, Providence, RI 02912, USA}
@@ -57,7 +63,7 @@
 \DeclareAffil{BCCP}{Berkeley Center for Cosmological Physics, Berkeley, CA 94720, USA}
 
 \affilauthorlist{
-A.~P.~Beardsley\affils{ASU}\myemail,
+A.~P.~Beardsley\affils{ASU,email},
 B.~J.~Hazelton\affils{UW,UWeSci},
 I.~S.~Sullivan\affils{UW},
 P.~Carroll\affils{UW},
@@ -288,8 +294,8 @@ on November 29, 2013. The individual snapshots are 112 seconds of data at 0.5 se
 \section{Analysis Pipeline}\label{sec:analysis}
 In order to ensure consistency in analysis, the international MWA EoR collaboration has 
 defined two independent reference analysis pipelines. The details of this strategy are 
-outlined in \citealt{Jacobs:2016}. This study is based on the FHD-to-
-\eppsilon pipe, which is in turn based on the Fast Holographic Deconvolution 
+outlined in \citealt{Jacobs:2016}. This study is based on the FHD-to-\eppsilon 
+pipe, which is in turn based on the Fast Holographic Deconvolution 
 (FHD\footnote{\url{https://github.com/EoRImaging/FHD}}, \citealt{Sullivan:2012}) and Error 
 Propagated Power Spectrum with Interleaved Observed Noise (\eppsilon
 \footnote{\url{https://github.com/EoRImaging/eppsilon}}, B.~J.~Hazelton et al. 2016, in 
@@ -350,10 +356,10 @@ reducing the number of free parameters in this step we increase our signal to no
 calibration solutions and avoid absorbing unmodeled confusion source flux into our gain 
 solutions which has been shown to contaminate the EoR window \citep{Barry:2016}. 
 
-In the first calibration step we allow our complex gains to account for any direction-
-independent response on a per antenna, per frequency channel, per polarization basis. To 
-define our gains in this way, we have made two simplifications. First we push all direction-
-dependence of the antenna response into the model of the primary beam. FHD is capable 
+In the first calibration step we allow our complex gains to account for any direction-independent 
+response on a per antenna, per frequency channel, per polarization basis. To 
+define our gains in this way, we have made two simplifications. First we push all 
+direction-dependence of the antenna response into the model of the primary beam. FHD is capable 
 of using separate models for each antenna, though this has not yet been implemented for 
 the MWA due to lack of individual models. The second simplification is to ignore any cross 
 terms between our different axes, for example a mutual coupling between two antennas. In 
@@ -419,7 +425,7 @@ $=-27^\circ$.
 In principle the foregrounds could be subtracted from the data immediately after calibration, 
 before gridding and imaging. However, for diagnostic reasons, we have found it beneficial to 
 carry the model through the entire pipeline, and only subtract just before squaring to power 
-spectrum units, allowing to form power spectra of the dirty, model, and residual data.
+spectrum units, allowing us to form power spectra of the dirty, model, and residual data.
 
 FHD provides all inputs needed for the \eppsilon package, which include weights cubes (for 
 proper accumulation of data), variance cubes (for error propagation), and even/odd 
@@ -968,8 +974,8 @@ Moving up in the window, between the first two coarse band harmonic lines we can
 additional faint line. This is the re-emergence of the 150 meter cable reflections. While the 
 method described in Section~\ref{subsec:cal_imaging} sufficiently calibrated out this 
 reflection line for the three hour golden set integration, the lower noise level in this deeper 
-integration shows it is not completely removed. Future analysis will require higher signal-to-
-noise on the reflection fitting, which may require combining snapshots for calibration 
+integration shows it is not completely removed. Future analysis will require higher 
+signal-to-noise on the reflection fitting, which may require combining snapshots for calibration 
 solutions. 
 
 Between the coarse band harmonic lines and the reflection line, we do see regions where 
@@ -1112,7 +1118,7 @@ bandpass calibration, the use of ionospheric corrections, and the lack of a diff
 calibration model uses a model with 1000 sources, for which ionospheric corrections are 
 estimated and applied, before peeling of those sources from the dataset. The bandpass 
 calibration is fundamentally different to FHD.
-The bandpass for each antenna is fit to a 2nd order polynomial within each 1.28~MHz coarse 
+The bandpass for each antenna is fitted to a 2nd order polynomial within each 1.28~MHz coarse 
 band individually. The delay of the 150~m cable reflection discussed earlier is comparable
 to the scale of the polynomial fit, so we expect it to naturally be fit out of the gain
 solutions. Indeed the RTS has not yet seen evidence of the reflection in the processed
@@ -1214,8 +1220,9 @@ limits in the field.
 
 \section{Acknowledgements}
 This work was supported by NSF grants AST-1410484 and AST-1206552.
-JCP is supported by an NSF Astronomy and Astrophysics Fellowship under award 
-AST-1302774. This scientific work makes use of the Murchison Radio-astronomy 
+DCJ is supported by an NSF Astronomy and Astrophysics Postdoctoral Fellowship
+under award AST-1401708.
+This scientific work makes use of the Murchison Radio-astronomy 
 Observatory, operated by CSIRO. We acknowledge the Wajarri Yamatji people as the 
 traditional owners of the Observatory site. Support for the MWA comes from the U.S. 
 National Science Foundation (grants AST-0457585, PHY-0835713, CAREER-0847753, and 
