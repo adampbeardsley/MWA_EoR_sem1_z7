@@ -1,4 +1,4 @@
-\begin{thebibliography}{65}
+\begin{thebibliography}{66}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Ali {et~al.}(2015)Ali, Parsons, Zheng, Pober, Liu, Aguirre, Bradley,
@@ -294,6 +294,38 @@ Parsons, A.~R., Backer, D.~C., Foster, G.~S., {et~al.} 2010, The Astronomical
   {Baccigalupi}, {Banday}, {Barreiro}, {Bartlett}, \& et~al.}]{Planck:2015}
 {Planck Collaboration}, {Ade}, P.~A.~R., {Aghanim}, N., {et~al.}
   2015{\natexlab{b}}, {ArXiv e-prints, arXiv:1502.01589}
+
+\bibitem[{{Planck Collaboration} {et~al.}(2016){Planck Collaboration}, {Adam},
+  {Aghanim}, {Ashdown}, {Aumont}, {Baccigalupi}, {Ballardini}, {Banday},
+  {Barreiro}, {Bartolo}, {Basak}, {Battye}, {Benabed}, {Bernard}, {Bersanelli},
+  {Bielewicz}, {Bock}, {Bonaldi}, {Bonavera}, {Bond}, {Borrill}, {Bouchet},
+  {Bucher}, {Burigana}, {Calabrese}, {Cardoso}, {Carron}, {Chiang}, {Colombo},
+  {Combet}, {Comis}, {Coulais}, {Crill}, {Curto}, {Cuttaia}, {Davis}, {de
+  Bernardis}, {de Rosa}, {de Zotti}, {Delabrouille}, {Di Valentino},
+  {Dickinson}, {Diego}, {Dor{\'e}}, {Douspis}, {Ducout}, {Dupac}, {Elsner},
+  {En{\ss}lin}, {Eriksen}, {Falgarone}, {Fantaye}, {Finelli}, {Forastieri},
+  {Frailis}, {Fraisse}, {Franceschi}, {Frolov}, {Galeotta}, {Galli}, {Ganga},
+  {G{\'e}nova-Santos}, {Gerbino}, {Ghosh}, {Gonz{\'a}lez-Nuevo}, {G{\'o}rski},
+  {Gruppuso}, {Gudmundsson}, {Hansen}, {Helou}, {Henrot-Versill{\'e}},
+  {Herranz}, {Hivon}, {Huang}, {Ili}, {Jaffe}, {Jones}, {Keih{\"a}nen},
+  {Keskitalo}, {Kisner}, {Knox}, {Krachmalnicoff}, {Kunz}, {Kurki-Suonio},
+  {Lagache}, {L{\"a}hteenm{\"a}ki}, {Lamarre}, {Langer}, {Lasenby}, {Lattanzi},
+  {Lawrence}, {Le Jeune}, {Levrier}, {Lewis}, {Liguori}, {Lilje},
+  {L{\'o}pez-Caniego}, {Ma}, {Mac{\'{\i}}as-P{\'e}rez}, {Maggio}, {Mangilli},
+  {Maris}, {Martin}, {Mart{\'{\i}}nez-Gonz{\'a}lez}, {Matarrese}, {Mauri},
+  {McEwen}, {Meinhold}, {Melchiorri}, {Mennella}, {Migliaccio},
+  {Miville-Desch{\^e}nes}, {Molinari}, {Moneti}, {Montier}, {Morgante}, {Moss},
+  {Naselsky}, {Natoli}, {Oxborrow}, {Pagano}, {Paoletti}, {Partridge},
+  {Patanchon}, {Patrizii}, {Perdereau}, {Perotto}, {Pettorino}, {Piacentini},
+  {Plaszczynski}, {Polastri}, {Polenta}, {Puget}, {Rachen}, {Racine},
+  {Reinecke}, {Remazeilles}, {Renzi}, {Rocha}, {Rossetti}, {Roudier},
+  {Rubi{\~n}o-Mart{\'{\i}}n}, {Ruiz-Granados}, {Salvati}, {Sandri},
+  {Savelainen}, {Scott}, {Sirri}, {Sunyaev}, {Suur-Uski}, {Tauber}, {Tenti},
+  {Toffolatti}, {Tomasi}, {Tristram}, {Trombetti}, {Valiviita}, {Van Tent},
+  {Vielva}, {Villa}, {Vittorio}, {Wandelt}, {Wehus}, {White}, {Zacchei}, \&
+  {Zonca}}]{Planck:2016}
+{Planck Collaboration}, {Adam}, R., {Aghanim}, N., {et~al.} 2016, ArXiv
+  e-prints
 
 \bibitem[{Pober {et~al.}(2013)Pober, Parsons, Aguirre, Ali, Bradley, Carilli,
   DeBoer, Dexter, Gugliucci, Jacobs, Klima, MacMahon, Manley, Moore, Stefan, \&

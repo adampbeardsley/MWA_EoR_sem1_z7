@@ -164,7 +164,12 @@ the timing of reionization \citep[e.g.][]{Planck:2015b, Planck:2015, WMAP9}. Mea
 observations of highly redshifted quasars have placed upper bounds on redshifts by which 
 reionization is complete. For example, \citealt{Fan:2006a} showed that reionization must be 
 complete by $z \approx 6$, a result which was confirmed independent of model by 
-\citealt{McGreer:2015}. Deep optical and infrared galaxy surveys are also beginning to 
+\citealt{McGreer:2015}.
+Using a $z_{\mathrm{end}}>6$ prior, the most recent analysis of \emph{Planck} data 
+found a reionization redshift $z_{\mathrm{re}} = 8.8 \pm 0.9$ for a redshift-symmetric model
+($z_{\mathrm{re}} = 8.5 \pm 0.9$ for redshift-asymmetric), and a duration of $\Delta z < 2.8$
+\citep{Planck:2016}.
+Deep optical and infrared galaxy surveys are also beginning to 
 reach the redshifts necessary to further constrain reionization \citep[e.g.][]{Bouwens:2014}, 
 and the James Webb Space Telescope will improve on their sensitivity 
 \citep{Gardner:2006}.
@@ -235,7 +240,7 @@ FM radio, or TV stations. A recent study of the RFI environment at the Murchison
 Observatory can be found in \citealt{Offringa:2015}.
 
 While the 21 cm EoR signal is priority, the MWA is a general observatory serving several 
-science programs beyond cosmology including galactic and extragalactic surveys, time 
+science programs beyond cosmology including Galactic and extragalactic surveys, time 
 domain astrophysics, solar monitoring, and ionospheric science. The array was thus 
 designed with these programs in consideration and the layout was optimized using a 
 pseudo-random antenna placement algorithm \citep{Beardsley:2012} to obtain a well 
@@ -258,9 +263,9 @@ these antennas, with a tightly packed core of radius 50 m, and extending out to 
 
 The beamformed signals (one for each polarization) are then transmitted to receivers in 
 the field, which digitize the signal and perform a first stage coarse frequency 
-channelization of the data (1.28 MHz sub-bands)\citep{Prabu:2015}. This channelization 
+channelization of the data (1.28 MHz coarse bands)\citep{Prabu:2015}. This channelization 
 applies a filter shape and aliases edge channels, which will later be flagged in our analysis. 
-The observer now selects 24 sub-bands (30.72 MHz total bandwidth) to pass onto the 
+The observer now selects 24 coarse bands (30.72 MHz total bandwidth) to pass onto the 
 correlator via fiber optic link. The correlator further channelizes the data to 10 kHz 
 resolution, cross multiplies signals between antennas to form visibilities, and averages in 
 time and frequency to a resolution specified by the observer. For the data in this work, the 
@@ -273,9 +278,9 @@ the telescope towards a sky field of interest, allow the field to drift overhead
 minutes until it begins to leave our field of view, then repoint the instrument at the field. The 
 telescope is thus only pointed at discrete positions, or ``pointings". This tracking is 
 repeated until the field is too low in the sky to track. We have identified three EoR fields 
-relatively devoid of galactic emission and bright extragalactic sources for observing: 
-``EoR0" (RA $=0.00$ h, dec $= -27^\circ$), ``EoR1" (RA $=4.00$ h, dec $= -27^\circ$), 
-and ``EoR2" (RA $=11.33$ h, dec $= -10^\circ$). In addition, we observe these fields in 
+relatively devoid of Galactic emission and bright extragalactic sources for observing: 
+``EoR0" (Right Ascension (RA) $=0.00$ h, Declination (Dec) $= -27^\circ$), ``EoR1" (RA $=4.00$ h, Dec $= -27^\circ$), 
+and ``EoR2" (RA $=11.33$ h, Dec $= -10^\circ$). In addition, we observe these fields in 
 high and low bands centered at 182 MHz ($z\approx6.8$) and 154 MHz ($z\approx8.2$) 
 respectively.
 
@@ -317,7 +322,9 @@ power spectrum is formed using the \eppsilon package.
 
 \subsection{Preprocessing}\label{subsec:preprocessing}
 The preprocessing step converts the data from the non-standard memory dump format 
-from the correlator's GPUs to a standard UVFITS format \citep{Greisen:2012}, performs 
+from the correlator's GPUs to a standard UVFITS format \citep{Greisen:2012}, 
+phases the data to the center of the pointing,
+performs 
 flagging, averages in time and freqeuncy, and writes to disk. For this step we use the 
 \cotter package \citep{Offringa:2015}, which in turn calls the \texttt{AOFLAGGER}\footnote{\url{http://
 aoflagger.sourceforge.net/}} to perform RFI flagging \citep{Offringa:2010}. 
@@ -332,7 +339,7 @@ were not pointed properly at the beginning of observations due to a beamformer e
 problem has since been resolved, but exists in our data. We therefore flag the first two 
 seconds of each observation to avoid any potentially mis-pointed data. 
 Finally, we flag the central 40 kHz channel of each coarse band. This channel corresponds
-to the sub-band DC mode, which has been observed to contain anomalous power likely
+to the coarse band DC mode, which has been observed to contain anomalous power likely
 due to very low level rounding errors in the polyphase filter bank of the digital receivers.
 
 In the final step of preprocessing, \cotter averages the data to 2 second, 80 kHz resolution 
@@ -364,7 +371,7 @@ of using separate models for each antenna, though this has not yet been implemen
 the MWA due to lack of individual models. The second simplification is to ignore any cross 
 terms between our different axes, for example a mutual coupling between two antennas. In 
 principle these terms would introduce baseline dependent gains, rather than antenna 
-dependent. The MWA has not yet seen evidence of these terms, and so we currently 
+dependent. We have not yet seen evidence of these terms in MWA data, and so we currently 
 neglect them in our solutions.
 
 Under these assumptions we can express the measured, uncalibrated visibility for an 
@@ -396,7 +403,7 @@ The coefficients $B(\nu)$, $A_{i,n}$, and $\phi_{i,n}$ are real quantities. This
 us to capture arbitrary spectral response due to common antenna factors (such as the 
 polyphase filter shapes or phased array response), as well as slowly varying antenna-
 dependent deviations. We also found it necessary to include terms dependent on the 
-beamformer to receiver cable length, which we will discuss in Subsection~\ref{sec:cables}.
+length of the cable connecting the beamformers to the receivers, which we will discuss in Subsection~\ref{sec:cables}.
 
 Once all calibration terms are found, we complete the calibration by dividing the raw data by 
 the gain estimates to produce calibrated visibilities. The entire calibration process is done 
@@ -408,18 +415,18 @@ After calibration, we form snapshot image cubes (frequency mapping to line-of-si
 direction). The visibilities are gridded using the primary beam as the gridding kernel, placing 
 the data in the holographic frame, which has been shown to be the optimal frame for 
 combining images in the sense that it preserves all information for parameter estimation 
-\citep{Morales:2009,Bhatnagar:2008}. We use a simulation based beam model for MWA 
+\citep{Morales:2009,Bhatnagar:2008}. We use a simulation-based primary beam model for MWA 
 antennas developed by \citealt{Sutinjo:2015}. At this stage we also average in frequency by 
-a factor of two by gridding pairs of frequency channels to the same $uv$ plane, resulting in 
+a factor of two by gridding pairs of frequency channels to the same $(u,v)$ plane, resulting in 
 a frequency resolution of 160 kHz. 
 
-The gridded $uv$ data are then Fourier transformed to create sky-frame images. To avoid 
+The gridded $(u,v)$ data are then Fourier transformed to create sky-frame images. To avoid 
 aliasing we image out 90$^\circ$ from phase center (gridding resolution of a half 
 wavelength), and crop the image. We found that cropping the image based on beam value 
 resulted in hard edges when integrating images from different snapshots having beams pointed 
 in slightly different directions. To avoid the hard edges, we predetermine a set of HEALPix 
 pixels to interpolate to, and use the same set for all snapshots on a given field. The final 
-cropped field of view for this work is a 21$^\circ$ square centered at RA~$=0$ h, dec~
+cropped field of view for this work is a 21$^\circ$ square centered at RA~$=0$ h, Dec~
 $=-27^\circ$. 
 
 In principle the foregrounds could be subtracted from the data immediately after calibration, 
@@ -441,7 +448,7 @@ line of sight and is denoted as $\mathbf{r_{\perp}}$.
 In the final steps of our pipeline we integrate the snapshot image cubes, and calculate a 
 power spectrum estimate. Though the integration step is formally an imaging component, 
 we conceptually group it with the power spectrum step. This is because all steps of the 
-pipeline up to here have been performed on a per-snapshot basis (no communication 
+pipeline up to this point have been performed on a per-snapshot basis (no communication 
 between snapshots beyond foreground modeling), and the integration step can be used to 
 select subsets of data for diagnosing power spectrum artifacts. The images produced by 
 FHD are in the holographic frame, which is already properly weighted for combining 
@@ -453,10 +460,10 @@ the integrated HEALPix cube, forming a cube in $(\mathbf{k}_{\perp},r_{||})$, wh
 \mathbf{k}_{\perp}$ represents the cosmological wavenumber in the plane perpendicular to 
 our line of sight, and $r_{||}$ is the distance to the observed redshift slice along the line of 
 sight. The Fourier transform along the $r_{||}$ dimension is treated separately due to 
-incomplete $uv$ sampling and flagged frequency channels, which leads to structure in the 
+incomplete $(u,v)$ sampling and flagged frequency channels, which leads to structure in the 
 frequency sampling along any given $k_{\perp}$ pixel. We thus adopt the Lomb-Scargle 
 least-squares method to determine the orthogonal eigenfunctions given our sampling 
-function and estimating the total power in each $k_{||}$ mode \citep{Scargle:1982}. In 
+function and estimate the total power in each $k_{||}$ mode \citep{Scargle:1982}. In 
 addition, because the spectrally smooth foregrounds contain vastly more power than the 
 expected EoR signal, we apply a Blackman-Harris window function prior to the $r_{||}$ to 
 $k_{||}$ transform. This has the effect of trading off lower effective bandwidth for higher 
@@ -473,10 +480,11 @@ ultimately constrain the EoR.
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=.9\columnwidth]{example_ps.pdf}
+\includegraphics[width=\columnwidth]{example_ps.pdf}
 \caption{
 An example two dimensional, E-W polarization residual power spectrum formed using the 
-three hour golden data set. The foreground wedge dominates the region below the solid 
+three hour golden data set
+from August 23, 2013. The foreground wedge dominates the region below the solid 
 black horizon line, while regions above are mostly noise-like with the exception of horizontal 
 coarse band harmonic lines. 
 \label{fig:example_ps}
@@ -491,8 +499,8 @@ corresponds to sky emission at the horizon, and the dashed lines corresponds to 
 at the edge of the MWA field of view. Above the wedge we see horizontal lines of 
 contamination due to the periodic frequency sampling function. These lines are often 
 referred to as the coarse band harmonics. We see vertical streaks at high $k_{||}$ and high 
-$k_{\perp}$. These are due to sparse $uv$ sampling beyond the dense core of the MWA 
-(starting $\sim70\lambda$), and the foreground power getting thrown to high spectral 
+$k_{\perp}$. These are due to sparse $(u,v)$ sampling beyond the dense core of the MWA 
+(starting $\sim70\lambda$), and the foreground power mixing to high spectral 
 modes. Between the coarse band lines and to the left of the vertical streaks we see regions 
 which contain both positive and negative (indicated by blue on the color bar) pixels. These 
 regions are where we have successfully isolated the foregrounds and retained a noise-like 
@@ -500,7 +508,7 @@ EoR window in the three hour integration.
 
 \section{Analysis Methods for Testing Data Quality}\label{sec:techniques}
 
-The two dimensional power spectrum is a useful figure of merit (FoM) as we improve and 
+The two-dimensional power spectrum is a useful figure of merit (FoM) as we improve and 
 refine our analysis pipeline. Foregrounds and systematics often manifest with characteristic 
 shapes in this space, enabling us to diagnose problems and quantify improvements 
 \citep{Morales:2012}. We use the MWA 3 hour ``golden'' data set from August 23, 2013, to 
@@ -513,7 +521,8 @@ have employed in our analysis.
 
 Early in our analysis it became apparent that the bandpass of each MWA antenna requires 
 more free parameters than those described in Equation~\ref{eq:cal1}. In particular, differing 
-beamformer to receiver cables lead to different bandpass shapes due to signal attenuation. 
+lengths of cable connecting the beamformers to the receivers
+ lead to different bandpass shapes due to signal attenuation. 
 We therefore allow the amplitude bandpass factor to depend on cable length, $B_{\alpha}
 (\nu)$, where $\alpha$ denotes the cable type.\footnote{For logistical purposes the 
 beamformer to receiver cables were installed in six set lengths. Cables of length 90, 150, 
@@ -547,9 +556,9 @@ selecting the mode where the reflection amplitude is largest.
 
 \begin{figure}
 \begin{center}
-\subfigure{\includegraphics[width=.9\columnwidth]{fourth_line_pre.pdf}}
+\subfigure{\includegraphics[width=\columnwidth]{fourth_line_pre.pdf}}
 ~
-\subfigure{\includegraphics[width=.9\columnwidth]{fourth_line_post.pdf}}
+\subfigure{\includegraphics[width=\columnwidth]{fourth_line_post.pdf}}
 \caption{
 \emph{Top:} Single polarization dirty power spectrum formed from the golden data set, 
 before implementing cable reflection fitting into the calibration loop. The black arrow points 
@@ -571,7 +580,7 @@ dimensional spectrum allows us to identify the ``shape'' of contamination, enabl
 precise diagnosis.
 
 \subsection{Gridding Kernel Resolution}
-A similar, low level effect which had the potential to contaminate the EoR window is shown 
+A similar, low-level effect which had the potential to contaminate the EoR window is shown 
 in Figure~\ref{fig:beam_res}. The spectra shown are the \emph{model} spectra -- calculated 
 by propagating the sky model visibilities through the entire pipeline. Despite our foreground 
 model not containing spectral structure, the EoR window in the top panel seems to have a 
@@ -581,14 +590,16 @@ as the wedge, but seems to originate far beyond the horizon.
 
 \begin{figure}
 \begin{center}
-\subfigure{\includegraphics[width=.9\columnwidth]{before_beam_resolution_golden.pdf}}
+\subfigure{\includegraphics[width=\columnwidth]{before_beam_resolution_golden.pdf}}
 ~
-\subfigure{\includegraphics[width=.9\columnwidth]{after_beam_resolution_golden.pdf}}
+\subfigure{\includegraphics[width=\columnwidth]{after_beam_resolution_golden.pdf}}
 \caption{
 \emph{Top:} Single polarization model power spectrum demonstrating the contamination in 
 the EoR window when using insufficient gridding kernel resolution. The window has a floor 
 comparable to an expected EoR signal, and a faint super-horizon line appears at high 
-$k_{||}$. \emph{Bottom:} Model power spectrum after increasing the gridding kernel 
+$k_{||}$. 
+The black arrow indicates the location and direction of the faint line.
+\emph{Bottom:} Model power spectrum after increasing the gridding kernel 
 resolution from 0.04 wavelengths to 0.007 wavelengths. The floor is now far below the 
 expected EoR signal level. 
 \label{fig:beam_res}
@@ -602,21 +613,23 @@ and efficiency, the kernel is pre-calculated at a high resolution, then a neares
 lookup table is used to approximate the beam values at discrete pixels. The kernel 
 resolution used in the top panel of Figure~\ref{fig:beam_res} was 0.04 wavelengths -- much 
 smaller than the half wavelength grid corresponding to horizon to horizon imaging. 
-However, as a baseline migrates in $\emph{uv}$ coordinates across frequencies, it 
+However, as a baseline migrates in $(u,v)$ coordinates across frequencies, it 
 undergoes discrete steps between kernel values used. This effectively results in small 
-baseline position errors which shift periodically in frequency, resulting in power being thrown 
-up into the window and a relatively strong harmonic at the frequency of the shifting (the faint 
+baseline position errors which shift periodically in frequency, resulting in power being mixed 
+into the window and a relatively strong harmonic at the frequency of the shifting (the faint 
 line in the upper left of the window). While we illustrate this effect with a model power 
 spectrum, the same problem exists in the data, but is below the noise levels at three hours 
 of integration.
 
 We resolved this issue by increasing the resolution at which we form the kernel. While the 
-most accurate answer is to model at infinite resolution, it is not feasible to do so 
-computationally. Instead we chose a resolution at which the effect no longer materially 
+most accurate answer is to model at infinite resolution, it is not computationally feasible to do 
+so. Instead we chose a resolution at which the effect no longer materially 
 impacts the power spectrum. With experimentation we found a kernel resolution of 0.007 
 wavelengths was sufficient. The resulting model power spectrum is shown in the bottom 
 panel of Figure~\ref{fig:beam_res}. The contamination within the EoR window now drops 
-significantly below the predicted cosmological signal levels.
+significantly below the predicted cosmological signal levels. This improvement in beam
+model resolution came at the cost of 20\% increase in memory usage for our imaging
+pipeline.
 
 \subsection{Improving Point Source Model}
 
@@ -632,7 +645,7 @@ time of analysis.
 
 It has been shown that subtracting a foreground model strictly within the main lobe of the 
 primary beam will not be sufficient to suppress the power spectrum wedge and unlock the 
-EoR window \citep{Pober:2016, Thyagarajan:2015, Thyagarajan:2015b}. In principle we 
+EoR window \citep{Thyagarajan:2015b, Thyagarajan:2015, Pober:2016}. In principle we 
 can repeat the model building described above using additional MWA observations pointed 
 away from our field of interest. But until that work is complete we supplement the extent of 
 our point source model using additional catalogs. We accomplish this through a hierarchical 
@@ -714,9 +727,9 @@ window.
 
 In addition to a point source foreground model, we also introduce a diffuse emission model 
 within the primary field of view of the MWA. Though the EoR0 field was chosen to be 
-relatively devoid of galactic emission, we find this diffuse structure still highly contaminating 
+relatively devoid of Galactic emission, we find this diffuse structure still highly contaminating 
 due to the very high sensitivity of the MWA at large scales. For computational purposes we 
-have divided the galactic emission into two regimes -- the faint clouds in our main lobe, and 
+have divided the Galactic emission into two regimes -- the faint clouds in our main lobe, and 
 the bright plane and other structures in the sidelobes. While the latter has been studied by 
 many people and a Global Sky Model (GSM) is readily available 
 \citep{deOliveira-Costa:2008}, the computational obstacle of simulating the instrument 
@@ -733,8 +746,14 @@ convolution (once when the data is taken, again when we use the output as a mode
 then form a pseudo Stokes I image by adding beam-weighted East-West and North-South 
 polarizations. We also integrate in frequency to form a single continuum image for our 
 model. By forcing our model to contain no spectral structure we mitigate the risk of 
-subtracting cosmological signal. Future iterations of this model will contain a spectral index 
+subtracting cosmological signal. 
+
+Future iterations of this model will contain a spectral index 
 and multiple polarization components.
+Lenc, et al. (in review) demonstrated the presence of strong polarized large-scale structures 
+in the EoR0 field at 154 MHz with varying Faraday depths. They observed rotations in the
+Stokes Q--U plane due to ionospheric conditions, which will need to be taken into account
+in our future diffuse models.
 
 Ultimately we need model visibilities to subtract from our data. However, rather than storing 
 a model for all observations (different pointings and phase centers), we find it most simple 
@@ -765,7 +784,7 @@ the model itself.
 The diffuse foreground model within the EoR0 field used for foreground subtraction. This 
 model was created using residual images from the golden data set. The image shown is 
 smoothed to degree scales to emphasize the large scale structure and approximate an 
-MWA snapshot natural weighting. The color scale is in units of Jy/str.
+MWA snapshot natural weighting.
 \label{fig:diffuse}
 }
 \end{center}
@@ -790,9 +809,9 @@ the differences in the foreground model in this region are below the three hour 
 
 \begin{figure}
 \begin{center}
-\subfigure{\includegraphics[width=.9\columnwidth]{diffuse_diff_model.pdf}}
+\subfigure{\includegraphics[width=\columnwidth]{diffuse_diff_model.pdf}}
 ~
-\subfigure{\includegraphics[width=.9\columnwidth]{diffuse_diff_residual.pdf}}
+\subfigure{\includegraphics[width=\columnwidth]{diffuse_diff_residual.pdf}}
 \caption{
 Single polarization (E-W) power spectrum differences from the golden data set showing the 
 effect of subtracting a diffuse foreground model. The calibration is identical with and without 
@@ -827,15 +846,15 @@ We show an example of one day's worth of per-pointing power spectra in Figure~
 pointing steps prior to zenith transit, $0$ corresponding to zenith, and $+4$ corresponding 
 to four steps after zenith. 
 This numbering scheme is shown graphically in Figure~\ref{fig:pointing}.
-Early in the night ($-5$ through $-3$) the bulk of the galactic plane 
+Early in the night ($-5$ through $-3$) the bulk of the Galactic plane 
 was still above the horizon, and despite being very far from our primary field of view, highly 
 contaminated our observations through the sidelobes of the instrument. We then have 
-relatively well behaved pointings, with the EoR window dominated by noise, until the final 
-pointing of the night when we can see evidence of the galaxy rising again indicated by 
+relatively well-behaved pointings, with the EoR window dominated by noise, until the final 
+pointing of the night when we can see evidence of the Galaxy rising again indicated by 
 strong lines of power at the edge of the foreground wedge. We saw the same contamination 
 on all days of observation and decided to cut all $-5$, $-4$, $-3$, and $+4$ pointings from 
-our data set. In principle it may be possible to model the galactic disk well enough to 
-account for its presence, but with a lack of sufficient galactic model, beam model, and the 
+our data set. In principle it may be possible to model the Galactic disk well enough to 
+account for its presence, but with a lack of sufficient Galactic model, beam model, and the 
 analysis tools to include it, we leave this to future work.
 
 \begin{figure*}
@@ -846,8 +865,8 @@ analysis tools to include it, we leave this to future work.
 \caption[Per pointing jackknife]{An example jackknife test. For this test we divided the data 
 into days and pointings. This is an example array of power spectra (residual E-W 
 polarization) for a single day, August 26, 2013. The early pointings are heavily contaminated 
-by the galaxy in the sidelobes, the window becomes more clear near zenith, and we can 
-see trace contamination at the end of the night (pointing +4) when the galaxy has risen 
+by the Galaxy in the sidelobes, the window becomes more clear near zenith, and we can 
+see trace contamination at the end of the night (pointing +4) when the Galaxy has risen 
 again.
 \label{fig:jackknife}
 }
@@ -875,7 +894,10 @@ power above the horizon line and below the first coarse band line. While we woul
 use calibrated visibilities for this metric, we have found that the uncalibrated power is 
 strongly correlated to the calibrated power, and the cuts we make below are independent of 
 calibration. This is encouraging because future analysis could use this metric before 
-processing the snapshots, saving valuable computing resources.
+processing the snapshots, saving valuable computing resources\footnote{Because
+calibration involves generating model visibilities for each snapshot, approximately half
+the computational cost of the entire imaging pipeline is required to obtain 
+calibration solutions.}.
 
 We plot the window power for each snapshot in our data set in Figure~\ref{fig:wedge_cut1}. 
 We first note that our conclusion from the jackknife tests is confirmed here -- early pointings 
@@ -910,7 +932,7 @@ jackknife tests we saw contamination could exist in one polarization and not the
 potentially due to RFI, or an instrumental failure. We plot the ratio of N-S power to E-W 
 power in Figure~\ref{fig:wedge_cut2}, after applying the previous cut. We see the ratio is 
 generally flat, with the exception of some outliers and almost all of pointing $+3$. We 
-suspect that the excess N-S power in the later pointing is due to the galaxy leaking back 
+suspect that the excess N-S power in the later pointing is due to the Galaxy leaking back 
 into the sidelobe of the N-S polarization, but not in the other. Again, we make the cut shown 
 with a black box.
 
@@ -927,7 +949,7 @@ not localized by observation day, LST, pointing, or any other jackknife we have 
 After the cuts described above, we are left with 1,029 snapshots, or just over 32 hours of 
 data. This is an aggressive cut, with the aim of removing all poor quality data and retaining 
 a clean data set. As mentioned earlier, more sophisticated analysis could allow us to 
-recover data cut from this study in the future (e.g. modeling and removing the galaxy in 
+recover data cut from this study in the future (e.g. modeling and removing the Galaxy in 
 observations pointing far off zenith).
 
 \subsection{Results}\label{sec:results}
@@ -991,7 +1013,7 @@ vertical dashed line to show the slice used to plot power as a function of $k_{|
 $k_{\perp}$ (bottom right). In the $k_{\perp}$ power plot we can see leakage at low and high
 $k_{\perp}$. On the low end this is due to the width of the coarse band harmonics and the
 exceptionally bright foregrounds at large scales. On the high end we are seeing the residual
-of the vertical streaks due to poor sampling at large $uv$. While the increased noise would
+of the vertical streaks due to poor sampling at large $(u,v)$. While the increased noise would
 mean that we will down weight the bins at large $k_{\perp}$, the contamination is even
 larger, meaning it would bias our estimate even though those bins are down weighted. 
 We exclude bins with $u<10\lambda$ and $u>70\lambda$, shown with grey boxes.
@@ -1181,7 +1203,7 @@ through multiple-snapshot solutions or refined antenna response models. Studies 
 beam are underway \citep[e.g.][]{Neben:2015}, and will likely help to further isolate the 
 foreground contaminates in our power spectra. The foreground model is a constant area of 
 investigation, but improved spectral dependence in both the point source catalog and the 
-diffuse model, as well as the addition of an all-sky galactic model, will continue to improve 
+diffuse model, as well as the addition of an all-sky Galactic model, will continue to improve 
 the foreground subtraction and further unlock the EoR window.
 
 The second limited region in our 1D power spectra is between the coarse band harmonics 
