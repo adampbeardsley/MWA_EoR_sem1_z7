@@ -245,13 +245,16 @@ domain astrophysics, solar monitoring, and ionospheric science. The array was th
 designed with these programs in consideration and the layout was optimized using a 
 pseudo-random antenna placement algorithm \citep{Beardsley:2012} to obtain a well 
 behaved point spread function while retaining a dense core for EoR sensitivity 
-\citep{Beardsley:2013}. This is in contrast to more pointed EoR experiments like PAPER, 
+\citep{Beardsley:2013}. 
+A full description of the science capabilities of the array is found in
+\citealt{Bowman:2013}.
+The high imaging capability of the MWA enables us to calibrate and subtract foregrounds
+based on sky models, leveraging the full capability of the observatory for the
+EoR experiment. 
+This strategy is in contrast to more pointed EoR experiments like PAPER, 
 which utilize a highly redundant layout to enhance sensitivity. Redundant arrays can 
-leverage symmetries of the instrument for quick calibration and analysis, but have poor 
-point spread functions, making foregrounds more difficult to characterize. Conversely we 
-use the high imaging capability of the MWA to calibrate and subtract foregrounds based on 
-sky models. A full description of the science capabilities of the array is found in 
-\citealt{Bowman:2013}. 
+exploit symmetries of the instrument for quick calibration and analysis, but have poor 
+point spread functions, making foregrounds more difficult to characterize.
 
 The technical design of the MWA is reviewed in \citealt{Tingay:2013}, and we highlight a 
 few key characteristics that will become important in our analysis of the data. Each 
@@ -937,7 +940,8 @@ into the sidelobe of the N-S polarization, but not in the other. Again, we make 
 with a black box.
 
 Our final data cut was made when inspecting the residual continuum images output from 
-FHD. We calculate a fractional residual flux RMS in the following way. For each snapshot 
+FHD. We test for residual flux at source locations by calculating a fractional residual flux RMS 
+in the following way. For each snapshot 
 continuum image, we find the residual flux in the pixels of all sources greater than 0.5 Jy 
 subtracted within half-beam power and scale by the integrated flux of the sources. This 
 gives us a list of fractional residual fluxes for the snapshot, which we then use to calculate 
@@ -1027,10 +1031,10 @@ in our one dimensional averages.
 \emph{Left:} The N-S, $z=6.8$ two dimensional power spectrum repeated from 
 Figure~\ref{fig:2d_ps_subband}. Here we have superimposed blue lines to show slices in
 $k_{\perp}$ (solid) and $k_{||}$ (dashed). \emph{Top right:} Residual power as a function
-of $k_{\perp}$ for fixed $k_{||}$. The grey boxes show regions which will be excluded from
-the one dimensional averages. The red dashed line shows the 1-$\sigma$ noise level, and
+of $k_{\perp}$ for fixed $k_{||}$, averaged in rings from the full 3D power cube (blue). The grey boxes show regions which will be excluded from
+the one dimensional averages. The red line shows the 1-$\sigma$ noise level, and
 the vertical black dashed line shows the intersection of this slice with the wedge. 
-\emph{Bottom right:} Residual power as a function of $k_{||}$ for fixed $k_{\perp}$. The strong
+\emph{Bottom right:} Residual power as a function of $k_{||}$ for fixed $k_{\perp}$, again averaged in rings from full 3D power cube (blue). The strong
 foreground contamination is evident at low $k_{||}$, and the coarse band harmonic lines
 appear as expected. The thin black line in both right panels is the equivalent power slice from the RTS$+$CHIPS comparison pipeline, which is discussed in Section~\ref{subsec:ref_pipe}.
 \label{fig:slices}
@@ -1232,7 +1236,7 @@ the PAPER experiment \citep{Ali:2015, Jacobs:2015, Parsons:2014}. The PAPER-64 l
 $\Delta^2\le502$~mK$^2$ at $z=8.4$ is about one and a half orders of magnitude lower 
 than our best limit in power units, though again probing a significantly different redshift. 
 While the MWA analysis is not yet at that level of maturity, there is room for rapid 
-improvement. The dashed red line in Figure~\ref{fig:1d_ps} indicate the noise level possible 
+improvement. The red lines in Figure~\ref{fig:1d_ps} indicate the noise level possible 
 to reach with this data set if systematics can be overcome.
 
 While this analysis has not reached full potential, it represents the deepest power spectrum 
