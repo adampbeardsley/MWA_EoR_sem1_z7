@@ -135,7 +135,7 @@ J.~S.~B.~Wyithe\affils{UMelbourne,CAASTRO}
 The Murchison Widefield Array (MWA) has collected hundreds of hours of Epoch of 
 Reionization (EoR) data and now faces the challenge of overcoming foreground and 
 systematic contamination to reduce the data to a cosmological measurement. We introduce 
-several novel analysis techniques such as cable reflection calibration, high resolution 
+several novel analysis techniques such as cable reflection calibration, hyper-resolution 
 gridding kernels, diffuse foreground model subtraction, and quality control methods. Each 
 change to the analysis pipeline is tested against a two dimensional power spectrum figure 
 of merit to demonstrate improvement. We incorporate the new techniques into a deep 
@@ -178,13 +178,13 @@ The 21 cm hyperfine transition from neutral hydrogen residing in the IGM during 
 offers another promising method to study the EoR. Not only is the 21cm signal a 
 \emph{direct} probe of the IGM, but, due to the narrow width of the transition and the 
 relationship between observed frequency and line-of-sight distance, it can be used to map 
-the full three dimensional space of the epoch. (For reviews, see \citealt{Furlanetto:2006} 
-and \citealt{Morales:2010}.) The first generation of instruments with primary science goals 
+the full three dimensional space of the epoch. (For reviews, see \citealt{Furlanetto:2006}, 
+\citealt{Morales:2010}, \citealt{Zaroubi:2013}, and \citealt{Pritchard:2012}) The first generation of instruments with primary science goals 
 to detect the 21cm EoR signal have been built, including the GMRT (Giant Metrewave 
 Radio Telescope, \citealt{Paciga:2013}), LOFAR (LOw Frequency Array\footnote{http://
-www.lofar.org}, \citealt{Yatawatta:2013}), PAPER (Precision Array for Probing the Epoch of 
+www.lofar.org}, \citealt{vanHaarlem:2013, Yatawatta:2013}), PAPER (Precision Array for Probing the Epoch of 
 Reionization\footnote{http://eor.berkeley.edu}, \citealt{Parsons:2010}), and the MWA 
-(Murchison Widefield Array\footnote{http://www.mwatelescope.org}, \citealt{Tingay:2013}). 
+(Murchison Widefield Array\footnote{http://www.mwatelescope.org}, \citealt{Tingay:2013, Bowman:2013}). 
 Due to relatively low signal to noise, these instruments aim for a statistical measurement of 
 the EoR in the form of a cosmological power spectrum. Meanwhile, the second generation 
 21cm EoR machines is on its way with the Hydrogen Epoch of Reionization Array (HERA
@@ -211,7 +211,7 @@ prep; D.~A.~Mitchell et al. 2016, in prep; ][]{Jacobs:2016, Trott:2016,
 Dillon:2013, Trott:2014}.
 
 This paper serves two purposes: to demonstrate several new analysis techniques and their 
-impact on power spectrum estimation, and to present the first attempt at a deep integration 
+impact on power spectrum estimation, and to present the first deep integration 
 power spectrum from the MWA. Using a three hour test set of data, we introduce several 
 novel techniques including calibration of cable reflection contamination, high resolution 
 gridding kernels, subtraction of a diffuse foreground model, and development of quality 
@@ -226,7 +226,7 @@ The remainder of this paper is organized as follows. In Section~\ref{sec:MWA} we
 describe the MWA instrument and the observations used in this work, in Section~
 \ref{sec:analysis} we describe our analysis pipeline, in Section~\ref{sec:techniques} we 
 describe several novel techniques in our analysis, in Section~\ref{sec:deep} we discuss our 
-efforts to apply the analysis pipeline to a deep data integration and compare with a reference pipeline for robust estimation, and we discuss future work 
+efforts to apply the analysis pipeline to a deep data integration and compare with an alternative analysis pipeline for robust estimation, and we discuss future work 
 in Section~\ref{sec:discussion}. Throughout this paper we use a $\Lambda$CDM 
 cosmology with $\Omega_m=0.73$, $\Omega_\Lambda=0.27$, and $h = 0.7$, consistent 
 with WMAP seven year results \citep{Komatsu:2011}. All distances and wavenumbers are in 
@@ -251,7 +251,7 @@ A full description of the science capabilities of the array is found in
 The high imaging capability of the MWA enables us to calibrate and subtract foregrounds
 based on sky models, leveraging the full capability of the observatory for the
 EoR experiment. 
-This strategy is in contrast to more pointed EoR experiments like PAPER, 
+This strategy is in contrast to more targeted EoR experiments like PAPER, 
 which utilize a highly redundant layout to enhance sensitivity. Redundant arrays can 
 exploit symmetries of the instrument for quick calibration and analysis, but have poor 
 point spread functions, making foregrounds more difficult to characterize.
@@ -287,11 +287,11 @@ and ``EoR2" (RA $=11.33$ h, Dec $= -10^\circ$). In addition, we observe these fi
 high and low bands centered at 182 MHz ($z\approx6.8$) and 154 MHz ($z\approx8.2$) 
 respectively.
 
-The data for this work includes two sets. First we use a set of 94 high band observations of 
+The data for this work includes two sets. First we use a set of 94 two-minute high band observations of 
 the EoR0 field from August 23, 2013, which were taken early in telescope operations and 
 found to be particularly well behaved. The MWA EoR collaboration has designated this set 
 as a ``golden data set'', which is used to build analysis tools and compare early results. All 
-techniques demonstrated here will use this golden data set. In Section~\ref{sec:deep} we 
+techniques demonstrated here will use this golden data set \cite[e.g.][]{Jacobs:2016, Trott:2016, Pober:2016, Dillon:2015}. In Section~\ref{sec:deep} we 
 will use a larger data set to move toward a deep integration. This data set consists of all 
 EoR0 high band observations beginning August 23, 2013 (including the golden data set), 
 and concluding when the field was no longer accessible for the season: when the sun was 
@@ -370,8 +370,8 @@ In the first calibration step we allow our complex gains to account for any dire
 response on a per antenna, per frequency channel, per polarization basis. To 
 define our gains in this way, we have made two simplifications. First we push all 
 direction-dependence of the antenna response into the model of the primary beam. FHD is capable 
-of using separate models for each antenna, though this has not yet been implemented for 
-the MWA due to lack of individual models. The second simplification is to ignore any cross 
+of using separate models for each antenna, though this has not been implemented in this 
+work. The second simplification is to ignore any cross 
 terms between our different axes, for example a mutual coupling between two antennas. In 
 principle these terms would introduce baseline dependent gains, rather than antenna 
 dependent. We have not yet seen evidence of these terms in MWA data, and so we currently 
@@ -562,6 +562,8 @@ antennas with cables of 150 meters. Because the cables were not cut at exact len
 (variations on order tens of centimeters), we solve for both the reflection coefficient and 
 delay by performing a direct Fourier transform to a highly over resolved delay grid and 
 selecting the mode where the reflection amplitude is largest. 
+This fitting produces a single reflection coefficient for each antenna with nominal cable
+length of 150 meters.
 
 \begin{figure}
 \begin{center}
@@ -639,8 +641,12 @@ most accurate answer is to model at infinite resolution, it is not computational
 so. Instead we chose a resolution at which the effect no longer materially 
 impacts the power spectrum. With experimentation we found a kernel resolution of 0.007 
 wavelengths was sufficient. The resulting model power spectrum is shown in the bottom 
-panel of Figure~\ref{fig:beam_res}. The contamination within the EoR window now drops 
-significantly below the predicted cosmological signal levels. This improvement in beam
+panel of Figure~\ref{fig:beam_res}. 
+The contamination within the EoR window now drops significantly lower. Of course, without
+knowing the exact level of the cosmological signal, we cannot know if this level is sufficiently 
+low. This effect may need to be revisited if the EoR power spectrum is lower than 
+predicted.
+The improvement in beam
 model resolution came at the cost of 20\% increase in memory usage for our imaging
 pipeline.
 
@@ -929,7 +935,9 @@ the cut shown with the black box, keeping only snapshots inside.
 \subfigure[]{\includegraphics[width=\columnwidth]{window_ratio_cut_v1_box_pointings.pdf}\label{fig:wedge_cut2}}
 \caption[Window power cut]{
 \emph{Top:} Window power for each observation in our data set. The window power is 
-calculated from the delay spectrum of uncalibrated data as a fast quality metric. Each color 
+calculated from the delay spectrum of uncalibrated data as a fast quality metric. 
+Because uncalibrated data is used, the units are arbitrary.
+Each color 
 is a distinct day of observing, and the vertical dashed lines represent pointing shifts, with 
 the pointing numbers indicated at the bottom of the plot above the horizontal axis. The black 
 box indicates observations which passed this cut. \emph{Bottom:} Data cut based on 
@@ -974,7 +982,7 @@ through the \eppsilon pipeline, and place an upper limit on the EoR power spectr
 
 The bandwidth of the MWA and our data set is 30.72 MHz, but in order to avoid the effects 
 of cosmic evolution over the span of our measured redshift range, we limit observations to 
-about 8 MHz, or $\Delta z \sim 0.4$ at our frequency. We do this by dividing the band into 
+about 8 MHz, or $\Delta z \sim 0.3$ at our frequency. We do this by dividing the band into 
 three overlapping sub-bands of 15.36 MHz each, which, after applying the Blackman-Harris 
 window function, will result in effective bandwidths of 7.68 MHz. We label these sub-bands 
 as ``low" ($z\approx 7.1$), ``mid" ($z\approx 6.8$), and ``high" ($z\approx 6.5$).
@@ -1074,7 +1082,8 @@ bins per harmonic).
 
 The final mask we apply is the wedge. We found that a small buffer beyond the horizon was
 necessary to completely mask out the wedge, consistent with \citealt{Dillon:2015}. We
-implement the buffer by extending the horizon line by 15 degrees. This line is shown as the
+implement the buffer by increasing the slope of the horizon line by 14\%.
+This line is shown as the
 dashed diagonal line in the left panel of Figure~\ref{fig:slices}.
 
 The various masking described above is summarized with the black contours shown on the
@@ -1215,7 +1224,7 @@ spectra.
 CHIPS does not 
 excise the coarse band harmonic lines, and so we see their strong effect where there are 
 gaps in the magenta lines. The most notable differences are the ability of the RTS$+$CHIPS pipe
-to access lower $k$ modes, while the FHD$+$\eppsilon pipe suppresses moe power before and
+to access lower $k$ modes, while the FHD$+$\eppsilon pipe suppresses more power before and
 after the first coarse band harmonic. While the different analysis methods result in slightly
 different upper limits, they are generally in agreement. 
 \label{fig:ps_comparison}

@@ -1,4 +1,4 @@
-\begin{thebibliography}{73}
+\begin{thebibliography}{76}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Ali {et~al.}(2015)Ali, Parsons, Zheng, Pober, Liu, Aguirre, Bradley,
@@ -384,6 +384,10 @@ Pober, J.~C., Ali, Z.~S., Parsons, A.~R., {et~al.} 2015, The Astrophysical
   Webster, Whitney, \& Wyithe}]{Prabu:2015}
 Prabu, T., Srivani, K., Roshi, D., {et~al.} 2015, Experimental Astronomy, 1
 
+\bibitem[{{Pritchard} \& {Loeb}(2012)}]{Pritchard:2012}
+{Pritchard}, J.~R., \& {Loeb}, A. 2012, Reports on Progress in Physics, 75,
+  086901
+
 \bibitem[{{Salvini} \& {Wijnholds}(2014)}]{Salvini:2014}
 {Salvini}, S., \& {Wijnholds}, S.~J. 2014, \aap, 571, A97
 
@@ -480,6 +484,42 @@ Trott, C.~M., Wayth, R.~B., \& Tingay, S.~J. 2012, The Astrophysical Journal,
   {Williams}, {Williams}, {Wu}, \& {Wyithe}}]{Trott:2016}
 {Trott}, C.~M., {Pindor}, B., {Procopio}, P., {et~al.} 2016, \apj, 818, 139
 
+\bibitem[{{van Haarlem} {et~al.}(2013){van Haarlem}, {Wise}, {Gunst}, {Heald},
+  {McKean}, {Hessels}, {de Bruyn}, {Nijboer}, {Swinbank}, {Fallows},
+  {Brentjens}, {Nelles}, {Beck}, {Falcke}, {Fender}, {H{\"o}randel},
+  {Koopmans}, {Mann}, {Miley}, {R{\"o}ttgering}, {Stappers}, {Wijers},
+  {Zaroubi}, {van den Akker}, {Alexov}, {Anderson}, {Anderson}, {van Ardenne},
+  {Arts}, {Asgekar}, {Avruch}, {Batejat}, {B{\"a}hren}, {Bell}, {Bell}, {van
+  Bemmel}, {Bennema}, {Bentum}, {Bernardi}, {Best}, {B{\^\i}rzan}, {Bonafede},
+  {Boonstra}, {Braun}, {Bregman}, {Breitling}, {van de Brink}, {Broderick},
+  {Broekema}, {Brouw}, {Br{\"u}ggen}, {Butcher}, {van Cappellen}, {Ciardi},
+  {Coenen}, {Conway}, {Coolen}, {Corstanje}, {Damstra}, {Davies}, {Deller},
+  {Dettmar}, {van Diepen}, {Dijkstra}, {Donker}, {Doorduin}, {Dromer}, {Drost},
+  {van Duin}, {Eisl{\"o}ffel}, {van Enst}, {Ferrari}, {Frieswijk}, {Gankema},
+  {Garrett}, {de Gasperin}, {Gerbers}, {de Geus}, {Grie{\ss}meier}, {Grit},
+  {Gruppen}, {Hamaker}, {Hassall}, {Hoeft}, {Holties}, {Horneffer}, {van der
+  Horst}, {van Houwelingen}, {Huijgen}, {Iacobelli}, {Intema}, {Jackson},
+  {Jelic}, {de Jong}, {Juette}, {Kant}, {Karastergiou}, {Koers}, {Kollen},
+  {Kondratiev}, {Kooistra}, {Koopman}, {Koster}, {Kuniyoshi}, {Kramer},
+  {Kuper}, {Lambropoulos}, {Law}, {van Leeuwen}, {Lemaitre}, {Loose}, {Maat},
+  {Macario}, {Markoff}, {Masters}, {McFadden}, {McKay-Bukowski}, {Meijering},
+  {Meulman}, {Mevius}, {Middelberg}, {Millenaar}, {Miller-Jones}, {Mohan},
+  {Mol}, {Morawietz}, {Morganti}, {Mulcahy}, {Mulder}, {Munk}, {Nieuwenhuis},
+  {van Nieuwpoort}, {Noordam}, {Norden}, {Noutsos}, {Offringa}, {Olofsson},
+  {Omar}, {Orr{\'u}}, {Overeem}, {Paas}, {Pandey-Pommier}, {Pandey}, {Pizzo},
+  {Polatidis}, {Rafferty}, {Rawlings}, {Reich}, {de Reijer}, {Reitsma},
+  {Renting}, {Riemers}, {Rol}, {Romein}, {Roosjen}, {Ruiter}, {Scaife}, {van
+  der Schaaf}, {Scheers}, {Schellart}, {Schoenmakers}, {Schoonderbeek},
+  {Serylak}, {Shulevski}, {Sluman}, {Smirnov}, {Sobey}, {Spreeuw}, {Steinmetz},
+  {Sterks}, {Stiepel}, {Stuurwold}, {Tagger}, {Tang}, {Tasse}, {Thomas},
+  {Thoudam}, {Toribio}, {van der Tol}, {Usov}, {van Veelen}, {van der Veen},
+  {ter Veen}, {Verbiest}, {Vermeulen}, {Vermaas}, {Vocks}, {Vogt}, {de Vos},
+  {van der Wal}, {van Weeren}, {Weggemans}, {Weltevrede}, {White}, {Wijnholds},
+  {Wilhelmsson}, {Wucknitz}, {Yatawatta}, {Zarka}, {Zensus}, \& {van
+  Zwieten}}]{vanHaarlem:2013}
+{van Haarlem}, M.~P., {Wise}, M.~W., {Gunst}, A.~W., {et~al.} 2013, \aap, 556,
+  A2
+
 \bibitem[{Vedantham {et~al.}(2012)Vedantham, Shankar, \&
   Subrahmanyan}]{Vedantham:2012}
 Vedantham, H., Shankar, N.~U., \& Subrahmanyan, R. 2012, The Astrophysical
@@ -525,5 +565,9 @@ Vedantham, H., Shankar, N.~U., \& Subrahmanyan, R. 2012, The Astrophysical
   M.}, {Wucknitz, O.}, \& {Zarka, P.}}]{Yatawatta:2013}
 Yatawatta, S., de~Bruyn, A.~G., Brentjens, M.~A., {et~al.} 2013, Astronomy and
   Astrophysics, 550, A136
+
+\bibitem[{{Zaroubi}(2013)}]{Zaroubi:2013}
+{Zaroubi}, S. 2013, in Astrophysics and Space Science Library, Vol. 396, The
+  First Galaxies, ed. T.~{Wiklind}, B.~{Mobasher}, \& V.~{Bromm}, 45
 
 \end{thebibliography}
