@@ -1135,7 +1135,8 @@ as confirmation of results. The analysis discussed so far has been based on the 
 highlight lessons learned from the comparison.
 
 The RTS uses a fundamentally different calibration and foreground subtraction approach than 
-FHD, as well as a different input point source model. The primary differences lie in the 
+FHD, as well as a different input point source model. 
+The primary differences lie in the 
 bandpass calibration, the use of ionospheric corrections, and the lack of a diffuse model. The 
 calibration model uses a model with 1000 sources, for which ionospheric corrections are 
 estimated and applied, before peeling of those sources from the dataset. The bandpass 
@@ -1145,6 +1146,7 @@ band individually. The delay of the 150~m cable reflection discussed earlier is 
 to the scale of the polynomial fit, so we expect it to naturally be fit out of the gain
 solutions. Indeed the RTS has not yet seen evidence of the reflection in the processed
 data \citep{Jacobs:2016}.
+
 The CHIPS power 
 spectrum estimator applies a full maximum-likelihood estimator to the data. In its full form, the 
 data are weighted by the thermal noise, and a model for the residual point source signal, 
