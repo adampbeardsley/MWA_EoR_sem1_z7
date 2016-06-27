@@ -105,7 +105,7 @@ S.~R.~McWhirter\affils{Haystack},
 D.~A.~Mitchell\affils{CASS,CAASTRO}, 
 E.~Morgan\affils{MIT}, 
 A.~R.~Neben\affils{MIT},
-N.~Thyagarajan\affils{ASU},
+Nithyanandan~Thyagarajan\affils{ASU},
 D.~Oberoi\affils{Tata}, 
 A.~R.~Offringa\affils{ASTRON,CAASTRO}, 
 S.~M.~Ord\affils{Curtin,CAASTRO},
@@ -204,7 +204,7 @@ in Fourier space) cosmological signal \citep{Morales:2006, Bowman:2009}. More re
 studies have shown the existence of a foreground ``wedge", the result of instrumental mode 
 mixing, throwing power from spectrally smooth foregrounds to higher Fourier modes 
 \citep{Thyagarajan:2015b, Thyagarajan:2015, Trott:2012, Liu:2014a, Liu:2014b, 
-Hazelton:2013, Pober:2013, Vedantham:2012, Morales:2012, Datta:2010}. Despite this 
+Hazelton:2013, Pober:2013, Thyagarajan:2013, Vedantham:2012, Morales:2012, Datta:2010}. Despite this 
 setback, the EoR window is preserved above the wedge, and the field is pushing forward with 
 several analysis pipelines under active development \citep[e.g. B.~J.~Hazelton et al. 2016, in 
 prep; D.~A.~Mitchell et al. 2016, in prep; ][]{Jacobs:2016, Trott:2016, 
@@ -467,7 +467,7 @@ function and estimate the total power in each $k_{||}$ mode \citep{Scargle:1982}
 addition, because the spectrally smooth foregrounds contain vastly more power than the 
 expected EoR signal, we apply a Blackman-Harris window function prior to the $r_{||}$ to 
 $k_{||}$ transform. This has the effect of trading off lower effective bandwidth for higher 
-dynamic range.
+dynamic range \citep[e.g.][]{Thyagarajan:2016, Thyagarajan:2013}.
 
 After squaring and dividing by our observation window function \citep{Bowman:2006}, we 
 arrive in three dimensional power spectrum space. We use the even/odd interleaved cubes 
@@ -1198,10 +1198,13 @@ different upper limits, they are generally in agreement.
 \section{Discussion}\label{sec:discussion}
 Inspecting our 32 hour integrated power spectra we see two places where we are limited. 
 First there is a region that is leakage-dominated at low $k$. The cause of this leakage is yet 
-unknown, but likely due to imperfect calibration, beam models, and/or foreground models. 
+unknown, but likely due to imperfect calibration, beam models, and/or foreground models.
 In order to improve on our limit in this regime, future analysis will require calibration which 
 better accounts for the instrumental response, perhaps by increasing signal to noise 
-through multiple-snapshot solutions or refined antenna response models. Studies of the 
+through multiple-snapshot solutions or refined antenna response models. 
+Through simulation, \citealt{Thyagarajan:2016} recently demonstrated the necessity of
+ precise foregrounds and instrumental models in order to retain a clean EoR window.
+Studies of the 
 beam are underway \citep[e.g.][]{Neben:2015}, and will likely help to further isolate the 
 foreground contaminates in our power spectra. The foreground model is a constant area of 
 investigation, but improved spectral dependence in both the point source catalog and the 

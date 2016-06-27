@@ -1,4 +1,4 @@
-\begin{thebibliography}{66}
+\begin{thebibliography}{68}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Ali {et~al.}(2015)Ali, Parsons, Zheng, Pober, Liu, Aguirre, Bradley,
@@ -387,6 +387,21 @@ Sullivan, I.~S., Morales, M.~F., Hazelton, B.~J., {et~al.} 2012, The
 \bibitem[{Sutinjo {et~al.}(2015)Sutinjo, O'Sullivan, Lenc, Wayth, Padhi, Hall,
   \& Tingay}]{Sutinjo:2015}
 Sutinjo, A., O'Sullivan, J., Lenc, E., {et~al.} 2015, Radio Science, 50, 52
+
+\bibitem[{{Thyagarajan} {et~al.}(2016){Thyagarajan}, {Parsons}, {DeBoer},
+  {Bowman}, {Ewall-Wice}, {Neben}, \& {Patra}}]{Thyagarajan:2016}
+{Thyagarajan}, N., {Parsons}, A., {DeBoer}, D., {et~al.} 2016, {ArXiv e-prints,
+  arXiv:1603.08958}
+
+\bibitem[{Thyagarajan {et~al.}(2013)Thyagarajan, Shankar, Subrahmanyan, Arcus,
+  Bernardi, Bowman, Briggs, Bunton, Cappallo, Corey, deSouza, Emrich, Gaensler,
+  Goeke, Greenhill, Hazelton, Herne, Hewitt, Johnston-Hollitt, Kaplan, Kasper,
+  Kincaid, Koenig, Kratzenberg, Lonsdale, Lynch, McWhirter, Mitchell, Morales,
+  Morgan, Oberoi, Ord, Pathikulangara, Remillard, Rogers, Roshi, Salah, Sault,
+  Srivani, Stevens, Thiagaraj, Tingay, Wayth, Waterson, Webster, Whitney,
+  Williams, Williams, \& Wyithe}]{Thyagarajan:2013}
+Thyagarajan, N., Shankar, N.~U., Subrahmanyan, R., {et~al.} 2013, The
+  Astrophysical Journal, 776, 6
 
 \bibitem[{Thyagarajan {et~al.}(2015{\natexlab{a}})Thyagarajan, Jacobs, Bowman,
   Barry, Beardsley, Bernardi, Briggs, Cappallo, Carroll, Deshpande,
