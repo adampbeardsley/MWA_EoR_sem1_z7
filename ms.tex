@@ -188,7 +188,7 @@ Reionization\footnote{http://eor.berkeley.edu}, \citealt{Parsons:2010}), and the
 Due to relatively low signal to noise, these instruments aim for a statistical measurement of 
 the EoR in the form of a cosmological power spectrum. Meanwhile, the second generation 
 21cm EoR machines is on its way with the Hydrogen Epoch of Reionization Array (HERA
-\footnote{http://reionization.org}, D.~R.~DeBoer, et al. 2016, in prep), which will further 
+\footnote{http://reionization.org}, \citealt{DeBoer:2016}), which will further 
 refine the power spectrum measurement in early build-out stages, but will ultimately be 
 capable of imaging the ionized bubbles of reionization in its later stages 
 \citep{Beardsley:2015,Malloy:2013}.
@@ -245,7 +245,7 @@ domain astrophysics, solar monitoring, and ionospheric science. The array was th
 designed with these programs in consideration and the layout was optimized using a 
 pseudo-random antenna placement algorithm \citep{Beardsley:2012} to obtain a well 
 behaved point spread function while retaining a dense core for EoR sensitivity 
-\citep{Beardsley:2013}. 
+\citep{Beardsley:2013}.\footnote{A drone flyover view of the array layout is available on YouTube at \url{https://youtu.be/yDWdTUzTUMo}.}
 A full description of the science capabilities of the array is found in
 \citealt{Bowman:2013}.
 The high imaging capability of the MWA enables us to calibrate and subtract foregrounds
@@ -266,8 +266,8 @@ these antennas, with a tightly packed core of radius 50 m, and extending out to 
 
 The beamformed signals (one for each polarization) are then transmitted to receivers in 
 the field, which digitize the signal and perform a first stage coarse frequency 
-channelization of the data (1.28 MHz coarse bands)\citep{Prabu:2015}. This channelization 
-applies a filter shape and aliases edge channels, which will later be flagged in our analysis. 
+channelization of the data (1.28 MHz coarse bands; \citealt{Prabu:2015}). This step 
+applies a filter shape and aliases channels on the edge of the coarse bands, which will later be flagged in our analysis. 
 The observer now selects 24 coarse bands (30.72 MHz total bandwidth) to pass onto the 
 correlator via fiber optic link. The correlator further channelizes the data to 10 kHz 
 resolution, cross multiplies signals between antennas to form visibilities, and averages in 
@@ -333,7 +333,7 @@ flagging, averages in time and freqeuncy, and writes to disk. For this step we u
 aoflagger.sourceforge.net/}} to perform RFI flagging \citep{Offringa:2010}. 
 
 Besides RFI, we manually flag data to remove three other effects. As mentioned in 
-Section~\ref{sec:MWA}, the edges of the coarse bands contain high levels of aliasing from 
+Section~\ref{sec:MWA}, the edges of the coarse bands contain aliasing from 
 the filter applied in the digital receivers. We flag two 40 kHz channels on either side of the 
 coarse band edges (total of four channels per coarse band edge). In principle the aliasing 
 could be calibrated out and these channels could be recovered, but this is left for future 
@@ -422,6 +422,12 @@ combining images in the sense that it preserves all information for parameter es
 antennas developed by \citealt{Sutinjo:2015}. At this stage we also average in frequency by 
 a factor of two by gridding pairs of frequency channels to the same $(u,v)$ plane, resulting in 
 a frequency resolution of 160 kHz. 
+
+The data are gridded into separate cubes for even/odd interleaved time samples. 
+The sum of the even and odd cubes contains power from the sky as well as noise,
+while the difference between the two contains only noise power. Subtracting the power
+spectrum of the difference from that of the sum yields an unbiased estimate of the sky power
+\citep{Jacobs:2016}.
 
 The gridded $(u,v)$ data are then Fourier transformed to create sky-frame images. To avoid 
 aliasing we image out 90$^\circ$ from phase center (gridding resolution of a half 
@@ -564,7 +570,9 @@ selecting the mode where the reflection amplitude is largest.
 \subfigure{\includegraphics[width=\columnwidth]{fourth_line_post.pdf}}
 \caption{
 \emph{Top:} Single polarization dirty power spectrum formed from the golden data set, 
-before implementing cable reflection fitting into the calibration loop. The black arrow points 
+before implementing cable reflection fitting into the calibration loop. 
+The small gray arrows point to the bands resulting from the periodic coarse band sampling.
+The black arrow points 
 to a horizontal band at $k_{||} \approx 0.7$~h~Mpc$^{-1}$, which cannot be accounted for 
 by the coarse bands. \emph{Bottom:} After we implement the cable reflection fitting in our 
 calibration solutions, we see the reflection line disappears.
@@ -613,7 +621,9 @@ expected EoR signal level.
 The source of this floor and super-horizon line was traced to the resolution at which we 
 formed the gridding kernel when gridding visibilities. In the interest of computational speed 
 and efficiency, the kernel is pre-calculated at a high resolution, then a nearest neighbor 
-lookup table is used to approximate the beam values at discrete pixels. The kernel 
+lookup table is used to approximate the beam values at discrete pixels. 
+This is a common practice in most analysis software packages.
+The kernel 
 resolution used in the top panel of Figure~\ref{fig:beam_res} was 0.04 wavelengths -- much 
 smaller than the half wavelength grid corresponding to horizon to horizon imaging. 
 However, as a baseline migrates in $(u,v)$ coordinates across frequencies, it 
@@ -648,9 +658,10 @@ time of analysis.
 
 It has been shown that subtracting a foreground model strictly within the main lobe of the 
 primary beam will not be sufficient to suppress the power spectrum wedge and unlock the 
-EoR window \citep{Thyagarajan:2015b, Thyagarajan:2015, Pober:2016}. In principle we 
-can repeat the model building described above using additional MWA observations pointed 
-away from our field of interest. But until that work is complete we supplement the extent of 
+EoR window \citep{Thyagarajan:2015b, Thyagarajan:2015, Pober:2016}. 
+We are in the process of repeating the model building described above using additional
+MWA observations pointed away from our field of interest.
+Until that work is complete we supplement the extent of 
 our point source model using additional catalogs. We accomplish this through a hierarchical 
 catalog pulling from our early KGS catalog, the MWA Commissioning Survey\footnote{The 
 more complete GLEAM Survey \citep[][Hurley-Walker et al., in collaboration review]
@@ -668,11 +679,11 @@ model visibilities for calibration and foreground subtraction.
 
 \begin{figure*}
 \begin{center}
-\includegraphics[width=\textwidth]{master_catalog.png}
+\includegraphics[width=\textwidth]{master_catalog.pdf}
 \caption{
 Hierarchical catalog used for foreground subtraction. This catalog combines the source lists 
-from our own FHD catalog, the MWACS catalog, Culgoora sources, and the MRC, 
-prioritizing in that order. The EoR0 field corresponds to the red FHD patch, while we use the 
+from the KGS catalog, the MWACS catalog, Culgoora sources, and the MRC, 
+prioritizing in that order. The EoR0 field corresponds to the red KGS patch, while we use the 
 other catalogs to fill in the sidelobes of the MWA. The size of each dot is proportional to the 
 182~MHz flux of the source, clipped at 20~Jy.
 \label{fig:master_catalog}
@@ -681,7 +692,7 @@ other catalogs to fill in the sidelobes of the MWA. The size of each dot is prop
 \end{figure*}
 
 The resulting hierarchical catalog is shown in Figure~\ref{fig:master_catalog}. The EoR0 
-field corresponds to the red FHD source patch. All sources above the horizon and within a 
+field corresponds to the red KGS source patch. All sources above the horizon and within a 
 primary beam value greater than 1\% maximum (including sidelobes) are included in both 
 our calibration and foreground subtraction models.  
 
@@ -996,6 +1007,13 @@ contamination that slipped through our cuts. However, dividing the data into ran
 subsets and comparing results indicated that there is not a small number of offending 
 observations, instead the leakage appears to exist at a low level in all the data.
 
+Another potential cause of the foreground leakage into the EoR window is insufficient
+calibration quality -- particularly the spectral shape of the instrumental bandpass.
+Investigations are underway to combine snapshot observations for higher signal-to-noise
+calibration solutions, as well as more sophisticated parameterization of the gain model in
+Equation~\ref{eq:cal2} to account for more physical effects such as dependence on
+ambient temperature variation.
+
 Moving up in the window, between the first two coarse band harmonic lines we can see an 
 additional faint line. This is the re-emergence of the 150 meter cable reflections. While the 
 method described in Section~\ref{subsec:cal_imaging} sufficiently calibrated out this 
@@ -1014,13 +1032,15 @@ dimensional power spectrum is the N-S, mid band spectrum from
 Figure~\ref{fig:2d_ps_subband}. We have drawn a horizontal solid blue line to indicate the 
 slice used to plot power as a function of $k_{\perp}$ for a fixed $k_{||}$ (top right), and a 
 vertical dashed line to show the slice used to plot power as a function of $k_{||}$ for a fixed 
-$k_{\perp}$ (bottom right). In the $k_{\perp}$ power plot we can see leakage at low and high
-$k_{\perp}$. On the low end this is due to the width of the coarse band harmonics and the
-exceptionally bright foregrounds at large scales. On the high end we are seeing the residual
-of the vertical streaks due to poor sampling at large $(u,v)$. While the increased noise would
+$k_{\perp}$ (bottom right). 
+In the $k_{\perp}$ power plot we can see leakage at high $k_{\perp}$ from the residual of the 
+vertical streaks due to poor sampling at large $(u,v)$. While the increased noise would
 mean that we will down weight the bins at large $k_{\perp}$, the contamination is even
-larger, meaning it would bias our estimate even though those bins are down weighted. 
-We exclude bins with $u<10\lambda$ and $u>70\lambda$, shown with grey boxes.
+larger, meaning it would bias our estimate even though those bins are down weighted.
+The low end of $k_{\perp}$ contains exceptionally bright foregrounds at large scales, which,
+due to the width of the coarse band harmonics, contaminate most of the $k_{||}$ modes. 
+With both these regimes in consideration, 
+we exclude bins with $u<10\lambda$ and $u>70\lambda$, shown with gray boxes.
 Between these two regimes are many bins consistent with the noise level, which we include
 in our one dimensional averages.
 
@@ -1031,12 +1051,12 @@ in our one dimensional averages.
 \emph{Left:} The N-S, $z=6.8$ two dimensional power spectrum repeated from 
 Figure~\ref{fig:2d_ps_subband}. Here we have superimposed blue lines to show slices in
 $k_{\perp}$ (solid) and $k_{||}$ (dashed). \emph{Top right:} Residual power as a function
-of $k_{\perp}$ for fixed $k_{||}$, averaged in rings from the full 3D power cube (blue). The grey boxes show regions which will be excluded from
+of $k_{\perp}$ for fixed $k_{||}$, averaged in rings from the full 3D power cube (blue). The gray boxes show regions which will be excluded from
 the one dimensional averages. The red line shows the 1-$\sigma$ noise level, and
 the vertical black dashed line shows the intersection of this slice with the wedge. 
 \emph{Bottom right:} Residual power as a function of $k_{||}$ for fixed $k_{\perp}$, again averaged in rings from full 3D power cube (blue). The strong
 foreground contamination is evident at low $k_{||}$, and the coarse band harmonic lines
-appear as expected. The thin black line in both right panels is the equivalent power slice from the RTS$+$CHIPS comparison pipeline, which is discussed in Section~\ref{subsec:ref_pipe}.
+appear as expected. The thin gray line in both right panels is the equivalent power slice from the RTS$+$CHIPS comparison pipeline, which is discussed in Section~\ref{subsec:ref_pipe}.
 \label{fig:slices}
 }
 \end{center}
@@ -1188,8 +1208,11 @@ results.
 \includegraphics[width=\columnwidth]{1D_spectra_comparison.pdf}
 \caption{
 Here we compare the upper limits from the FHD$+$\eppsilon pipeline with those from the 
-RTS$+$CHIPS pipeline. The magenta lines are repeated from Figure~\ref{fig:1d_ps}, and the blue line
-is the power plus two sigma thermal error bars line generated by CHIPS. CHIPS does not 
+RTS$+$CHIPS pipeline. The magenta lines are repeated from Figure~\ref{fig:1d_ps}, and the gray lines
+are the power plus two sigma thermal error bars lines generated by CHIPS. 
+Due to the logarithmic binning used by CHIPS, some bins are empty, resulting in gaps in the
+spectra.
+CHIPS does not 
 excise the coarse band harmonic lines, and so we see their strong effect where there are 
 gaps in the magenta lines. The most notable differences are the ability of the RTS$+$CHIPS pipe
 to access lower $k$ modes, while the FHD$+$\eppsilon pipe suppresses moe power before and
@@ -1243,7 +1266,11 @@ While this analysis has not reached full potential, it represents the deepest po
 integration to date produced by an imaging pipeline. Imaging involves many difficulties (e.g. 
 efficient gridding and mapmaking, foreground modeling), but if systematics can be 
 overcome, it has the potential to quickly compete with other more pointed experiments and 
-analysis styles. Here we have identified a crucial region of power spectrum space that is 
+analysis styles. 
+More broadly, imaging analyses will be necessary to perform cross-correlation studies
+with complimentary probes such as galaxy surveys or other intensity mapping experiments
+ \citep[e.g.][]{DeBoer:2016, Vrbanec:2016, Beardsley:2015, Silva:2015, Dore:2014, Lidz:2009}.
+Here we have identified a crucial region of power spectrum space that is 
 currently contaminated, with suggestions for improvement in future analysis. With improved 
 calibration techniques, primary beam models, and understanding of foregrounds, the MWA 
 and other imaging analyses will be able to quickly approach the most competitive upper 
