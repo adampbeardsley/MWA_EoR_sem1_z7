@@ -1,4 +1,4 @@
-\begin{thebibliography}{76}
+\begin{thebibliography}{80}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Ali {et~al.}(2015)Ali, Parsons, Zheng, Pober, Liu, Aguirre, Bradley,
@@ -6,6 +6,12 @@
   MacMahon, Maree, Moore, Razavi, Stefan, Walbrugh, \& Walker}]{Ali:2015}
 Ali, Z.~S., Parsons, A.~R., Zheng, H., {et~al.} 2015, The Astrophysical
   Journal, 809, 61
+
+\bibitem[{{Asad} {et~al.}(2016){Asad}, {Koopmans}, {Jeli{\'c}}, {Ghosh},
+  {Brentjens}, {de Bruyn}, {Ciardi}, {Iliev}, {Mevius}, {Pandey}, {Yatawatta},
+  \& {Zaroubi}}]{Asad:2016}
+{Asad}, K.~M.~B., {Koopmans}, L.~V.~E., {Jeli{\'c}}, V., {et~al.} 2016, ArXiv
+  e-prints
 
 \bibitem[{{Barry} {et~al.}(2016){Barry}, {Hazelton}, {Sullivan}, {Morales}, \&
   {Pober}}]{Barry:2016}
@@ -218,6 +224,14 @@ Malloy, M., \& Lidz, A. 2013, The Astrophysical Journal, 767, 68
   {D'Odorico}}]{McGreer:2015}
 {McGreer}, I.~D., {Mesinger}, A., \& {D'Odorico}, V. 2015, \mnras, 447, 499
 
+\bibitem[{{Mellema} {et~al.}(2013){Mellema}, {Koopmans}, {Abdalla}, {Bernardi},
+  {Ciardi}, {Daiboo}, {de Bruyn}, {Datta}, {Falcke}, {Ferrara}, {Iliev},
+  {Iocco}, {Jeli{\'c}}, {Jensen}, {Joseph}, {Labroupoulos}, {Meiksin},
+  {Mesinger}, {Offringa}, {Pandey}, {Pritchard}, {Santos}, {Schwarz},
+  {Semelin}, {Vedantham}, {Yatawatta}, \& {Zaroubi}}]{Mellema:2013}
+{Mellema}, G., {Koopmans}, L.~V.~E., {Abdalla}, F.~A., {et~al.} 2013,
+  Experimental Astronomy, 36, 235
+
 \bibitem[{Mitchell {et~al.}(2008)Mitchell, Greenhill, Wayth, Sault, Lonsdale,
   Cappallo, Morales, \& Ord}]{Mitchell:2008}
 Mitchell, D., Greenhill, L., Wayth, R., {et~al.} 2008, Selected Topics in
@@ -302,6 +316,11 @@ Parsons, A.~R., Backer, D.~C., Foster, G.~S., {et~al.} 2010, The Astronomical
   {MacMahon}, {Manley}, {Moore}, {Pober}, {Stefan}, \&
   {Walbrugh}}]{Parsons:2014}
 {Parsons}, A.~R., {Liu}, A., {Aguirre}, J.~E., {et~al.} 2014, \apj, 788, 106
+
+\bibitem[{{Patil} {et~al.}(2016){Patil}, {Yatawatta}, {Zaroubi}, {Koopmans},
+  {de Bruyn}, {Jeli{\'c}}, {Ciardi}, {Iliev}, {Mevius}, {Pandey}, \&
+  {Gehlot}}]{Patil:2016}
+{Patil}, A.~H., {Yatawatta}, S., {Zaroubi}, S., {et~al.} 2016, ArXiv e-prints
 
 \bibitem[{{Planck Collaboration} {et~al.}(2015{\natexlab{a}}){Planck
   Collaboration}, {Aghanim}, {Arnaud}, {Ashdown}, {Aumont}, {Baccigalupi},
@@ -524,6 +543,11 @@ Trott, C.~M., Wayth, R.~B., \& Tingay, S.~J. 2012, The Astrophysical Journal,
   Subrahmanyan}]{Vedantham:2012}
 Vedantham, H., Shankar, N.~U., \& Subrahmanyan, R. 2012, The Astrophysical
   Journal, 745, 176
+
+\bibitem[{Virone {et~al.}(2014)Virone, Lingua, Piras, Cina, Perini, Monari,
+  Paonessa, Peverini, Addamo, \& Tascone}]{Virone:2014}
+Virone, G., Lingua, A., Piras, M., {et~al.} 2014, Antennas and Wireless
+  Propagation Letters, IEEE, 13, 169
 
 \bibitem[{{Vrbanec} {et~al.}(2016){Vrbanec}, {Ciardi}, {Jeli{\'c}}, {Jensen},
   {Zaroubi}, {Fernandez}, {Ghosh}, {Iliev}, {Kakiichi}, {Koopmans}, \&

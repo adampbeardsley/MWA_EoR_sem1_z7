@@ -142,9 +142,10 @@ of merit to demonstrate improvement. We incorporate the new techniques into a de
 integration of 32 hours of MWA data. This data set is used to place a systematic-limited 
 upper limit on the cosmological power spectrum of $\Delta^2 \leq 2.7 \times 10^4$ 
 mK$^2$ at $k=0.27$ h~Mpc$^{-1}$ and $z=7.1$, consistent with other published limits, and a 
-modest improvement (factor of 1.4) over previous MWA results. While our result is 
-systematic limited, we identify several strategies to overcome these systematics in future 
-analysis.
+modest improvement (factor of 1.4) over previous MWA results. 
+From this deep analysis we have identified a list of improvements to be made to our EoR
+data analysis strategies. These improvements will be implemented in the future and detailed
+in upcoming publications.
 \end{abstract}
 \keywords{cosmology: observations - cosmology: reionization}
 \maketitle
@@ -158,8 +159,8 @@ particular is rich with both cosmological and astrophysical dynamics as early-un
 evolution gives way to non-linear structure growth and stars and galaxies reionize the 
 intergalactic medium (IGM).
 
-Several probes are being used to investigate the EoR, but to date, a direct detection eludes 
-researchers. Studies of the polarization of the CMB have placed integrated constraints on 
+Several probes are being used to investigate the EoR. 
+Studies of the polarization of the CMB have placed integrated constraints on 
 the timing of reionization \citep[e.g.][]{Planck:2015b, Planck:2015, WMAP9}. Meanwhile, 
 observations of highly redshifted quasars have placed upper bounds on redshifts by which 
 reionization is complete. For example, \citealt{Fan:2006a} showed that reionization must be 
@@ -180,7 +181,7 @@ offers another promising method to study the EoR. Not only is the 21cm signal a
 relationship between observed frequency and line-of-sight distance, it can be used to map 
 the full three dimensional space of the epoch. (For reviews, see \citealt{Furlanetto:2006}, 
 \citealt{Morales:2010}, \citealt{Zaroubi:2013}, and \citealt{Pritchard:2012}) The first generation of instruments with primary science goals 
-to detect the 21cm EoR signal have been built, including the GMRT (Giant Metrewave 
+to detect the highly redshift 21cm signal have been built, including the GMRT (Giant Metrewave 
 Radio Telescope, \citealt{Paciga:2013}), LOFAR (LOw Frequency Array\footnote{http://
 www.lofar.org}, \citealt{vanHaarlem:2013, Yatawatta:2013}), PAPER (Precision Array for Probing the Epoch of 
 Reionization\footnote{http://eor.berkeley.edu}, \citealt{Parsons:2010}), and the MWA 
@@ -188,7 +189,9 @@ Reionization\footnote{http://eor.berkeley.edu}, \citealt{Parsons:2010}), and the
 Due to relatively low signal to noise, these instruments aim for a statistical measurement of 
 the EoR in the form of a cosmological power spectrum. Meanwhile, the second generation 
 21cm EoR machines is on its way with the Hydrogen Epoch of Reionization Array (HERA
-\footnote{http://reionization.org}, \citealt{DeBoer:2016}), which will further 
+\footnote{http://reionization.org}, \citealt{DeBoer:2016}), 
+and the low frequency Square Kilometer Array (SKA1-Low \citealt{Mellema:2013}),
+which will further 
 refine the power spectrum measurement in early build-out stages, but will ultimately be 
 capable of imaging the ionized bubbles of reionization in its later stages 
 \citep{Beardsley:2015,Malloy:2013}.
@@ -204,9 +207,9 @@ in Fourier space) cosmological signal \citep{Morales:2006, Bowman:2009}. More re
 studies have shown the existence of a foreground ``wedge", the result of instrumental mode 
 mixing, throwing power from spectrally smooth foregrounds to higher Fourier modes 
 \citep{Thyagarajan:2015b, Thyagarajan:2015, Trott:2012, Liu:2014a, Liu:2014b, 
-Hazelton:2013, Pober:2013, Thyagarajan:2013, Vedantham:2012, Morales:2012, Datta:2010}. Despite this 
-setback, the EoR window is preserved above the wedge, and the field is pushing forward with 
-several analysis pipelines under active development \citep[e.g. B.~J.~Hazelton et al. 2016, in 
+Hazelton:2013, Pober:2013, Thyagarajan:2013, Vedantham:2012, Morales:2012, Datta:2010}. Nevertheless, 
+the EoR window is preserved above the wedge, and 
+several analysis pipelines are under active development \citep[e.g. B.~J.~Hazelton et al. 2016, in 
 prep; D.~A.~Mitchell et al. 2016, in prep; ][]{Jacobs:2016, Trott:2016, 
 Dillon:2013, Trott:2014}.
 
@@ -217,17 +220,35 @@ novel techniques including calibration of cable reflection contamination, high r
 gridding kernels, subtraction of a diffuse foreground model, and development of quality 
 control methods which will be crucial for deeper integrations. We apply these new 
 techniques to a deep integration of data from the first semester of MWA observations 
-(August, 2013 -- November, 2013) on a single EoR field and redshift range, $6.2<z<7.5$. 
-While not expecting to detect the EoR with less than a hundred hours of observations, this 
+(August, 2013 -- November, 2013), with a total of 32 hours on a single EoR field and redshift range, $6.2<z<7.5$.
+
+Our best result is a limit on the cosmological power spectrum of $\Delta^2 \leq 2.7 \times 10^4$ 
+mK$^2$ at $k=0.27$ h~Mpc$^{-1}$ and $z=7.1$. This is lower than the GMRT 40 hour
+limit ($\Delta^2 \le 6.15 \times 10^4$ mK$^2$ at $z=8.6$; \citealt{Paciga:2013}), but 
+signficantly higher than the latest PAPER result which 
+integrated nearly 1,000 hours ($\Delta^2 \le 502$ mK$^2$ at $z=8.4$; \citealt{Ali:2015}).
+Several EoR experiments are reaching sensitivity levels where very low systematics
+become dominant. The PAPER team saw evidence that antenna cross-talk and foreground
+leakage was limiting their result at several scales. The LOFAR team has seen excess noise
+and diffuse foreground suppression due to calibration \citep{Patil:2016}. It is essential
+for EoR experiments to understand and overcome these systematics in order to reach
+a cosmological detection.
+
+While not expecting to detect the EoR with less than a hundred hours of observations, our 
 intermediate integration will serve to identify and diagnose systematics, allowing for 
-improved analysis in future work.
+improved analysis in future work. We list several directions to improve our modeling of
+foregrounds and the instrumental response, which in turn will improve our calibration
+and foreground subtraction. Our strategy to perform periodic deep integrations allows us
+to continue uncovering systematics, refine algorithms and data analysis, and understand
+the subtleties of the instrument to execute this challenging experiment.
 
 The remainder of this paper is organized as follows. In Section~\ref{sec:MWA} we briefly 
 describe the MWA instrument and the observations used in this work, in Section~
 \ref{sec:analysis} we describe our analysis pipeline, in Section~\ref{sec:techniques} we 
 describe several novel techniques in our analysis, in Section~\ref{sec:deep} we discuss our 
 efforts to apply the analysis pipeline to a deep data integration and compare with an alternative analysis pipeline for robust estimation, and we discuss future work 
-in Section~\ref{sec:discussion}. Throughout this paper we use a $\Lambda$CDM 
+in Section~\ref{sec:discussion}, including a summary of planned improvements
+to the analysis. Throughout this paper we use a $\Lambda$CDM 
 cosmology with $\Omega_m=0.73$, $\Omega_\Lambda=0.27$, and $h = 0.7$, consistent 
 with WMAP seven year results \citep{Komatsu:2011}. All distances and wavenumbers are in 
 comoving coordinates.
@@ -235,7 +256,7 @@ comoving coordinates.
 \section{The Murchison Widefield Array and Observations}\label{sec:MWA}
 The Murchison Widefield Array is one of several first generation radio interferometers with 
 a primary science goal of detecting the 21cm EoR power spectrum. The remote Australian 
-outback offers relative isolation from man-made radio frequency interference (RFI) such as 
+outback offers relative isolation from human-made radio frequency interference (RFI) such as 
 FM radio, or TV stations. A recent study of the RFI environment at the Murchison Radio 
 Observatory can be found in \citealt{Offringa:2015}.
 
@@ -363,8 +384,14 @@ foreground model. This step results in independent complex gains for each antenn
 frequency channel, and polarization. In the second step we impose restrictions on these 
 gains motivated by our understanding of the spectral response of the instrument. By 
 reducing the number of free parameters in this step we increase our signal to noise on 
-calibration solutions and avoid absorbing unmodeled confusion source flux into our gain 
+calibration solutions and avoid absorbing unmodeled confusion source flux density into our gain 
 solutions which has been shown to contaminate the EoR window \citep{Barry:2016}. 
+Recently, \citealt{Patil:2016} demonstrated excess noise and a suppression of diffuse
+foregrounds in LOFAR images after calibration and subtraction of bright discrete
+foreground sources. They suggested a multi-frequency calibration solution as a potential
+solution to these systematics, similar to the scheme implemented here. Indeed we have
+not seen evidence of these systematics through simulations and direct propagation of
+our noise \citep[Hazelton et al. 2016, in prep.]{Barry:2016}.
 
 In the first calibration step we allow our complex gains to account for any direction-independent 
 response on a per antenna, per frequency channel, per polarization basis. To 
@@ -475,7 +502,7 @@ least-squares method to determine the orthogonal eigenfunctions given our sampli
 function and estimate the total power in each $k_{||}$ mode \citep{Scargle:1982}. In 
 addition, because the spectrally smooth foregrounds contain vastly more power than the 
 expected EoR signal, we apply a Blackman-Harris window function prior to the $r_{||}$ to 
-$k_{||}$ transform. This has the effect of trading off lower effective bandwidth for higher 
+$k_{||}$ transform. This has the effect of trading lower effective bandwidth for higher 
 dynamic range \citep[e.g.][]{Thyagarajan:2016, Thyagarajan:2013}.
 
 After squaring and dividing by our observation window function \citep{Bowman:2006}, we 
@@ -673,13 +700,13 @@ catalog pulling from our early KGS catalog, the MWA Commissioning Survey\footnot
 more complete GLEAM Survey \citep[][Hurley-Walker et al., in collaboration review]
 {Wayth:2015} was not available at the time of analysis.} \citep[MWACS, ][]
 {Hurley-Walker:2014}, the Culgoora catalog \citep{Slee:1977}, and the Molonglo Reference Catalog 
-\citep[MRC, ][]{Large:1981}. Source fluxes are prioritized in this order based on our 
-confidence in their predicted flux at 182 MHz. We first cluster the source lists to avoid 
-redundant sources, using a 3.5 arcmin neighborhood radius, then select the flux from the 
+\citep[MRC, ][]{Large:1981}. Source flux densities are prioritized in this order based on our 
+confidence in their predicted flux density at 182 MHz. We first cluster the source lists to avoid 
+redundant sources, using a 3.5 arcmin neighborhood radius, then select the flux density from the 
 highest priority catalog. Spectral indices were obtained from the MWACS and Culgoora 
 catalogs when available, otherwise a two-point spectral index was estimated for Culgoora-
 MRC matches or MRC-SUMSS matches. All other sources were given a spectral index of 
-$-0.8$. The spectral index was used to extrapolate the flux from the catalog frequency to 
+$-0.8$. The spectral index was used to extrapolate the flux density from the catalog frequency to 
 182 MHz, but a uniform spectral index of $-0.8$ is used within our band when forming 
 model visibilities for calibration and foreground subtraction.
 
@@ -691,7 +718,7 @@ Hierarchical catalog used for foreground subtraction. This catalog combines the 
 from the KGS catalog, the MWACS catalog, Culgoora sources, and the MRC, 
 prioritizing in that order. The EoR0 field corresponds to the red KGS patch, while we use the 
 other catalogs to fill in the sidelobes of the MWA. The size of each dot is proportional to the 
-182~MHz flux of the source, clipped at 20~Jy.
+182~MHz flux density of the source, clipped at 20~Jy.
 \label{fig:master_catalog}
 }
 \end{center}
@@ -762,7 +789,7 @@ simply using output point-source subtracted residual images of FHD from the thre
 golden data set. We combine the images from three hours to leverage the rotation of the 
 earth to improve the point spread function (PSF) of the instrument. This integrating of 
 images is done in a uniformly weighted frame to minimize the effect of double instrument 
-convolution (once when the data is taken, again when we use the output as a model). We 
+convolution (once when the data are taken, again when we use the output as a model). We 
 then form a pseudo Stokes I image by adding beam-weighted East-West and North-South 
 polarizations. We also integrate in frequency to form a single continuum image for our 
 model. By forcing our model to contain no spectral structure we mitigate the risk of 
@@ -779,7 +806,7 @@ Ultimately we need model visibilities to subtract from our data. However, rather
 a model for all observations (different pointings and phase centers), we find it most simple 
 to treat the model as a single HEALPix image which can be used to create model visibilities 
 for each independent observation. FHD treats each pixel in the image as a point source at 
-the pixel location with total flux equal to the flux density of the diffuse image times the area 
+the pixel location with total flux density equal to the surface brightness of the diffuse image times the area 
 of the pixel and creates model visibilities for each snapshot in the same way that it imports 
 a catalog of point sources.
 
@@ -816,8 +843,9 @@ foreground models used for calibration in the two runs are identical (diffuse is
 calibration), the calibration solutions were identical and therefore the dirty power spectra 
 were identical as well. We compare the model and residual power spectra by direct 
 subtraction in Figure~\ref{fig:diffuse_diff}. The top panel shows the model power with the 
-diffuse subtracted from the model power without. The entire plot is negative (red) because 
-we only added power with the diffuse model. 
+diffuse subtracted from the model power without. 
+Because our diffuse model added power to the full foreground model, the entire plot is
+negative (red).
 Even the EoR window is red (albeit at a much lower level than the wedge) because of power
 leakage from non-uniform spectral sampling and from the dynamic range limit of the 
 Blackman-Harris window function.
@@ -858,8 +886,10 @@ pipeline described in the previous sections of this article. Similar to tests on
 set, we rely heavily on the 2D power spectrum as a diagnostic tool, this time to identify and 
 excise poor quality data.
 
-We use the jackknife method -- dividing the data into many subgroups -- to filter out bad 
-data and detect patterns. A powerful grouping is to divide the data into the observation day 
+We use the jackknife method to filter out bad data and detect patterns. This involves dividing
+the data into many subgroups and forming power spectra. The goal is to find observational
+parameters which affect the quality of the data, such as the day or time of night.
+A powerful grouping is to divide the data into the observation day 
 and ``pointing" (which direction the antennas were pointed while tracking the EoR0 field). 
 We show an example of one day's worth of per-pointing power spectra in Figure~
 \ref{fig:jackknife}. The pointings are labeled sequentially with $-5$ corresponding to five 
@@ -959,19 +989,19 @@ into the sidelobe of the N-S polarization, but not in the other. Again, we make 
 with a black box.
 
 Our final data cut was made when inspecting the residual continuum images output from 
-FHD. We test for residual flux at source locations by calculating a fractional residual flux RMS 
+FHD. We test for residual brightness at source locations by calculating a fractional residual brightness RMS 
 in the following way. For each snapshot 
-continuum image, we find the residual flux in the pixels of all sources greater than 0.5 Jy 
-subtracted within half-beam power and scale by the integrated flux of the sources. This 
-gives us a list of fractional residual fluxes for the snapshot, which we then use to calculate 
-an RMS. We found that most snapshots had residual flux RMS $<10\%$ with some outliers, 
+continuum image, we find the residual brightness in the pixels of all sources greater than 0.5 Jy 
+subtracted within half-beam power and scale by the integrated flux density of the sources. This 
+gives us a list of fractional residual brightnesses for the snapshot, which we then use to calculate 
+an RMS. We found that most snapshots had residual brightness RMS $<10\%$ with some outliers, 
 which we cut from the data. This cut largely overlapped with previous cuts, but removed an 
-additional 95 observations. The cause of the high residual flux RMS is yet unknown and is 
+additional 95 observations. The cause of the high residual brightness RMS is yet unknown and is 
 not localized by observation day, LST, pointing, or any other jackknife we have performed.
 
 After the cuts described above, we are left with 1,029 snapshots, or just over 32 hours of 
 data. This is an aggressive cut, with the aim of removing all poor quality data and retaining 
-a clean data set. As mentioned earlier, more sophisticated analysis could allow us to 
+a data set as clean as we can determine from our data quality checks. As mentioned earlier, more sophisticated analysis could allow us to 
 recover data cut from this study in the future (e.g. modeling and removing the Galaxy in 
 observations pointing far off zenith).
 
@@ -990,7 +1020,7 @@ as ``low" ($z\approx 7.1$), ``mid" ($z\approx 6.8$), and ``high" ($z\approx 6.5$
 The 32 hour integrated residual power spectra for our three sub-bands and both 
 instrumental polarizations are shown in Figure~\ref{fig:2d_ps_subband}. A number of 
 features can be seen in these spectra. In all cases the foreground wedge is prominent, with 
-extra power at large scales (low $k_{\perp}$). This is indication that our diffuse model can 
+extra power at large scales (low $k_{\perp}$). This is an indication that our diffuse model can 
 improve for deeper subtraction. 
 
 \begin{figure*}
@@ -1262,16 +1292,71 @@ and GMRT, we can glean a view of the current state of the field. The results fro
 analysis are a modest improvement over the previous best MWA results \citep{Dillon:2015}, 
 which is not surprising given that this integration contains about ten times more data, but 
 has a strong signal to noise on the power spectrum. Our results are also consistent with the 
-GMRT limit of $\Delta^2\le6.15\times10^4$~mK$^2$ at $z=8.6$ \citep{Paciga:2013}, though 
+40 hour GMRT limit of $\Delta^2\le6.15\times10^4$~mK$^2$ at $k=0.5\, h$~Mpc$^{-1}$ and $z=8.6$ \citep{Paciga:2013}, though 
 probe significantly different periods of the EoR. The frontrunner in terms of an upper limit is 
 the PAPER experiment \citep{Ali:2015, Jacobs:2015, Parsons:2014}. The PAPER-64 limit of 
-$\Delta^2\le502$~mK$^2$ at $z=8.4$ is about one and a half orders of magnitude lower 
+$\Delta^2\le502$~mK$^2$ at $z=8.4$ from a 135 day observing campaign is about one and a half orders of magnitude lower 
 than our best limit in power units, though again probing a significantly different redshift. 
 While the MWA analysis is not yet at that level of maturity, there is room for rapid 
 improvement. The red lines in Figure~\ref{fig:1d_ps} indicate the noise level possible 
-to reach with this data set if systematics can be overcome.
+to reach with these data if systematics can be overcome.
 
-While this analysis has not reached full potential, it represents the deepest power spectrum 
+\subsection{Summary of planned analysis improvements}
+Through the reduction of the first season of MWA high band EoR observations, we have
+identified several opportunities to improve our analysis. Here we compile a list of future
+improvements and their potential impact on the power spectrum results. Broadly speaking,
+these improvements emphasize a need to better understand the foregrounds and the 
+instrument, and are likely to be relevant to imaging based analyses in general.
+
+\textbf{Extended point source model.} The hierarchical catalog used here was a definite
+improvement over the MWACS catalog alone. This point source model will continue
+to improve with the release of the GLEAM Survey, as well as dedicated MWA observations 
+to target sources in the sidelobes of the EoR fields. Improving the foreground catalog
+in our sidelobes will be crucial in controlling the foreground leakage into the EoR window
+\citep{Pober:2016}. Incorporating these improved catalogs
+into our analysis will improve both the foreground subtraction and the calibration.
+
+\textbf{Diffuse emission model.} The diffuse model here contained no spectral information
+and represented only the Stokes I polarization. Nevertheless subtracting this model removed
+90\% of the residual power in the foreground wedge. Adding a spectral index and multiple
+polarization components to the model will improve this subtraction even further.
+As Lenc, et al. 2016 (in review) demonstrated, substantial polarized diffuse structure
+exists in the EoR0 field. The contributions to Stokes Q and U depend on the ionospheric
+conditions, which will be accounted for in future analyses to appropriately model this
+emission. 
+In addition the diffuse model will be extended to an all-sky model. It is evident from the
+jackknives shown in Figure~\ref{fig:jackknife} that strong emission near the horizon is
+leaking into our power spectra during off-zenith observations. By modeling and subtracting
+this emission we may be able to recover these observations in future analyses.
+
+\textbf{Primary beam model.} In order to properly model the instrument response to the sky
+we also need an accurate primary beam model. This is especially important for EoR
+power spectrum measurements because the (often bright) near-horizon emission resides
+at the edge of the foreground wedge 
+\citep{Pober:2016, Thyagarajan:2015, Thyagarajan:2015b}, but the low elevation beam
+can be difficult to model at the necessary precision \citep{Thyagarajan:2016}. 
+\citealt{Asad:2016} demonstrated the need for a polarized primary beam model in order
+to mitigate the risk of diffuse polarized emission leaking into Stokes I, conflating with a 
+potential cosmological measurement. The MWA
+primary beam model is continuously improving to incorporate mutual coupling between the 
+phased dipoles, and embedded element patterns for each of the 32 dipoles on each antenna 
+\citep{Sutinjo:2015}. Other methods are also being pursued to directly measure the full beam 
+response in situ using the ORBCOMM satellite constellation \citep{Neben:2015}, and 
+drone-flown calibrator sources (Jacobs, et al. in prep). The latter method is similar to
+the strategy \citealt{Virone:2014} used to verify SKA beam patterns.
+
+\textbf{Calibration.} The most limiting factor in our analysis is likely to be insufficiently
+precise calibration solutions, which can cause foreground power to leak into the EoR window,
+as we see in the integrated 2D power spectra (Figure~\ref{fig:2d_ps_subband}).
+Because our calibration is based on sky and instrument models, the improvements
+described above will improve our calibration. We also plan to combine many snapshot
+observations when estimating gains, achieving higher signal to noise, which in turn will
+enable more sophisticated parameterizations of the antenna bandpasses. This will require
+an overhaul of the data flow depicted in Figure~\ref{fig:pipe} because snapshots will need
+to be combined in the calibration step, but preliminary investigations have shown that the
+gains are stable enough to be fit across several hours of observation.
+
+While the analysis presented here has not reached full potential, it represents the deepest power spectrum 
 integration to date produced by an imaging pipeline. Imaging involves many difficulties (e.g. 
 efficient gridding and mapmaking, foreground modeling), but if systematics can be 
 overcome, it has the potential to quickly compete with other more pointed experiments and 
