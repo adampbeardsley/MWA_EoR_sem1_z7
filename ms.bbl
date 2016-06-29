@@ -1,4 +1,4 @@
-\begin{thebibliography}{80}
+\begin{thebibliography}{84}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Ali {et~al.}(2015)Ali, Parsons, Zheng, Pober, Liu, Aguirre, Bradley,
@@ -68,6 +68,9 @@ Bowman, J.~D., Morales, M.~F., \& Hewitt, J.~N. 2006, The Astrophysical
 
 \bibitem[{Bowman {et~al.}(2009)Bowman, Morales, \& Hewitt}]{Bowman:2009}
 ---. 2009, The Astrophysical Journal, 695, 183
+
+\bibitem[{Bowman \& Rogers(2010)}]{Bowman:2010}
+Bowman, J.~D., \& Rogers, A. E.~E. 2010, Nature, 468, 796
 
 \bibitem[{Bowman {et~al.}(2013)Bowman, Cairns, Kaplan, Murphy, Oberoi,
   Staveley-Smith, Arcus, Barnes, Bernardi, Briggs, Brown, Bunton, Burgasser,
@@ -322,6 +325,11 @@ Parsons, A.~R., Backer, D.~C., Foster, G.~S., {et~al.} 2010, The Astronomical
   {Gehlot}}]{Patil:2016}
 {Patil}, A.~H., {Yatawatta}, S., {Zaroubi}, S., {et~al.} 2016, ArXiv e-prints
 
+\bibitem[{{Patra} {et~al.}(2013){Patra}, {Subrahmanyan}, {Raghunathan}, \&
+  {Udaya Shankar}}]{Patra:2013}
+{Patra}, N., {Subrahmanyan}, R., {Raghunathan}, A., \& {Udaya Shankar}, N.
+  2013, Experimental Astronomy, 36, 319
+
 \bibitem[{{Planck Collaboration} {et~al.}(2015{\natexlab{a}}){Planck
   Collaboration}, {Aghanim}, {Arnaud}, {Ashdown}, {Aumont}, {Baccigalupi},
   {Banday}, {Barreiro}, {Bartlett}, {Bartolo}, \& et~al.}]{Planck:2015b}
@@ -420,6 +428,13 @@ Prabu, T., Srivani, K., Roshi, D., {et~al.} 2015, Experimental Astronomy, 1
 \bibitem[{{Slee}(1977)}]{Slee:1977}
 {Slee}, O.~B. 1977, Australian Journal of Physics Astrophysical Supplement, 43,
   1
+
+\bibitem[{{Sokolowski} {et~al.}(2015){Sokolowski}, {Tremblay}, {Wayth},
+  {Tingay}, {Clarke}, {Roberts}, {Waterson}, {Ekers}, {Hall}, {Lewis},
+  {Mossammaparast}, {Padhi}, {Schlagenhaufer}, {Sutinjo}, \&
+  {Tickner}}]{Sokolowski:2015}
+{Sokolowski}, M., {Tremblay}, S.~E., {Wayth}, R.~B., {et~al.} 2015, PASA -
+  Publications of the Astronomical Society of Australia, 32, e004
 
 \bibitem[{Sullivan {et~al.}(2012)Sullivan, Morales, Hazelton, Arcus, Barnes,
   Bernardi, Briggs, Bowman, Bunton, Cappallo, Corey, Deshpande, deSouza,
@@ -548,6 +563,11 @@ Vedantham, H., Shankar, N.~U., \& Subrahmanyan, R. 2012, The Astrophysical
   Paonessa, Peverini, Addamo, \& Tascone}]{Virone:2014}
 Virone, G., Lingua, A., Piras, M., {et~al.} 2014, Antennas and Wireless
   Propagation Letters, IEEE, 13, 169
+
+\bibitem[{{Voytek} {et~al.}(2014){Voytek}, {Natarajan}, {J{\'a}uregui
+  Garc{\'{\i}}a}, {Peterson}, \& {L{\'o}pez-Cruz}}]{Voytek:2014}
+{Voytek}, T.~C., {Natarajan}, A., {J{\'a}uregui Garc{\'{\i}}a}, J.~M.,
+  {Peterson}, J.~B., \& {L{\'o}pez-Cruz}, O. 2014, \apjl, 782, L9
 
 \bibitem[{{Vrbanec} {et~al.}(2016){Vrbanec}, {Ciardi}, {Jeli{\'c}}, {Jensen},
   {Zaroubi}, {Fernandez}, {Ghosh}, {Iliev}, {Kakiichi}, {Koopmans}, \&

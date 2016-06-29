@@ -187,8 +187,11 @@ www.lofar.org}, \citealt{vanHaarlem:2013, Yatawatta:2013}), PAPER (Precision Arr
 Reionization\footnote{http://eor.berkeley.edu}, \citealt{Parsons:2010}), and the MWA 
 (Murchison Widefield Array\footnote{http://www.mwatelescope.org}, \citealt{Tingay:2013, Bowman:2013}). 
 Due to relatively low signal to noise, these instruments aim for a statistical measurement of 
-the EoR in the form of a cosmological power spectrum. Meanwhile, the second generation 
-21cm EoR machines is on its way with the Hydrogen Epoch of Reionization Array (HERA
+the EoR in the form of a cosmological power spectrum. 
+Complementary to power spectrum experiments are efforts to detect the sky-average global
+21-cm signal from the EoR \citep[e.g.][]{Bowman:2010, Sokolowski:2015, Patra:2013, Voytek:2014}.
+Meanwhile, the second generation of
+21cm EoR interferometers is on its way with the Hydrogen Epoch of Reionization Array (HERA
 \footnote{http://reionization.org}, \citealt{DeBoer:2016}), 
 and the low frequency Square Kilometer Array (SKA1-Low \citealt{Mellema:2013}),
 which will further 
@@ -266,7 +269,7 @@ domain astrophysics, solar monitoring, and ionospheric science. The array was th
 designed with these programs in consideration and the layout was optimized using a 
 pseudo-random antenna placement algorithm \citep{Beardsley:2012} to obtain a well 
 behaved point spread function while retaining a dense core for EoR sensitivity 
-\citep{Beardsley:2013}.\footnote{A drone flyover view of the array layout is available on YouTube at \url{https://youtu.be/yDWdTUzTUMo}.}
+\citep{Beardsley:2013, Bowman:2006}.\footnote{A drone flyover view of the array layout is available on YouTube at \url{https://youtu.be/yDWdTUzTUMo}.}
 A full description of the science capabilities of the array is found in
 \citealt{Bowman:2013}.
 The high imaging capability of the MWA enables us to calibrate and subtract foregrounds
@@ -537,7 +540,7 @@ contamination due to the periodic frequency sampling function. These lines are o
 referred to as the coarse band harmonics. We see vertical streaks at high $k_{||}$ and high 
 $k_{\perp}$. These are due to sparse $(u,v)$ sampling beyond the dense core of the MWA 
 (starting $\sim70\lambda$), and the foreground power mixing to high spectral 
-modes. Between the coarse band lines and to the left of the vertical streaks we see regions 
+modes \citep{Bowman:2009}. Between the coarse band lines and to the left of the vertical streaks we see regions 
 which contain both positive and negative (indicated by blue on the color bar) pixels. These 
 regions are where we have successfully isolated the foregrounds and retained a noise-like 
 EoR window in the three hour integration.
@@ -549,7 +552,7 @@ refine our analysis pipeline. Foregrounds and systematics often manifest with ch
 shapes in this space, enabling us to diagnose problems and quantify improvements 
 \citep{Morales:2012}. We use the MWA 3 hour ``golden'' data set from August 23, 2013, to 
 repeatedly form power spectra to test and refine our analysis. While an exhaustive catalog 
-of these improvements would be unsuited for this article (and likely bore the reader), we 
+of these improvements is outside the scope of this paper, we 
 demonstrate the utility of the 2D power spectrum as a FoM with a few key techniques we 
 have employed in our analysis. 
 
@@ -766,7 +769,9 @@ calibration using the new catalog is more accurate.
 
 J.~L.~B.~Line, et al (2016, in review) performed similar analysis, but with an emphasis on the
 positional accuracy of catalog entries. By using simulations of visibilities they were able to 
-isolate the effect of using perfect versus offset source positions. They confirmed the
+isolate the effect of using perfect versus offset source positions. In their simulations source 
+position offsets of $14\%$ of the synthesized
+beam-width had significant impact on foreground subtraction, confirming the
 importance of a complete and accurate point source catalog in order to retain a clean EoR
 window.
 
@@ -808,7 +813,8 @@ to treat the model as a single HEALPix image which can be used to create model v
 for each independent observation. FHD treats each pixel in the image as a point source at 
 the pixel location with total flux density equal to the surface brightness of the diffuse image times the area 
 of the pixel and creates model visibilities for each snapshot in the same way that it imports 
-a catalog of point sources.
+a catalog of point sources. This is similar to the strategy employed by 
+\citealt{Thyagarajan:2015} to model diffuse structure.
 
 The diffuse model used for this work is shown in Figure~\ref{fig:diffuse}. While the actual 
 model image is uniform weighted with resolution $\sim\!6$~arcminutes, we show it 
@@ -875,7 +881,7 @@ it successfully removed 90\% of the residual power.
 
 \section{A Deep Integration}\label{sec:deep}
 Up to this point we have only discussed testing and analysis on the three hour golden data 
-set. We next turn towards a deep integration, incorporating the techniques described above. 
+set. We next turn towards a deeper integration, incorporating the techniques described above. 
 We start with all MWA observations taken on the EoR0 field at 182~MHz between August 
 23, 2013 and November 29, 2013. This includes 2,780 snapshots, or about 86.5 hours of 
 data. We first make data quality cuts, then form power spectra.
@@ -903,9 +909,8 @@ relatively well-behaved pointings, with the EoR window dominated by noise, until
 pointing of the night when we can see evidence of the Galaxy rising again indicated by 
 strong lines of power at the edge of the foreground wedge. We saw the same contamination 
 on all days of observation and decided to cut all $-5$, $-4$, $-3$, and $+4$ pointings from 
-our data set. In principle it may be possible to model the Galactic disk well enough to 
-account for its presence, but with a lack of sufficient Galactic model, beam model, and the 
-analysis tools to include it, we leave this to future work.
+our data set. In principle it may be possible to model the Galactic plane well enough to 
+account for its presence, but we leave this to future work.
 
 \begin{figure*}
 \begin{center}
@@ -936,7 +941,7 @@ increments the pointing label by one, and the zenith pointing is defined as zero
 \end{center}
 \end{figure}
 
-Motivated by the hand grading done with power spectrum jackknives, we developed 
+Motivated by the manual classification done with power spectrum jackknives, we developed 
 another metric to quickly predict power spectrum quality for each snapshot in our data set. 
 We do this by forming a delay spectrum \citep{Parsons:2012b} from the raw, uncalibrated 
 visibilities. We then calculate an estimated total EoR window power by integrating the 
@@ -1022,7 +1027,7 @@ as ``low" ($z\approx 7.1$), ``mid" ($z\approx 6.8$), and ``high" ($z\approx 6.5$
 The 32 hour integrated residual power spectra for our three sub-bands and both 
 instrumental polarizations are shown in Figure~\ref{fig:2d_ps_subband}. A number of 
 features can be seen in these spectra. In all cases the foreground wedge is prominent, with 
-extra power at large scales (low $k_{\perp}$). This is an indication that our diffuse model can 
+extra power at large scales (low $k_{\perp}$). This is an indication that our diffuse model needs to 
 improve for deeper subtraction. 
 
 \begin{figure*}
@@ -1041,7 +1046,7 @@ The contours show the window used for averaging to one dimension.
 
 The lowest region of the EoR window, above the horizon line and around $k_{||} \approx 
 0.25$ h Mpc$^{-1}$, contains purely positive bins, indicating non-noise-like power. The 
-cause for this seeming leakage is yet unknown, but will ultimately limit our integration in this 
+cause for this seeming leakage is yet unknown, and limits our integration in this 
 analysis. One suspected origin of this contamination was individual snapshots with high 
 contamination that slipped through our cuts. However, dividing the data into random 
 subsets and comparing results indicated that there is not a small number of offending 
@@ -1154,7 +1159,7 @@ harmonic lines, especially at larger $k$, are bins which approach the noise leve
 consistent with zero (notably the North-South polarization for the low and mid bands). The
 bin just above the first coarse band harmonic is also consistent with zero in the low band.
 These regions are encouraging because they have the potential to continue integrating down
-with more data. Improved suppression of the coarse band harmonic and cable reflection lines
+with more data without further analysis improvements. Further suppression of the coarse band harmonic and cable reflection lines
 will also improve the limits presented here.
 
 Our best upper limits for a cosmological signal are at low $k$, despite the 
@@ -1282,9 +1287,8 @@ the foreground subtraction and further unlock the EoR window.
 The second limited region in our 1D power spectra is between the coarse band harmonics 
 where our measured signal approaches the noise level. Additional data will likely reduce the 
 noise, and therefore our upper limit, in this regime. However, until the leakage at low $k$ is 
-understood, progress at higher $k$ is susceptible to running into the same systematic. 
-While a longer integration may improve the upper limit in the short term, the hope for an 
-eventual detection lies in understanding the contaminants at low $k$. 
+understood, progress at higher $k$ is susceptible to running into the same systematic
+with longer integrations. 
 
 Finally, we place our best upper limits in context with the 21cm EoR field as a whole. A 
 direct comparison between measurements from different instruments is difficult due to the 
@@ -1293,14 +1297,15 @@ spectrum in units of mK$^2$ to be roughly flat over the scales probed by the MWA
 and GMRT, we can glean a view of the current state of the field. The results from this 
 analysis are a modest improvement over the previous best MWA results \citep{Dillon:2015}, 
 which is not surprising given that this integration contains about ten times more data, but 
-has a strong signal to noise on the power spectrum. Our results are also consistent with the 
+is systematic limited. Our results are also consistent with the 
 40 hour GMRT limit of $\Delta^2\le6.15\times10^4$~mK$^2$ at $k=0.5\, h$~Mpc$^{-1}$ and $z=8.6$ \citep{Paciga:2013}, though 
 probe significantly different periods of the EoR. The frontrunner in terms of an upper limit is 
 the PAPER experiment \citep{Ali:2015, Jacobs:2015, Parsons:2014}. The PAPER-64 limit of 
 $\Delta^2\le502$~mK$^2$ at $z=8.4$ from a 135 day observing campaign is about one and a half orders of magnitude lower 
 than our best limit in power units, though again probing a significantly different redshift. 
-While the MWA analysis is not yet at that level of maturity, there is room for rapid 
-improvement. The red lines in Figure~\ref{fig:1d_ps} indicate the noise level possible 
+The MWA analysis is rapidly improving as we uncover and mitigate systematics to realize
+the full sensitivity of the telescope.
+The red lines in Figure~\ref{fig:1d_ps} indicate the noise level possible 
 to reach with these data if systematics can be overcome.
 
 \subsection{Summary of planned analysis improvements}
@@ -1361,11 +1366,11 @@ gains are stable enough to be fit across several hours of observation.
 While the analysis presented here has not reached full potential, it represents the deepest power spectrum 
 integration to date produced by an imaging pipeline. Imaging involves many difficulties (e.g. 
 efficient gridding and mapmaking, foreground modeling), but if systematics can be 
-overcome, it has the potential to quickly compete with other more pointed experiments and 
+overcome, it has the potential to compete with other more targeted experiments and 
 analysis styles. 
 More broadly, imaging analyses will be necessary to perform cross-correlation studies
 with complimentary probes such as galaxy surveys or other intensity mapping experiments
- \citep[e.g.][]{DeBoer:2016, Vrbanec:2016, Beardsley:2015, Silva:2015, Dore:2014, Lidz:2009}.
+ \citep[e.g.][]{DeBoer:2016, Vrbanec:2016, Beardsley:2015, Silva:2015, Dore:2014, Lidz:2009}, which will ultimately unlock the full potential of 21cm observations.
 Here we have identified a crucial region of power spectrum space that is 
 currently contaminated, with suggestions for improvement in future analysis. With improved 
 calibration techniques, primary beam models, and understanding of foregrounds, the MWA 
