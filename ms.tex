@@ -989,14 +989,15 @@ into the sidelobe of the N-S polarization, but not in the other. Again, we make 
 with a black box.
 
 Our final data cut was made when inspecting the residual continuum images output from 
-FHD. We test for residual brightness at source locations by calculating a fractional residual brightness RMS 
+FHD. We test for residual flux density at source locations by calculating a fractional residual flux density RMS 
 in the following way. For each snapshot 
-continuum image, we find the residual brightness in the pixels of all sources greater than 0.5 Jy 
-subtracted within half-beam power and scale by the integrated flux density of the sources. This 
-gives us a list of fractional residual brightnesses for the snapshot, which we then use to calculate 
-an RMS. We found that most snapshots had residual brightness RMS $<10\%$ with some outliers, 
+continuum image, we find the residual flux density of all sources greater than 0.5 Jy 
+subtracted within half-beam power by integrating the brightness within the source pixel.
+We then scale by the integrated flux density of the sources, giving us a list of fractional
+residual flux densities for the snapshot, which we then use to calculate an RMS. We found
+that most snapshots had residual flux density RMS $<10\%$ with some outliers,
 which we cut from the data. This cut largely overlapped with previous cuts, but removed an 
-additional 95 observations. The cause of the high residual brightness RMS is yet unknown and is 
+additional 95 observations. The cause of the high residual flux density RMS is yet unknown and is 
 not localized by observation day, LST, pointing, or any other jackknife we have performed.
 
 After the cuts described above, we are left with 1,029 snapshots, or just over 32 hours of 
