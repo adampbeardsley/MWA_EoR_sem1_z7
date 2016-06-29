@@ -988,13 +988,14 @@ suspect that the excess N-S power in the later pointing is due to the Galaxy lea
 into the sidelobe of the N-S polarization, but not in the other. Again, we make the cut shown 
 with a black box.
 
-Our final data cut was made when inspecting the residual continuum images output from 
-FHD. We test for residual flux density at source locations by calculating a fractional residual flux density RMS 
-in the following way. For each snapshot 
-continuum image, we find the residual flux density of all sources greater than 0.5 Jy 
-subtracted within half-beam power by integrating the brightness within the source pixel.
-We then scale by the integrated flux density of the sources, giving us a list of fractional
-residual flux densities for the snapshot, which we then use to calculate an RMS. We found
+Our final data cut was made when inspecting the snapshot residual continuum images output from 
+FHD. 
+We estimate a proxy for the residual flux density from foreground sources by calculating
+the RMS of the fractional residual flux densities for all subtracted sources greater than
+0.5 Jy within half-beam power. The fractional residual flux density is measured as the ratio
+of the residual image pixel value (Jy) at the source position to the integrated flux density
+of the source.
+We found
 that most snapshots had residual flux density RMS $<10\%$ with some outliers,
 which we cut from the data. This cut largely overlapped with previous cuts, but removed an 
 additional 95 observations. The cause of the high residual flux density RMS is yet unknown and is 
