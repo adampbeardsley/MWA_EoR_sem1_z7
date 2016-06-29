@@ -352,7 +352,7 @@ The preprocessing step converts the data from the non-standard memory dump forma
 from the correlator's GPUs to a standard UVFITS format \citep{Greisen:2012}, 
 phases the data to the center of the pointing,
 performs 
-flagging, averages in time and freqeuncy, and writes to disk. For this step we use the 
+flagging, averages in time and frequency, and writes to disk. For this step we use the 
 \cotter package \citep{Offringa:2015}, which in turn calls the \texttt{AOFLAGGER}\footnote{\url{http://
 aoflagger.sourceforge.net/}} to perform RFI flagging \citep{Offringa:2010}. 
 
@@ -384,7 +384,7 @@ we present the production mode of analysis after the model has been determined.
 Calibration is accomplished within the FHD package in two steps. First we match the raw 
 data to model visibilities formed using a realistic simulation of the array response to our 
 foreground model. This step results in independent complex gains for each antenna, 
-frequency channel, and polarization. In the second step we impose restrictions on these 
+80~kHz frequency channel, and polarization. In the second step we impose restrictions on these 
 gains motivated by our understanding of the spectral response of the instrument. By 
 reducing the number of free parameters in this step we increase our signal to noise on 
 calibration solutions and avoid absorbing unmodeled confusion source flux density into our gain 
@@ -397,7 +397,7 @@ not seen evidence of these systematics through simulations and direct propagatio
 our noise \citep[Hazelton et al. 2016, in prep.]{Barry:2016}.
 
 In the first calibration step we allow our complex gains to account for any direction-independent 
-response on a per antenna, per frequency channel, per polarization basis. To 
+response on a per antenna, per 80~kHz frequency channel, per polarization basis. To 
 define our gains in this way, we have made two simplifications. First we push all 
 direction-dependence of the antenna response into the model of the primary beam. FHD is capable 
 of using separate models for each antenna, though this has not been implemented in this 
@@ -449,7 +449,10 @@ direction). The visibilities are gridded using the primary beam as the gridding 
 the data in the holographic frame, which has been shown to be the optimal frame for 
 combining images in the sense that it preserves all information for parameter estimation 
 \citep{Morales:2009,Bhatnagar:2008}. We use a simulation-based primary beam model for MWA 
-antennas developed by \citealt{Sutinjo:2015}. At this stage we also average in frequency by 
+antennas developed by \citealt{Sutinjo:2015} 
+which incorporates an average embedded element pattern for the dipoles, as well as mutual
+coupling between dipoles within an antenna.
+At this stage we also average in frequency by 
 a factor of two by gridding pairs of frequency channels to the same $(u,v)$ plane, resulting in 
 a frequency resolution of 160 kHz. 
 
@@ -819,7 +822,7 @@ a catalog of point sources. This is similar to the strategy employed by
 The diffuse model used for this work is shown in Figure~\ref{fig:diffuse}. While the actual 
 model image is uniform weighted with resolution $\sim\!6$~arcminutes, we show it 
 smoothed to degree scales to emphasize the large scale structure and approximate what 
-the MWA instrument observes with a natural weight.
+the MWA instrument observes with a natural weighting.
 
 For this iteration of analysis we only use the diffuse model for subtraction, and omit it for 
 calibration. At the time of writing short baselines were not producing reliable results in the 
@@ -837,7 +840,8 @@ the model itself.
 The diffuse foreground model within the EoR0 field used for foreground subtraction. This 
 model was created using residual images from the golden data set. The image shown is 
 smoothed to degree scales to emphasize the large scale structure and approximate an 
-MWA snapshot natural weighting.
+MWA snapshot natural weighting. Note that the negative brightness values are a 
+consequence of not sampling the zero-spacing part of the $(u,v)$ plane.
 \label{fig:diffuse}
 }
 \end{center}
@@ -1278,7 +1282,7 @@ through multiple-snapshot solutions or refined antenna response models.
 Through simulation, \citealt{Thyagarajan:2016} recently demonstrated the necessity of
  precise foregrounds and instrumental models in order to retain a clean EoR window.
 Studies of the 
-beam are underway \citep[e.g.][]{Neben:2015}, and will likely help to further isolate the 
+beam are underway \citep[e.g.][]{Neben:2015, Sutinjo:2015}, and will likely help to further isolate the 
 foreground contaminates in our power spectra. The foreground model is a constant area of 
 investigation, but improved spectral dependence in both the point source catalog and the 
 diffuse model, as well as the addition of an all-sky Galactic model, will continue to improve 
@@ -1294,8 +1298,10 @@ Finally, we place our best upper limits in context with the 21cm EoR field as a 
 direct comparison between measurements from different instruments is difficult due to the 
 varying methods, redshifts, and scales probed. However, if we approximate the power 
 spectrum in units of mK$^2$ to be roughly flat over the scales probed by the MWA, PAPER, 
-and GMRT, we can glean a view of the current state of the field. The results from this 
-analysis are a modest improvement over the previous best MWA results \citep{Dillon:2015}, 
+and GMRT, we can glean a view of the current state of the field. 
+The best result from this analysis is an upper limit on the power spectrum of 
+$\Delta^2 \le 2.7 \times 10^4$~mK$^2$ at $k=0.27\, h$~Mpc$^{-1}$ and $z=7.1$.
+This is a modest improvement over the previous best MWA results \citep{Dillon:2015}, 
 which is not surprising given that this integration contains about ten times more data, but 
 is systematic limited. Our results are also consistent with the 
 40 hour GMRT limit of $\Delta^2\le6.15\times10^4$~mK$^2$ at $k=0.5\, h$~Mpc$^{-1}$ and $z=8.6$ \citep{Paciga:2013}, though 
