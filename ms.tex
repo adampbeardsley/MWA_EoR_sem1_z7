@@ -1210,16 +1210,54 @@ highlight lessons learned from the comparison.
 
 The RTS uses a fundamentally different calibration and foreground subtraction approach than 
 FHD, as well as a different input point source model. 
-The primary differences lie in the 
-bandpass calibration, the use of ionospheric corrections, and the lack of a diffuse model. The 
-calibration model uses a model with 1000 sources, for which ionospheric corrections are 
-estimated and applied, before peeling of those sources from the dataset. The bandpass 
-calibration is fundamentally different to FHD.
-The bandpass for each antenna is fitted to a 2nd order polynomial within each 1.28~MHz coarse 
-band individually. The delay of the 150~m cable reflection discussed earlier is comparable
-to the scale of the polynomial fit, so we expect it to naturally be fit out of the gain
+The primary differences lie in the use of ionospheric corrections, the
+bandpass calibration, and the lack of a diffuse model. 
+RTS accomplishes the interferometric calibration in two steps: a
+direction-independent calibration to a single compound calibrator
+created by combining the 1000 apparently brightest sources in the sky,
+followed by an individual calibration and subtraction of those sources
+inside the Calibration Measurement Loop (CML, \citealt{Mitchell:2008}).
+The CML estimates individual ionospheric corrections for all sources and
+performs a full direction-dependent calibration for the 5 very
+brightest ones. These tasks
+are distributed over independent parallel threads for each 1.28~MHz
+coarse channel.
+
+The bandpass calibration is also fundamentally different to FHD. The bandpass for each antenna is 
+fitted to a 3rd order polynomial within each 1.28 MHz coarse band and each direction and 
+polarization individually. The delay of the 150~m cable reflection discussed earlier is 
+comparable to the scale of the polynomial fit, so we expect it to naturally be fit out of the gain
 solutions. Indeed the RTS has not yet seen evidence of the reflection in the processed
 data \citep{Jacobs:2016}.
+
+The source catalog used with RTS was a combined cross-match created with the Positional 
+Update and Matching Algorithm (PUMA, J.~L.~B.~Line et al. 2016, in review). Full details of PUMA and 
+this cross-matched catalog can be found in Line et al. 2016, but we include a brief 
+description here. PUMA is designed to cross-match low radio-frequency ($\lesssim 1\,$GHz) 
+catalogs. It utilizes a Bayesian probabilistic positional cross-match approach based on~
+\citealt{Budavari:2008}, combined with criteria based on catalog resolution and fitting the 
+spectral energy distribution to a power-law. These criteria allow for surveys with differing 
+resolutions, which can introduce confusing sources into the matched process.
+Primarily the source catalog was based on the MWA Commissioning Survey
+\citep[MWACS, ][]{Hurley-Walker:2014}, which was cross-matched to the $74\,$MHz Very 
+Large Array Low Frequency Sky Survey redux~\citep[VLSSr, ][]{Lane:2012}, the Molonglo 
+Reference Catalogue~\citep[MRC, ][]{Large:1981}, the $843\,$MHz Sydney University 
+Molonglo Sky Survey~\citep[SUMSS,][]{Mauch:2003}; and the $1.4\,$GHz NRAO VLA Sky 
+Survey~\citep[NVSS,][]{Condon:1998}. MWACS covers approximately 
+$20.5^h < \textrm{RA} < 8.5^h$,  $-ˆ’58^\circ < \delta < -ˆ’14^\circ$, so to complete the sky 
+coverage needed, MRC was used as a base catalogue outside of the MWACS coverage and 
+was matched to VLSSr, SUMSS and NVSS.
+
+Since RTS has the added step of individual source peeling, there is a
+greater possibility for numerical calibration failure. Before passing to CHIPS, a simple quality
+assurance step is considered, which is based upon the variance of residual visibilities in each
+1.28~MHz coarse band. 
+Observations with divergent or
+unstable calibrations were readily identified by variances far outside
+the otherwise observed distribution of values.
+Of the 1,029 observations calibrated and used by the FHD pipeline, the RTS$+$CHIPS 
+pipeline successfully calibrated and included 1,003. The remainder failed to calibrate 
+successfully, potentially due to adverse ionospheric conditions. 
 
 The CHIPS power 
 spectrum estimator applies a full maximum-likelihood estimator to the data. In its full form, the 
@@ -1227,11 +1265,10 @@ data are weighted by the thermal noise, and a model for the residual point sourc
 within a full frequency-dependent description of the instrument. For this comparison, the 
 foreground weighting is not used, in order for a direct comparison with the weighting scheme 
 used by \eppsilon.
+The data were divided into the 
+same three redshift bins, and the 2D and 1D power spectra formed. 
 
-Of the 1,029 observations calibrated and used by the FHD pipeline, the RTS$+$CHIPS 
-pipeline successfully calibrated and included 1,003. The remainder failed to calibrate 
-successfully, potentially due to adverse ionospheric conditions. The data were divided into the 
-same three redshift bins, and the 2D and 1D power spectra formed. Table \ref{tbl:limits} 
+Table \ref{tbl:limits} 
 displays comparison 2-sigma upper limits, demonstrating broad consistency between the 
 pipelines. The RTS$+$CHIPS best limits appear at a lower $k$ bin than FHD$+$\eppsilon, 
 owing to the different structure of the foreground leakage for the two pipelines. 
@@ -1245,14 +1282,6 @@ results from Figure~\ref{fig:1d_ps}, while the gray line plots the equivalent RT
 results (with coarse band harmonics included). Despite the differences in the two pipelines, 
 they produce consistent power across a range of scales, supporting the robustness of the 
 results.
-
-% ADAM: Motivation why a pipeline is being discussed
-% MAHSA: Summary of RTS to power spectrum (e.g. calibration, etc)
-% MAHSA QA: - bad day, forward reference Jordan et al, Beam nulls - fixed for future analysis
-% CATH: Plots
-%     by pointing - diff zenith vs +2 
-%	2D PS vs redshift
-%	1D
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{1D_spectra_comparison.pdf}
