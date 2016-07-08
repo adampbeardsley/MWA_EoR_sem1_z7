@@ -180,7 +180,7 @@ offers another promising method to study the EoR. Not only is the 21cm signal a
 \emph{direct} probe of the IGM, but, due to the narrow width of the transition and the 
 relationship between observed frequency and line-of-sight distance, it can be used to map 
 the full three dimensional space of the epoch. (For reviews, see \citealt{Furlanetto:2006}, 
-\citealt{Morales:2010}, \citealt{Zaroubi:2013}, and \citealt{Pritchard:2012}) The first generation of instruments with primary science goals 
+\citealt{Morales:2010}, \citealt{Zaroubi:2013}, \citealt{Loeb:2013}, and \citealt{Pritchard:2012}) The first generation of instruments with primary science goals 
 to detect the highly redshift 21cm signal have been built, including the GMRT (Giant Metrewave 
 Radio Telescope, \citealt{Paciga:2013}), LOFAR (LOw Frequency Array\footnote{http://
 www.lofar.org}, \citealt{vanHaarlem:2013, Yatawatta:2013}), PAPER (Precision Array for Probing the Epoch of 
@@ -210,11 +210,12 @@ in Fourier space) cosmological signal \citep{Morales:2006, Bowman:2009}. More re
 studies have shown the existence of a foreground ``wedge", the result of instrumental mode 
 mixing, throwing power from spectrally smooth foregrounds to higher Fourier modes 
 \citep{Thyagarajan:2015b, Thyagarajan:2015, Trott:2012, Liu:2014a, Liu:2014b, 
-Hazelton:2013, Pober:2013, Thyagarajan:2013, Vedantham:2012, Morales:2012, Datta:2010}. Nevertheless, 
-the EoR window is preserved above the wedge, and 
+Hazelton:2013, Pober:2013, Thyagarajan:2013, Vedantham:2012, Morales:2012, Datta:2010}, 
+while others are investigating the spectral structure of point sources themselves \cite[e.g.][]{Offringa:2016}.
+The EoR window is still expected to be preserved above the wedge, and 
 several analysis pipelines are under active development \citep[e.g. B.~J.~Hazelton et al. 2016, in 
 prep; D.~A.~Mitchell et al. 2016, in prep; ][]{Jacobs:2016, Trott:2016, 
-Dillon:2013, Trott:2014}.
+Dillon:2015b, Dillon:2013, Trott:2014}.
 
 This paper serves two purposes: to demonstrate several new analysis techniques and their 
 impact on power spectrum estimation, and to present the first deep integration 
@@ -529,6 +530,8 @@ three hour golden data set
 from August 23, 2013. The foreground wedge dominates the region below the solid 
 black horizon line, while regions above are mostly noise-like with the exception of horizontal 
 coarse band harmonic lines. 
+The vertical streaks at high $k_{||}$ and high $k_{\perp}$ are due to sparse $(u,v)$ sampling
+beyond the dense core of the MWA.
 \label{fig:example_ps}
 }
 \end{center}
@@ -1042,6 +1045,8 @@ Residual two dimensional power spectra for the three sub-bands used to place lim
 cosmological signal. The left panels show the low band, centered at 174.7 MHz, or a 
 redshift of 7.1. The middle panels show the mid band, centered at 182.4 MHz, or a redshift 
 of 6.8. The right panels show the high band, centered at 190.1 MHz, or a redshift of 6.5. 
+The top row corresponds to East-West instrumental polarization, while the bottom row 
+shows North-South polarization.
 The contours show the window used for averaging to one dimension.
 \label{fig:2d_ps_subband}
 }
@@ -1134,20 +1139,23 @@ three dimensional power spectrum cube and averaged directly to one dimension.
 
 The resulting one dimensional power spectra are shown in Figure~\ref{fig:1d_ps}, where 
 the measured power is shown with solid blue, the 1-$\sigma$ noise level is shown with 
-thin red, and the 2-$\sigma$ upper limit for each bin is shown with dashed magenta. 
+thin red, and the 2-$\sigma$ upper limit for each bin is shown with magenta. 
 Where our unbiased estimator is negative, the absolute value is shown, but with a dotted 
 blue line. For consistency with the literature, we plot our one dimensional power spectra 
 as $\Delta^2(k)=k^3P_{21}(k)/(2\pi^2)$, which has units of mK$^2$.
 
 \begin{figure*}
 \begin{center}
-\includegraphics[width=\textwidth]{1D_spectra.pdf}
+\includegraphics[width=\textwidth]{1D_spectra.png}
 \caption[1D deep power spectra]{
 One dimensional power spectra for our three sub-bands and both instrumental 
 polarizations. The solid blue line shows the measured power spectrum with step widths 
 corresponding to the bin size used in the average. Where the measured signal is negative 
-we plot the absolute value with a dotted line. The thin red line is the 1-$\sigma$ noise level, and 
-the dashed magenta line is the 2-$\sigma$ upper limit for each $k$ bin. 
+we plot the absolute value with a dotted line. 
+The gray boxes show the $\pm 2\sigma$ error bars on the measured power spectrum.
+Where the boxes meet the horizontal axis we are consistent with zero.
+The thin red line is the 1-$\sigma$ noise level, and 
+the magenta line is the 2-$\sigma$ upper limit for each $k$ bin. 
 A fiducial theoretical model for a fully neutral IGM from \citet{Furlanetto:2006} is shown
 in black for reference.
 \label{fig:1d_ps}
@@ -1332,7 +1340,7 @@ The best result from this analysis is an upper limit on the power spectrum of
 $\Delta^2 \le 2.7 \times 10^4$~mK$^2$ at $k=0.27\, h$~Mpc$^{-1}$ and $z=7.1$.
 This is a modest improvement over the previous best MWA results \citep{Dillon:2015}, 
 which is not surprising given that this integration contains about ten times more data, but 
-is systematic limited. Our results are also consistent with the 
+is systematics limited. Our results are also consistent with the 
 40 hour GMRT limit of $\Delta^2\le6.15\times10^4$~mK$^2$ at $k=0.5\, h$~Mpc$^{-1}$ and $z=8.6$ \citep{Paciga:2013}, though 
 probe significantly different periods of the EoR. The frontrunner in terms of an upper limit is 
 the PAPER experiment \citep{Ali:2015, Jacobs:2015, Parsons:2014}. The PAPER-64 limit of 

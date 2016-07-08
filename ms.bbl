@@ -1,4 +1,4 @@
-\begin{thebibliography}{88}
+\begin{thebibliography}{91}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Ali {et~al.}(2015)Ali, Parsons, Zheng, Pober, Liu, Aguirre, Bradley,
@@ -122,17 +122,24 @@ Dillon, J.~S., Liu, A., \& Tegmark, M. 2013, Phys. Rev. D, 87, 043005
   {Webster}}]{Dillon:2014}
 {Dillon}, J.~S., {Liu}, A., {Williams}, C.~L., {et~al.} 2014, \prd, 89, 023002
 
-\bibitem[{{Dillon} {et~al.}(2015){Dillon}, {Neben}, {Hewitt}, {Tegmark},
-  {Barry}, {Beardsley}, {Bowman}, {Briggs}, {Carroll}, {de Oliveira-Costa},
-  {Ewall-Wice}, {Feng}, {Greenhill}, {Hazelton}, {Hernquist}, {Hurley-Walker},
-  {Jacobs}, {Kim}, {Kittiwisit}, {Lenc}, {Line}, {Loeb}, {McKinley},
-  {Mitchell}, {Morales}, {Offringa}, {Paul}, {Pindor}, {Pober}, {Procopio},
-  {Riding}, {Sethi}, {Shankar}, {Subrahmanyan}, {Sullivan}, {Thyagarajan},
-  {Tingay}, {Trott}, {Wayth}, {Webster}, {Wyithe}, {Bernardi}, {Cappallo},
-  {Deshpande}, {Johnston-Hollitt}, {Kaplan}, {Lonsdale}, {McWhirter}, {Morgan},
-  {Oberoi}, {Ord}, {Prabu}, {Srivani}, {Williams}, \& {Williams}}]{Dillon:2015}
-{Dillon}, J.~S., {Neben}, A.~R., {Hewitt}, J.~N., {et~al.} 2015, \prd, 91,
-  123011
+\bibitem[{{Dillon} {et~al.}(2015{\natexlab{a}}){Dillon}, {Neben}, {Hewitt},
+  {Tegmark}, {Barry}, {Beardsley}, {Bowman}, {Briggs}, {Carroll}, {de
+  Oliveira-Costa}, {Ewall-Wice}, {Feng}, {Greenhill}, {Hazelton}, {Hernquist},
+  {Hurley-Walker}, {Jacobs}, {Kim}, {Kittiwisit}, {Lenc}, {Line}, {Loeb},
+  {McKinley}, {Mitchell}, {Morales}, {Offringa}, {Paul}, {Pindor}, {Pober},
+  {Procopio}, {Riding}, {Sethi}, {Shankar}, {Subrahmanyan}, {Sullivan},
+  {Thyagarajan}, {Tingay}, {Trott}, {Wayth}, {Webster}, {Wyithe}, {Bernardi},
+  {Cappallo}, {Deshpande}, {Johnston-Hollitt}, {Kaplan}, {Lonsdale},
+  {McWhirter}, {Morgan}, {Oberoi}, {Ord}, {Prabu}, {Srivani}, {Williams}, \&
+  {Williams}}]{Dillon:2015}
+{Dillon}, J.~S., {Neben}, A.~R., {Hewitt}, J.~N., {et~al.} 2015{\natexlab{a}},
+  \prd, 91, 123011
+
+\bibitem[{{Dillon} {et~al.}(2015{\natexlab{b}}){Dillon}, {Tegmark}, {Liu},
+  {Ewall-Wice}, {Hewitt}, {Morales}, {Neben}, {Parsons}, \&
+  {Zheng}}]{Dillon:2015b}
+{Dillon}, J.~S., {Tegmark}, M., {Liu}, A., {et~al.} 2015{\natexlab{b}}, \prd,
+  91, 023002
 
 \bibitem[{{Dor{\'e}} {et~al.}(2014){Dor{\'e}}, {Bock}, \& {31
   co-authors}}]{Dore:2014}
@@ -233,6 +240,10 @@ Liu, A., Parsons, A.~R., \& Trott, C.~M. 2014{\natexlab{a}}, Phys. Rev. D, 90,
 \bibitem[{Liu {et~al.}(2014{\natexlab{b}})Liu, Parsons, \& Trott}]{Liu:2014b}
 ---. 2014{\natexlab{b}}, Phys. Rev. D, 90, 023019
 
+\bibitem[{Loeb \& Furlanetto(2013)}]{Loeb:2013}
+Loeb, A., \& Furlanetto, S. 2013, The First Galaxies in the Universe, Princeton
+  series in astrophysics (Princeton University Press)
+
 \bibitem[{Malloy \& Lidz(2013)}]{Malloy:2013}
 Malloy, M., \& Lidz, A. 2013, The Astrophysical Journal, 767, 68
 
@@ -304,6 +315,16 @@ Offringa, A.~R., de~Bruyn, A.~G., Biehl, M., {et~al.} 2010, Monthly Notices of
   Williams, Williams, Wu, Wyithe, \& Zheng}]{Offringa:2015}
 Offringa, A.~R., Wayth, R.~B., Hurley-Walker, N., {et~al.} 2015, PASA -
   Publications of the Astronomical Society of Australia, 32
+
+\bibitem[{{Offringa} {et~al.}(2016){Offringa}, {Trott}, {Hurley-Walker},
+  {Johnston-Hollitt}, {McKinley}, {Barry}, {Beardsley}, {Bowman}, {Briggs},
+  {Carroll}, {Dillon}, {Ewall-Wice}, {Feng}, {Gaensler}, {Greenhill},
+  {Hazelton}, {Hewitt}, {Jacobs}, {Kim}, {Kittiwisit}, {Lenc}, {Line}, {Loeb},
+  {Mitchell}, {Morales}, {Neben}, {Paul}, {Pindor}, {Pober}, {Procopio},
+  {Riding}, {Sethi}, {Shankar}, {Subrahmanyan}, {Sullivan}, {Tegmark},
+  {Thyagarajan}, {Tingay}, {Wayth}, {Webster}, \& {Wyithe}}]{Offringa:2016}
+{Offringa}, A.~R., {Trott}, C.~M., {Hurley-Walker}, N., {et~al.} 2016, \mnras,
+  458, 1057
 
 \bibitem[{Ord {et~al.}(2010)Ord, Mitchell, Wayth, Greenhill, Bernardi, Gleadow,
   Edgar, Clark, Allen, Arcus, Benkevitch, Bowman, Briggs, Bunton, Burns,
