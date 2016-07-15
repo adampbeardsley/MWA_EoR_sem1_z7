@@ -1,4 +1,4 @@
-\begin{thebibliography}{91}
+\begin{thebibliography}{92}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Ali {et~al.}(2015)Ali, Parsons, Zheng, Pober, Liu, Aguirre, Bradley,
@@ -86,6 +86,18 @@ Bowman, J.~D., Cairns, I., Kaplan, D.~L., {et~al.} 2013, PASA - Publications of
 
 \bibitem[{Budav{\'{a}}ri \& Szalay(2008)}]{Budavari:2008}
 Budav{\'{a}}ri, T., \& Szalay, A.~S. 2008, The Astrophysical Journal, 679, 301
+
+\bibitem[{Carroll {et~al.}(2016)Carroll, Line, Morales, Barry, Beardsley,
+  Hazelton, Jacobs, Pober, Sullivan, Webster, Bernardi, Bowman, Briggs,
+  Cappallo, Corey, de~Oliveira-Costa, Dillon, Emrich, Ewall-Wice, Feng,
+  Gaensler, Goeke, Greenhill, Hewitt, Hurley-Walker, Johnston-Hollitt, Kaplan,
+  Kasper, Kim, Kratzenberg, Lenc, Loeb, Lonsdale, Lynch, McKinley, McWhirter,
+  Mitchell, Morgan, Neben, Oberoi, Offringa, Ord, Paul, Pindor, Prabu,
+  Procopio, Riding, Rogers, Roshi, Shankar, Sethi, Srivani, Subrahmanyan,
+  Tegmark, Thyagarajan, Tingay, Trott, Waterson, Wayth, Whitney, Williams,
+  Williams, Wu, \& Wyithe}]{Carroll:2016}
+Carroll, P.~A., Line, J., Morales, M.~F., {et~al.} 2016, Monthly Notices of the
+  Royal Astronomical Society
 
 \bibitem[{Condon {et~al.}(1998)Condon, Cotton, Greisen, Yin, Perley, Taylor, \&
   Broderick}]{Condon:1998}
