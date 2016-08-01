@@ -163,9 +163,9 @@ Several probes are being used to investigate the EoR.
 Studies of the polarization of the CMB have placed integrated constraints on 
 the timing of reionization \citep[e.g.][]{Planck:2015b, Planck:2015, WMAP9}. Meanwhile, 
 observations of highly redshifted quasars have placed upper bounds on redshifts by which 
-reionization is complete. For example, \citealt{Fan:2006a} showed that reionization must be 
+reionization is complete. For example, \citet{Fan:2006a} showed that reionization must be 
 complete by $z \approx 6$, a result which was confirmed independent of model by 
-\citealt{McGreer:2015}.
+\citet{McGreer:2015}.
 Using a $z_{\mathrm{end}}>6$ prior, the most recent analysis of \emph{Planck} data 
 found a reionization redshift $z_{\mathrm{re}} = 8.8 \pm 0.9$ for a redshift-symmetric model
 ($z_{\mathrm{re}} = 8.5 \pm 0.9$ for redshift-asymmetric), and a duration of $\Delta z < 2.8$
@@ -201,7 +201,7 @@ capable of imaging the ionized bubbles of reionization in its later stages
 
 Using the first generation of instruments, several upper limits have been placed on the 21 
 cm EoR signal \citep{Ali:2015, Dillon:2014, Parsons:2014, Jacobs:2015, Paciga:2013}, and 
-\citealt{Pober:2015} was able to place constraints on physical reionization models. 
+\citet{Pober:2015} was able to place constraints on physical reionization models. 
 However, much work is to be done to understand the data produced by these arrays. 
 Foreground subtraction and isolation has emerged as a priority in the field. Central to most 
 analysis strategies is the concept of an ``EoR window" -- the region of Fourier space where 
@@ -229,7 +229,7 @@ techniques to a deep integration of data from the first semester of MWA observat
 Our best result is a limit on the cosmological power spectrum of $\Delta^2 \leq 2.7 \times 10^4$ 
 mK$^2$ at $k=0.27$ h~Mpc$^{-1}$ and $z=7.1$. This is lower than the GMRT 40 hour
 limit ($\Delta^2 \le 6.15 \times 10^4$ mK$^2$ at $z=8.6$; \citealt{Paciga:2013}), but 
-signficantly higher than the latest PAPER result which 
+significantly higher than the latest PAPER result which 
 integrated over 700 hours ($\Delta^2 \le 502$ mK$^2$ at $z=8.4$; \citealt{Ali:2015}).
 Several EoR experiments are reaching sensitivity levels where very low systematics
 become dominant. The PAPER team saw evidence that antenna cross-talk and foreground
@@ -262,7 +262,7 @@ The Murchison Widefield Array is one of several first generation radio interfero
 a primary science goal of detecting the 21cm EoR power spectrum. The remote Australian 
 outback offers relative isolation from human-made radio frequency interference (RFI) such as 
 FM radio, or TV stations. A recent study of the RFI environment at the Murchison Radio 
-Observatory can be found in \citealt{Offringa:2015}.
+Observatory can be found in \citet{Offringa:2015}.
 
 While the 21 cm EoR signal is priority, the MWA is a general observatory serving several 
 science programs beyond cosmology including Galactic and extragalactic surveys, time 
@@ -272,7 +272,7 @@ pseudo-random antenna placement algorithm \citep{Beardsley:2012} to obtain a wel
 behaved point spread function while retaining a dense core for EoR sensitivity 
 \citep{Beardsley:2013, Bowman:2006}.\footnote{A drone flyover view of the array layout is available on YouTube at \url{https://youtu.be/yDWdTUzTUMo}.}
 A full description of the science capabilities of the array is found in
-\citealt{Bowman:2013}.
+\citet{Bowman:2013}.
 The high imaging capability of the MWA enables us to calibrate and subtract foregrounds
 based on sky models, leveraging the full capability of the observatory for the
 EoR experiment. 
@@ -281,7 +281,7 @@ which utilize a highly redundant layout to enhance sensitivity. Redundant arrays
 exploit symmetries of the instrument for quick calibration and analysis, but have poor 
 point spread functions, making foregrounds more difficult to characterize.
 
-The technical design of the MWA is reviewed in \citealt{Tingay:2013}, and we highlight a 
+The technical design of the MWA is reviewed in \citet{Tingay:2013}, and we highlight a 
 few key characteristics that will become important in our analysis of the data. Each 
 antenna of the MWA comprises 16 dual-polarization dipoles placed on a regular grid, lying 
 on a ground screen. The radio frequency signals from these dipoles feed into an analog 
@@ -327,7 +327,7 @@ on November 29, 2013. The individual snapshots are 112 seconds of data at 0.5 se
 \section{Analysis Pipeline}\label{sec:analysis}
 In order to ensure consistency in analysis, the international MWA EoR collaboration has 
 defined two independent reference analysis pipelines. The details of this strategy are 
-outlined in \citealt{Jacobs:2016}. This study is based on the FHD-to-\eppsilon 
+outlined in \citet{Jacobs:2016}. This study is based on the FHD-to-\eppsilon 
 pipe, which is in turn based on the Fast Holographic Deconvolution 
 (FHD\footnote{\url{https://github.com/EoRImaging/FHD}}, \citealt{Sullivan:2012}) and Error 
 Propagated Power Spectrum with Interleaved Observed Noise (\eppsilon
@@ -390,7 +390,7 @@ gains motivated by our understanding of the spectral response of the instrument.
 reducing the number of free parameters in this step we increase our signal to noise on 
 calibration solutions and avoid absorbing unmodeled confusion source flux density into our gain 
 solutions which has been shown to contaminate the EoR window \citep{Barry:2016}. 
-Recently, \citealt{Patil:2016} demonstrated excess noise and a suppression of diffuse
+Recently, \citet{Patil:2016} demonstrated excess noise and a suppression of diffuse
 foregrounds in LOFAR images after calibration and subtraction of bright discrete
 foreground sources. They suggested a multi-frequency calibration solution as a potential
 solution to these systematics, similar to the scheme implemented here. Indeed we have
@@ -417,7 +417,7 @@ where $g_i(\nu)$ and $g_j(\nu)$ are the complex gains for antennas $i$ and $j$
 respectively. Because we are treating polarizations independently, we allow the antenna 
 subscript to run over both East-West (E-W) and North-South (N-S) polarizations.
 
-FHD utilizes the StEFCal algorithm described in \citealt{Salvini:2014} to find the minimum 
+FHD utilizes the StEFCal algorithm described in \citet{Salvini:2014} to find the minimum 
 $\chi^2$ estimate with respect to the complex gains. The result of this operation is 
 estimated gains for every antenna, frequency channel, and polarization. However, with 
 certain known properties of the antenna response we can reduce the number of free 
@@ -450,7 +450,7 @@ direction). The visibilities are gridded using the primary beam as the gridding 
 the data in the holographic frame, which has been shown to be the optimal frame for 
 combining images in the sense that it preserves all information for parameter estimation 
 \citep{Morales:2009,Bhatnagar:2008}. We use a simulation-based primary beam model for MWA 
-antennas developed by \citealt{Sutinjo:2015} 
+antennas developed by \citet{Sutinjo:2015} 
 which incorporates an average embedded element pattern for the dipoles, as well as mutual
 coupling between dipoles within an antenna.
 At this stage we also average in frequency by 
@@ -482,7 +482,7 @@ proper accumulation of data), variance cubes (for error propagation), and even/o
 interleaved data cubes (for an unbiased estimator and a direct measurement of the noise). 
 We also retain both East-West and North-South polarizations. At this time we can remap 
 our coordinates to cosmological units according to the relationships given in 
-\citealt{Morales:2004}, where angular and frequency units $(\theta_x,\theta_y,f)$ map to 
+\citet{Morales:2004}, where angular and frequency units $(\theta_x,\theta_y,f)$ map to 
 cosmological distance units $(r_x,r_y,r_z)$. Often $r_z$ is referred to as the line of sight 
 dimension, and denoted as $r_{||}$. Similarly, $(r_x,r_y)$ is the plane perpendicular to the 
 line of sight and is denoted as $\mathbf{r_{\perp}}$.
@@ -582,7 +582,7 @@ exactly to twice the signal travel time through the 150 meter cables (with veloc
 therefore introduced a reflection term into our gain model, which allows our restricted gains 
 to account for the interference of the incident signal with a round-trip reflected signal in the 
 cable. 
-A similar approach was taken at lower frequencies in \citealt{Ewall-Wice:2016}.
+A similar approach was taken at lower frequencies in \citet{Ewall-Wice:2016}.
 The full gain model is expressed as
 \begin{equation}\label{eq:cal2}
 \hat{g}_i(\nu)=B_{\alpha}(\nu)\left(P_i(\nu)+R_i(\nu)\right),
@@ -693,7 +693,7 @@ and build a catalog, and a production mode where we calibrate using the sky mode
 subtract it from the data without further fitting. Because full deconvolution on every 
 observation from the MWA is computationally not feasible, we currently restrict ourselves to 
 the golden data set to build our model. The process of building the catalog is presented in 
-\citealt{Carroll:2016}. They applied machine learning classification methods 
+\citet{Carroll:2016}. They applied machine learning classification methods 
 to select reliable detections from the full deconvolution FHD mode, culminating in the KGS 
 catalog. The work here uses an early iteration of the KGS catalog that was available at the 
 time of analysis.
@@ -820,7 +820,7 @@ for each independent observation. FHD treats each pixel in the image as a point 
 the pixel location with total flux density equal to the surface brightness of the diffuse image times the area 
 of the pixel and creates model visibilities for each snapshot in the same way that it imports 
 a catalog of point sources. This is similar to the strategy employed by 
-\citealt{Thyagarajan:2015} to model diffuse structure.
+\citet{Thyagarajan:2015} to model diffuse structure.
 
 The diffuse model used for this work is shown in Figure~\ref{fig:diffuse}. While the actual 
 model image is uniform weighted with resolution $\sim\!6$~arcminutes, we show it 
@@ -1127,7 +1127,7 @@ harmonics by masking out the harmonic bin itself and two bins on either side (to
 bins per harmonic).
 
 The final mask we apply is the wedge. We found that a small buffer beyond the horizon was
-necessary to completely mask out the wedge, consistent with \citealt{Dillon:2015}. We
+necessary to completely mask out the wedge, consistent with \citet{Dillon:2015}. We
 implement the buffer by increasing the slope of the horizon line by 14\%.
 This line is shown as the
 dashed diagonal line in the left panel of Figure~\ref{fig:slices}.
@@ -1207,7 +1207,7 @@ High & 6.5 & N-S & 0.24 & 3.22 $\times 10^4$ & 0.14 & 2.5 $\times 10^4$ \\
 
 \subsection{Comparison with reference pipeline}\label{subsec:ref_pipe}
 
-As demonstrated in \citealt{Jacobs:2016}, comparison between independent 
+As demonstrated in \citet{Jacobs:2016}, comparison between independent 
 analysis pipelines is essential to evaluate the validity of algorithms under active development. 
 Such comparison provides insight into the strengths and weaknesses of the pipelines, as well 
 as confirmation of results. The analysis discussed so far has been based on the FHD to 
@@ -1243,7 +1243,7 @@ Update and Matching Algorithm (PUMA, J.~L.~B.~Line et al. 2016, in review). Full
 this cross-matched catalog can be found in Line et al. 2016, but we include a brief 
 description here. PUMA is designed to cross-match low radio-frequency ($\lesssim 1\,$GHz) 
 catalogs. It utilizes a Bayesian probabilistic positional cross-match approach based on~
-\citealt{Budavari:2008}, combined with criteria based on catalog resolution and fitting the 
+\citet{Budavari:2008}, combined with criteria based on catalog resolution and fitting the 
 spectral energy distribution to a power-law. These criteria allow for surveys with differing 
 resolutions, which can introduce confusing sources into the matched process.
 Primarily the source catalog was based on the MWA Commissioning Survey
@@ -1316,7 +1316,7 @@ unknown, but likely due to imperfect calibration, beam models, and/or foreground
 In order to improve on our limit in this regime, future analysis will require calibration which 
 better accounts for the instrumental response, perhaps by increasing signal to noise 
 through multiple-snapshot solutions or refined antenna response models. 
-Through simulation, \citealt{Thyagarajan:2016} recently demonstrated the necessity of
+Through simulation, \citet{Thyagarajan:2016} recently demonstrated the necessity of
  precise foregrounds and instrumental models in order to retain a clean EoR window.
 Studies of the 
 beam are underway \citep[e.g.][]{Neben:2015, Sutinjo:2015}, and will likely help to further isolate the 
@@ -1385,7 +1385,7 @@ power spectrum measurements because the (often bright) near-horizon emission res
 at the edge of the foreground wedge 
 \citep{Pober:2016, Thyagarajan:2015, Thyagarajan:2015b}, but the low elevation beam
 can be difficult to model at the necessary precision \citep{Thyagarajan:2016}. 
-\citealt{Asad:2016} demonstrated the need for a polarized primary beam model in order
+\citet{Asad:2016} demonstrated the need for a polarized primary beam model in order
 to mitigate the risk of diffuse polarized emission leaking into Stokes I, conflating with a 
 potential cosmological measurement. The MWA
 primary beam model is continuously improving to incorporate mutual coupling between the 
@@ -1393,7 +1393,7 @@ phased dipoles, and embedded element patterns for each of the 32 dipoles on each
 \citep{Sutinjo:2015}. Other methods are also being pursued to directly measure the full beam 
 response in situ using the ORBCOMM satellite constellation \citep{Neben:2015}, and 
 drone-flown calibrator sources (Jacobs, et al. in prep). The latter method is similar to
-the strategy \citealt{Virone:2014} used to verify SKA beam patterns.
+the strategy \citet{Virone:2014} used to verify SKA beam patterns.
 
 \textbf{Calibration.} The most limiting factor in our analysis is likely to be insufficiently
 precise calibration solutions, which can cause foreground power to leak into the EoR window,
