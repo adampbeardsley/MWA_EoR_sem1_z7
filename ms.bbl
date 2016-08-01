@@ -1,4 +1,4 @@
-\begin{thebibliography}{92}
+\begin{thebibliography}{93}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Ali {et~al.}(2015)Ali, Parsons, Zheng, Pober, Liu, Aguirre, Bradley,
@@ -184,6 +184,9 @@ Furlanetto, S.~R., Oh, S.~P., \& Briggs, F.~H. 2006, Physics Reports, 433, 181,
   {Sonneborn}, {Stiavelli}, {Stockman}, {Windhorst}, \&
   {Wright}}]{Gardner:2006}
 {Gardner}, J.~P., {Mather}, J.~C., {Clampin}, M., {et~al.} 2006, \ssr, 123, 485
+
+\bibitem[{{Greig} {et~al.}(2016){Greig}, {Mesinger}, \& {Pober}}]{Greig:2016}
+{Greig}, B., {Mesinger}, A., \& {Pober}, J.~C. 2016, \mnras, 455, 4295
 
 \bibitem[{{Greisen}(2012)}]{Greisen:2012}
 {Greisen}, E. 2012, {AIPS FITS File Format}, AIPS Memo 117
