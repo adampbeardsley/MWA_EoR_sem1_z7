@@ -213,7 +213,9 @@ mixing, throwing power from spectrally smooth foregrounds to higher Fourier mode
 Hazelton:2013, Pober:2013, Thyagarajan:2013, Vedantham:2012, Morales:2012, Datta:2010}, 
 while others are investigating the spectral structure of point sources themselves \cite[e.g.][]{Offringa:2016}.
 The EoR window is still expected to be preserved above the wedge, and 
-several analysis pipelines are under active development \citep[e.g. B.~J.~Hazelton et al. 2016, in 
+several analysis pipelines are under active development 
+\textbf{to exploit this foreground isolation}
+\citep[e.g. B.~J.~Hazelton et al. 2016, in 
 prep; D.~A.~Mitchell et al. 2016, in prep; ][]{Jacobs:2016, Trott:2016, 
 Dillon:2015b, Dillon:2013, Trott:2014}.
 
@@ -315,8 +317,9 @@ respectively.
 The data for this work includes two sets. First we use a set of 94 two-minute high band observations of 
 the EoR0 field from August 23, 2013, which were taken early in telescope operations and 
 found to be particularly well behaved. The MWA EoR collaboration has designated this set 
-as a ``golden data set'', which is used to build analysis tools and compare early results. All 
-techniques demonstrated here will use this golden data set \cite[e.g.][]{Jacobs:2016, Trott:2016, Pober:2016, Dillon:2015}. In Section~\ref{sec:deep} we 
+as a ``golden data set'', which is used to build analysis tools and compare early results 
+\textbf{\cite[e.g.][]{Jacobs:2016, Trott:2016, Pober:2016, Dillon:2015}.} All 
+techniques demonstrated here will use this golden data set. In Section~\ref{sec:deep} we 
 will use a larger data set to move toward a deep integration. This data set consists of all 
 EoR0 high band observations beginning August 23, 2013 (including the golden data set), 
 and concluding when the field was no longer accessible for the season: when the sun was 
@@ -395,7 +398,7 @@ foregrounds in LOFAR images after calibration and subtraction of bright discrete
 foreground sources. They suggested a multi-frequency calibration solution as a potential
 solution to these systematics, similar to the scheme implemented here. Indeed we have
 not seen evidence of these systematics through simulations and direct propagation of
-our noise \citep[Hazelton et al. 2016, in prep.]{Barry:2016}.
+our noise \citep[\textbf{B.~J.}~Hazelton et al. 2016, in prep.]{Barry:2016}.
 
 In the first calibration step we allow our complex gains to account for any direction-independent 
 response on a per antenna, per 80~kHz frequency channel, per polarization basis. To 
@@ -414,7 +417,9 @@ antenna pair $(i,j)$ as
 V'_{ij}(\nu) \approx g_i(\nu)g^*_j(\nu)V_{ij}(\nu),
 \end{equation}
 where $g_i(\nu)$ and $g_j(\nu)$ are the complex gains for antennas $i$ and $j$ 
-respectively. Because we are treating polarizations independently, we allow the antenna 
+respectively,
+\textbf{and $V_{ij}(\nu)$ is the true visibility which we aim to recover through calibration.}
+Because we are treating polarizations independently, we allow the antenna 
 subscript to run over both East-West (E-W) and North-South (N-S) polarizations.
 
 FHD utilizes the StEFCal algorithm described in \citet{Salvini:2014} to find the minimum 
@@ -706,7 +711,7 @@ MWA observations pointed away from our field of interest.
 Until that work is complete we supplement the extent of 
 our point source model using additional catalogs. We accomplish this through a hierarchical 
 catalog pulling from our early KGS catalog, the MWA Commissioning Survey\footnote{The 
-more complete GLEAM Survey \citep[][Hurley-Walker et al., in collaboration review]
+more complete GLEAM Survey \citep[][\textbf{N.}~Hurley-Walker et al., in review]
 {Wayth:2015} was not available at the time of analysis.} \citep[MWACS, ][]
 {Hurley-Walker:2014}, the Culgoora catalog \citep{Slee:1977}, and the Molonglo Reference Catalog 
 \citep[MRC, ][]{Large:1981}. Source flux densities are prioritized in this order based on our 
@@ -808,7 +813,7 @@ subtracting cosmological signal.
 
 Future iterations of this model will contain a spectral index 
 and multiple polarization components.
-Lenc, et al. (in review) demonstrated the presence of strong polarized large-scale structures 
+\textbf{E.}~Lenc, et al. (in review) demonstrated the presence of strong polarized large-scale structures 
 in the EoR0 field at 154 MHz with varying Faraday depths. They observed rotations in the
 Stokes Q--U plane due to ionospheric conditions, which will need to be taken into account
 in our future diffuse models.
@@ -1240,7 +1245,7 @@ data \citep{Jacobs:2016}.
 
 The source catalog used with RTS was a combined cross-match created with the Positional 
 Update and Matching Algorithm (PUMA, J.~L.~B.~Line et al. 2016, in review). Full details of PUMA and 
-this cross-matched catalog can be found in Line et al. 2016, but we include a brief 
+this cross-matched catalog can be found in Line et al. (2016), but we include a brief 
 description here. PUMA is designed to cross-match low radio-frequency ($\lesssim 1\,$GHz) 
 catalogs. It utilizes a Bayesian probabilistic positional cross-match approach based on~
 \citet{Budavari:2008}, combined with criteria based on catalog resolution and fitting the 
@@ -1370,7 +1375,7 @@ into our analysis will improve both the foreground subtraction and the calibrati
 and represented only the Stokes I polarization. Nevertheless subtracting this model removed
 90\% of the residual power in the foreground wedge. Adding a spectral index and multiple
 polarization components to the model will improve this subtraction even further.
-As Lenc, et al. 2016 (in review) demonstrated, substantial polarized diffuse structure
+As \textbf{E.}~Lenc, et al. 2016 (in review) demonstrated, substantial polarized diffuse structure
 exists in the EoR0 field. The contributions to Stokes Q and U depend on the ionospheric
 conditions, which will be accounted for in future analyses to appropriately model this
 emission. 
@@ -1392,7 +1397,7 @@ primary beam model is continuously improving to incorporate mutual coupling betw
 phased dipoles, and embedded element patterns for each of the 32 dipoles on each antenna 
 \citep{Sutinjo:2015}. Other methods are also being pursued to directly measure the full beam 
 response in situ using the ORBCOMM satellite constellation \citep{Neben:2015}, and 
-drone-flown calibrator sources (Jacobs, et al. in prep). The latter method is similar to
+drone-flown calibrator sources (\textbf{D.~C.}~Jacobs, et al. in prep). The latter method is similar to
 the strategy \citet{Virone:2014} used to verify SKA beam patterns.
 
 \textbf{Calibration.} The most limiting factor in our analysis is likely to be insufficiently
