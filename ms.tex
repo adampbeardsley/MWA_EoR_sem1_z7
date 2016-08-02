@@ -452,7 +452,7 @@ and diagnostic purposes.
 
 After calibration, we form snapshot image cubes (frequency mapping to line-of-sight 
 direction). The visibilities are gridded using the primary beam as the gridding kernel, placing 
-the data in the holographic frame, which has been shown to be the optimal frame for 
+the data in the \textbf{``holographic frame,"} which has been shown to be the optimal \textbf{weighting scheme} for 
 combining images in the sense that it preserves all information for parameter estimation 
 \citep{Morales:2009,Bhatnagar:2008}. We use a simulation-based primary beam model for MWA 
 antennas developed by \citet{Sutinjo:2015} 
@@ -517,12 +517,19 @@ expected EoR signal, we apply a Blackman-Harris window function prior to the $r_
 $k_{||}$ transform. This has the effect of trading lower effective bandwidth for higher 
 dynamic range \citep[e.g.][]{Thyagarajan:2016, Thyagarajan:2013}.
 
+\textbf{The pipeline as described up to this point is applied to both the calibrated data
+and the foreground model. At this point we subtract the model from the data to form
+residual data as well. All three sets of data (dirty, model, and residual) are carried through 
+the remaining steps to form corresponding power spectra.}
+
 After squaring and dividing by our observation window function \citep{Bowman:2006}, we 
 arrive in three dimensional power spectrum space. We use the even/odd interleaved cubes 
 to form a signal (odd plus even) and noise (odd minus even) power spectrum, which we 
 subtract from one another to form an unbiased estimate of our signal power. This is 
 mathematically equivalent to cross multiplying the even and odd cubes. The three 
-dimensional power spectrum cube can next be averaged in annuli to form two dimensional 
+dimensional power spectrum cube can next be averaged in annuli 
+\textbf{of constant $k_{\perp}$ and $k_{||}$ (i.e. orthogonal to the $k_{||}$ axis)}
+to form two dimensional 
 power spectra, or spherical shells to form one dimensional power spectra where we will 
 ultimately constrain the EoR.
 
@@ -537,6 +544,9 @@ black horizon line, while regions above are mostly noise-like with the exception
 coarse band harmonic lines. 
 The vertical streaks at high $k_{||}$ and high $k_{\perp}$ are due to sparse $(u,v)$ sampling
 beyond the dense core of the MWA.
+\textbf{The right axis shows the delay (Fourier dual to frequency) corresponding to the 
+$k_||$ axis, and the top axis shows the baseline length (in wavelengths) corresponding
+to the $k_{\perp}$ axis.}
 \label{fig:example_ps}
 }
 \end{center}
@@ -551,7 +561,11 @@ contamination due to the periodic frequency sampling function. These lines are o
 referred to as the coarse band harmonics. We see vertical streaks at high $k_{||}$ and high 
 $k_{\perp}$. These are due to sparse $(u,v)$ sampling beyond the dense core of the MWA 
 (starting $\sim70\lambda$), and the foreground power mixing to high spectral 
-modes \citep{Bowman:2009}. Between the coarse band lines and to the left of the vertical streaks we see regions 
+modes \citep{Bowman:2009}. 
+\textbf{We provide axes more closely related to the measurements to assist in connecting
+these instrumental effects. The right axis shows delay (Fourier dual to frequency), and the
+top axis shows baseline length measured in wavelengths.}
+Between the coarse band lines and to the left of the vertical streaks we see regions 
 which contain both positive and negative (indicated by blue on the color bar) pixels. These 
 regions are where we have successfully isolated the foregrounds and retained a noise-like 
 EoR window in the three hour integration.
@@ -700,7 +714,9 @@ observation from the MWA is computationally not feasible, we currently restrict 
 the golden data set to build our model. The process of building the catalog is presented in 
 \citet{Carroll:2016}. They applied machine learning classification methods 
 to select reliable detections from the full deconvolution FHD mode, culminating in the KGS 
-catalog. The work here uses an early iteration of the KGS catalog that was available at the 
+catalog\footnote{\textbf{KGS is an abbreviation of KATALOGSS, the KDD (Knowledge 
+Discovery in Databases) Astrometry, Trueness, and Apparent Luminosity of Galaxies in 
+Snapshot Surveys}}. The work here uses an early iteration of the KGS catalog that was available at the 
 time of analysis.
 
 It has been shown that subtracting a foreground model strictly within the main lobe of the 
@@ -752,7 +768,9 @@ accurate calibration and foreground subtraction.
 Because we use the input foreground model to calibrate our visibilities, the gain estimates 
 for our two runs differed. In particular we saw the overall flux scale of the calibrated 
 visibilities was higher when using the full hierarchical catalog. In order to put both residual 
-2D power spectra onto the same scale for comparison, we first divide each pixel by the 
+2D power spectra onto the same scale for comparison, we first divide each 
+\textbf{$(k_{\perp},k_{||})$ cell}
+by the 
 corresponding dirty power spectrum pixel, then subtract to arrive at a ratio difference. 
 \begin{equation}\label{eq:diff_ratio}
 \mathtt{ratio\;difference = \frac{residual_1}{dirty_1} - \frac{residual_2}{dirty_2}}
@@ -804,7 +822,7 @@ This first iteration of modeling the diffuse structure within our primary field 
 simply using output point-source subtracted residual images of FHD from the three hour 
 golden data set. We combine the images from three hours to leverage the rotation of the 
 earth to improve the point spread function (PSF) of the instrument. This integrating of 
-images is done in a uniformly weighted frame to minimize the effect of double instrument 
+images is done \textbf{with uniform weighted data} to minimize the effect of double instrument 
 convolution (once when the data are taken, again when we use the output as a model). We 
 then form a pseudo Stokes I image by adding beam-weighted East-West and North-South 
 polarizations. We also integrate in frequency to form a single continuum image for our 
@@ -860,8 +878,9 @@ through our entire analysis pipeline with and without using the diffuse model. B
 foreground models used for calibration in the two runs are identical (diffuse is omitted for 
 calibration), the calibration solutions were identical and therefore the dirty power spectra 
 were identical as well. We compare the model and residual power spectra by direct 
-subtraction in Figure~\ref{fig:diffuse_diff}. The top panel shows the model power with the 
-diffuse subtracted from the model power without. 
+subtraction in Figure~\ref{fig:diffuse_diff}. 
+The top panel shows \textbf{our foreground model power spectrum
+minus the model power spectrum when including diffuse}. 
 Because our diffuse model added power to the full foreground model, the entire plot is
 negative (red).
 Even the EoR window is red (albeit at a much lower level than the wedge) because of power
@@ -881,11 +900,13 @@ the differences in the foreground model in this region are below the three hour 
 \caption{
 Single polarization (E-W) power spectrum differences from the golden data set showing the 
 effect of subtracting a diffuse foreground model. The calibration is identical with and without 
-the diffuse model, so the dirty power spectra are identical. The diffuse model adds a large 
-amount of power to the model (top), and the residual power (bottom) is significantly lower in 
-the wedge when using the diffuse model (positive difference), demonstrating a successful 
-subtraction. While this first attempt at a diffuse model was rudimentary, it shows promise as 
-it successfully removed 90\% of the residual power. 
+the diffuse model, so the dirty power spectra are identical. 
+\textbf{In the top panel the model power spectrum difference is almost entirely negative 
+(red), indicating that the diffuse model added a large amount of power to the foreground 
+model. The bottom panel shows the residual power spectrum difference is positive in the 
+wedge (blue), demonstrating a successful subtraction.}
+While this first attempt at a diffuse model was rudimentary, it 
+\textbf{successfully removed 90\% of the residual power. }
 \label{fig:diffuse_diff}
 }
 \end{center}
