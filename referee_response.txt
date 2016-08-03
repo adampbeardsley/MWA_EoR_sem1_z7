@@ -1,0 +1,155 @@
+Major comments
+---------------
+---The authors emphasize the diagnostic importance of the kperp-kpara plot, and I appreciate the care with which such plots were discussed. However, I found the absence of a kpara-kperp error plot to be rather conspicuous. I would imagine that an error plot would also be enormously informative, and I'd like to see one included, along with a short discussion of its features.
+
+We have added an error plot in Section 3.3 (now Figure 3), along with a paragraph at the end of the section describing the structure.
+
+======================================================================
+
+---11th paragraph of Section 3.1. "At this stage we also average in frequency by a factor of two..." Is there a specific motivation for this? Or is it just a convenient way to reduce the data volume?
+
+======================================================================
+
+---After Eq. (5): "After fitting for all other parameters, we fit for the reflection mode". Why do this instead of a global fit for all the parameters, which would presumably give a better overall fit? I've noticed that with the form of the g-hat, if A_i,1 and A_i,2 are zero, the reflection mode parameters are degenerate with the "normal" calibration parameters. Is the separate fit a desire to avoid the near-degeneracy that results when A_i,1 and A_i,2 are small?
+
+======================================================================
+
+---Penultimate paragraph of Section 4.2. This reminds me of the Hazelton et al. (2013) paper about multi-baseline wedge effects. It would seem like the current paper is suggesting that the Hazelton et al. effect can be reduced with a fine kernel resolution. However, Hazelton et al. seem to imply that their effect is fundamental and unavoidable. Can the authors explicitly clarify this?
+
+======================================================================
+
+---2nd paragraph of Section 4.3. "All other sources were given a spectral index of -0.8". What motivated this choice?
+
+======================================================================
+
+---Penultimate paragraph of Section 4.3. The authors find that using the two different foreground models gave different flux scales. Is there a sense in which the flux scale has converged?
+
+======================================================================
+
+---Figures 9 and 10. Figure 10 seems to indicate that there is a "+5" pointing. Why is it not included in Figure 9?
+
+======================================================================
+
+---Figure 11, bottom panel. Since the "+3" portion seems so tightly clustered and is only excluded from the analysis due to some consistent offset, might this be fixable by adjusting calibration parameters?
+
+======================================================================
+
+---8th paragraph of Section 5.2. I think the vertical lines caused by incomplete uv coverage needs more explanation/discussion. A thinning uv coverage alone should not result in the vertical streaks. It needs to be coupled with increased leakage from within the wedge. The fact that reduced uv coverage causes vertical streaks is therefore also a result of how the power spectrum is estimated (since that + the instrument is what determines the leakage). As an example, one could go with a "scorched earth" style analysis, sacrificing sensitivity to preserve the EoR window by doing single-baseline delay spectrum analyses for the longer baselines. The foregrounds would be contained within the wedge under such a procedure, independent of uv-coverage (since we're already at the extreme of analyzing one baseline at a time). The form of one's power spectrum estimator must therefore play a role here.
+
+======================================================================
+
+---Along the same lines as the previous point, might an accounting of covariances between different power spectrum cells also help here, perhaps allowing for decreased leakage?
+
+======================================================================
+
+---5th from last paragraph of Section 5.2. Why an increase in slope of 14% of the horizon line? I'm curious as to the thinking here, particularly versus the alternative I've seen in the literature where a constant delay buffer is added to the horizon line.
+
+======================================================================
+
+---Figure 15. Why does the FHD + eppsilon pipeline not go to as high k as RTS + CHIPS? Is there some limitation that prevents the highest k regions from being explored?
+
+======================================================================
+
+---It would be helpful in the discussion section to give a sense for what data and results we can look forward to. As an outsider, for example, I am curious as to whether there is more data "in the can" that is just waiting to be analyzed, or whether any new results will come from data taken once the MWA expansion is past its construction/commissioning phase.
+
+======================================================================
+
+Minor comments
+---------------
+---Throughout: the authors seem to use \citealt{} or \citep{} for all citations, but when the citation is part of the sentence, \citet{} to be used (so that publication year but not the author name is enclosed in parentheses).
+
+This has been fixed in the updated draft.
+
+======================================================================
+
+---4th paragraph of introduction: Greig et al. also placed constraints on physical models, I think.
+
+Yes, thank you for pointing that out. This citation has been added.
+
+======================================================================
+
+---Final sentence of 4th paragraph of introduction: The two halves of the sentence don't really have a logical connection to each other. I was confused for a moment because I thought there was a missing part to sentence. In particular, when I read "...and several analysis pipelines are under active development" I thought the authors meant that there were specific efforts to preserve the EoR window, but I think it's just generic pipeline development.
+
+We have rephrased to “… and several analysis pipelines are under active development to exploit this foreground isolation” to emphasize that the pipelines cited are following the EoR window framework.
+
+======================================================================
+
+---Similarly, in the last paragraph of Section 2, when the authors say "(e.g., Jacobs et al. 2016...)", I'm not sure what the "for example" is referring to. I'm not sure how those other works demonstrated that "all techniques demonstrated here will use this golden data set"?
+
+Those citations were misplaced and meant for the previous sentence. This has been fixed.
+
+======================================================================
+
+---Equation 1: V_ij is never defined as the "true" visibility.
+
+It is now defined in the sentence after the equation.
+
+======================================================================
+
+---11th paragraph of Section 3.1 and first paragraph of Section 3.3: what does "frame" mean? Is this a technical term? I'm not familiar with it.
+
+“Holographic frame” is now introduced as a term referring to the specific weighting scheme that yields optimal maps. We also removed another use of “frame” in Sec 4.4 when referring to weighting.
+
+======================================================================
+
+---Section 3.3: even though it can be inferred from the description in Section 3.2, it would be helpful to readers to mention the foreground subtraction step in Section 3.3 to make it clear where it fits into the power spectrum pipeline.
+
+We have injected a paragraph to Section 3.3 to mention the foreground subtraction. This is now the third paragraph of the section.
+
+======================================================================
+
+---Section 3.3, 3rd paragraph: "The three dimensional power spectrum cube can next be averaged in annuli to form..." For readers who may not be accustomed to P(kperp, kpara) spectra, it would be good to be more specific here. (E.g., annuli oriented in which direction?)
+
+This is now clarified as the annuli of constant (kperp, kpar), (i.e. orthogonal to the kpar axis).
+
+======================================================================
+
+---In all kperp-kpara plots: The units "ns" and "lambda" are given, but it's never stated what quantities (i.e., "delay" and "baseline length", respectively) are plotted.
+
+We have added a description of these axes in the penultimate paragraph of Section 3.3 (and in the caption of Figure 2).
+
+======================================================================
+
+---I don't think "KGS" is ever defined.
+
+It is now spelled out in a footnote when we introduce the catalog.
+
+======================================================================
+
+---Just before Equation 6. "Pixel" is a bit of a confusing term here. Perhaps something like "kperp-kpara cell" might be more appropriate?
+
+This has been changed.
+
+======================================================================
+
+---An inconsistency in citation style. Why is "J. L. B. Line" always given his initials while everyone else is cited by last name only?
+
+Our understanding is that unpublished references should include the initials, while published references do not (http://journals.aas.org/authors/references.html#Unpublished). However, when double checking we noticed a couple unpublished references that were missing the initials, and have now added them.
+
+======================================================================
+
+---Penultimate paragraph of Section 4.4. What does "total residual power" mean? Can we be more precise? Is it the power integrated over the whole kperp-kpara plane? If so, the relevant k scales of integration need to be specified.
+
+======================================================================
+
+---Last paragraph of Section 4.4. I am having trouble understanding the sentence "The top panel shows the model power with the diffuse subtracted from the model power without". Can we rephrase? Also, I'm a little confused by what "model power with the diffuse subtracted" means. Isn't the diffuse power "added" to the model on top of the point sources?
+
+This was worded in a very confusing way. The sentence now reads: “The top panel shows our point source foreground model power spectrum minus the model power spectrum when including diffuse.”
+
+======================================================================
+
+---Figure 8 caption: I don't understand the meaning of the parenthetical remark "(positive difference)".
+
+This sentence had a lot of words to orient the reader between the color scheme corresponding to positive/negative, and which power spectrum was subtracted from which. We have broken it up into two sentences to be more clear.
+
+======================================================================
+
+---Figure 8 caption (but also in the text): is it not a bit optimistic to say that the diffuse modeling "shows promise" just because 90% of power is removed? 90% sounds impressive if we think in linear terms, but on a logarithmic scale (which is what counts), it's just one order of magnitude out of many.
+
+We have removed the subjective language.
+
+======================================================================
+
+---Final paragraph of the paper. It's not quite true that imaging is necessary for cross-correlation. One could also take the images from other surveys and use them to predict visibilities, allowing for a cross-correlation in visibility space.
+
+While this is technically true (and interesting), it does not avoid the challenges inherent in imaging. In order to achieve the visibility correlation, one would need to simulate the measured visibilities with their phase to high accuracy. In the literature we often lump all instrumental effects into the "A" matrix operating on a sky vector resulting in a set of measurements, assuming the calibration will fix all the small instrumental effects and make the real A match the model A. For a cross-correlation one would need to simulate with the real A, including phase corrections at the level needed for imaging. This can be sidestepped in power spectrum measurements because localization is irrelevant, but it is essential for cross-correlation, and the calibration uncertainties leaks back in in the difference between simulating with a model A and the real A. For all intents and purposes, cross-correlating in visibility space would still be an imaging analysis. There is actually a paper in the works (M.F. Morales et al) which will very carefully explore the definition and trade-offs of imaging analysis.
