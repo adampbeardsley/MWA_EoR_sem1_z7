@@ -570,6 +570,40 @@ which contain both positive and negative (indicated by blue on the color bar) pi
 regions are where we have successfully isolated the foregrounds and retained a noise-like 
 EoR window in the three hour integration.
 
+\begin{figure}
+\begin{center}
+\includegraphics[width=\columnwidth]{example_2derror.pdf}
+\caption{
+\textbf{
+Error level corresponding to Figure~\ref{fig:example_ps}. The noise is relatively low at
+short baseline length (low $k_{\perp}$) due to the dense MWA core. The array is more
+sparse at longer baselines, and the noise increases. The second $k_{||}$ bin has slightly
+lower noise than the rest of the $k_{||}$ modes due to the interaction between the
+Lomb-Scargle periodogram with the Blackman-Harris window function applied to the data.
+}
+\label{fig:example_2derror}
+}
+\end{center}
+\end{figure}
+
+\textbf{Figure~\ref{fig:example_2derror} shows the error level corresponding to the two 
+dimensional power spectrum in Figure~\ref{fig:example_ps}. These errors
+are found by propagating noise measured from calibrated visibilities through the entire
+pipeline. The dense core of the MWA results in relatively low noise at low $k_\perp$.
+As the $(u,v)$ density of the array decreases at longer baselines, the noise increases.
+The noise is mostly constant across $k_{||}$ because the Fourier transform distributes
+the noise in frequency to all modes equally \citep{Morales:2004}.
+The exception is the second $k_{||}$ bin, which has slightly lower noise than the rest of the 
+$k_{||}$ modes. This is a result of the Lomb-Scargle periodogram interacting with the
+Blackman-Harris window function we apply to the data. In the case of $k_{||}=0$
+(shown as the bottom bin on the log plot), the
+cosine term carries all the information and has a noise level $\sqrt{2}$ lower than any other
+sine or cosine term individually. The first non-zero $k_{||}$ mode is highly covariant with the 
+bottom bin due to the window function. Therefore the noise on this mode's cosine term is 
+lower than other higher order cosines. With the added contribution from the sine term, this
+mode contains the lowest level of noise.
+}
+
 \section{Analysis Methods for Testing Data Quality}\label{sec:techniques}
 
 The two-dimensional power spectrum is a useful figure of merit (FoM) as we improve and 
