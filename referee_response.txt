@@ -26,29 +26,43 @@ This effect is distinct from other wedge features discussed in the literature, a
 
 ---2nd paragraph of Section 4.3. "All other sources were given a spectral index of -0.8". What motivated this choice?
 
+This is the median spectral index of sources based on studies below 1.4 GHz. We now mention this and cite the appropriate references.
+
 ======================================================================
 
 ---Penultimate paragraph of Section 4.3. The authors find that using the two different foreground models gave different flux scales. Is there a sense in which the flux scale has converged?
+
+This is a bit subtle, but the flux scale difference is in the calibrated data, not in the model itself. The difference is quite small (part in 10^3 in mK^2 units), but gets amplified when we show straight difference plots like we use for the diffuse subtraction demonstration. KGS did not find a significant difference in flux scale of the catalog itself, but using a more complete sky model requires lower amplitude (and more accurate) gains to match the visibilities to the model. We have clarified this point in the text.
 
 ======================================================================
 
 ---Figures 9 and 10. Figure 10 seems to indicate that there is a "+5" pointing. Why is it not included in Figure 9?
 
+This observing campaign did not actually contain data from a +5 pointing, because that is the point that the EoR1 field has risen higher than EoR0 so we switch fields. We have removed the +5 pointing from the cartoon and explain in the caption.
+
 ======================================================================
 
 ---Figure 11, bottom panel. Since the "+3" portion seems so tightly clustered and is only excluded from the analysis due to some consistent offset, might this be fixable by adjusting calibration parameters?
+
+While it may be possible to recover more pointings in future analysis, it is likely to require both improved calibration and foreground/instrument modeling. The window power statistic is robust against calibration, and the excess power we see in the N-S polarization at this pointing is likely due to bright large scale structure in our sidelobes (which are different in the two polarizations). We would need to properly model and remove this power in order to use this pointing. The potential to recover pointings is mentioned in Sec. 5.1 (end of 2nd paragraph), and discussed more thoroughly in Sec. 6.1.
 
 ======================================================================
 
 ---8th paragraph of Section 5.2. I think the vertical lines caused by incomplete uv coverage needs more explanation/discussion. A thinning uv coverage alone should not result in the vertical streaks. It needs to be coupled with increased leakage from within the wedge. The fact that reduced uv coverage causes vertical streaks is therefore also a result of how the power spectrum is estimated (since that + the instrument is what determines the leakage). As an example, one could go with a "scorched earth" style analysis, sacrificing sensitivity to preserve the EoR window by doing single-baseline delay spectrum analyses for the longer baselines. The foregrounds would be contained within the wedge under such a procedure, independent of uv-coverage (since we're already at the extreme of analyzing one baseline at a time). The form of one's power spectrum estimator must therefore play a role here.
 
+This is a good point, but we feel the explanation is better suited for the pipeline section. In the penultimate paragraph of Section 3.3 we now go into more detail of the streaks seen in Fig 2.
+
 ======================================================================
 
 ---Along the same lines as the previous point, might an accounting of covariances between different power spectrum cells also help here, perhaps allowing for decreased leakage?
 
+Indeed, and this is under development in the eppsilon pipeline. We now mention this at the same place as the previous point.
+
 ======================================================================
 
 ---5th from last paragraph of Section 5.2. Why an increase in slope of 14% of the horizon line? I'm curious as to the thinking here, particularly versus the alternative I've seen in the literature where a constant delay buffer is added to the horizon line.
+
+The cut in kpar and the increased wedge slope effectively achieve the same thing as the constant delay buffer. Our wedge slope is actually a bit more aggressive than one would get from the delay buffer because we saw leakage consistently above the “horizon” (previous 3 hour integrations were on the cusp of reaching the noise level to see this). 
 
 ======================================================================
 
@@ -59,6 +73,8 @@ This is simply due to the frequency averaging FHD+eppsilon does at the gridding 
 ======================================================================
 
 ---It would be helpful in the discussion section to give a sense for what data and results we can look forward to. As an outsider, for example, I am curious as to whether there is more data "in the can" that is just waiting to be analyzed, or whether any new results will come from data taken once the MWA expansion is past its construction/commissioning phase.
+
+We have injected a paragraph (2nd to last of the paper) providing this information. There is plenty of data available, but real progress will be made through understanding the systematics discussed in the paper.
 
 ======================================================================
 

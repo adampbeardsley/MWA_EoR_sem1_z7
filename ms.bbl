@@ -1,4 +1,4 @@
-\begin{thebibliography}{93}
+\begin{thebibliography}{97}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Ali {et~al.}(2015)Ali, Parsons, Zheng, Pober, Liu, Aguirre, Bradley,
@@ -108,6 +108,11 @@ Condon, J.~J., Cotton, W.~D., Greisen, E.~W., {et~al.} 1998, The Astronomical
 Datta, A., Bowman, J.~D., \& Carilli, C.~L. 2010, The Astrophysical Journal,
   724, 526
 
+\bibitem[{{De Breuck} {et~al.}(2000){De Breuck}, {van Breugel},
+  {R{\"o}ttgering}, \& {Miley}}]{DeBreuck:2000}
+{De Breuck}, C., {van Breugel}, W., {R{\"o}ttgering}, H.~J.~A., \& {Miley}, G.
+  2000, \aaps, 143, 303
+
 \bibitem[{{de Oliveira-Costa} {et~al.}(2008){de Oliveira-Costa}, {Tegmark},
   {Gaensler}, {Jonas}, {Landecker}, \& {Reich}}]{deOliveira-Costa:2008}
 {de Oliveira-Costa}, A., {Tegmark}, M., {Gaensler}, B.~M., {et~al.} 2008,
@@ -196,6 +201,9 @@ Furlanetto, S.~R., Oh, S.~P., \& Briggs, F.~H. 2006, Physics Reports, 433, 181,
 Hazelton, B.~J., Morales, M.~F., \& Sullivan, I.~S. 2013, The Astrophysical
   Journal, 770, 156
 
+\bibitem[{{Hunstead}(1991)}]{Hunstead:1991}
+{Hunstead}, R.~W. 1991, Australian Journal of Physics, 44, 743
+
 \bibitem[{{Hurley-Walker} {et~al.}(2014){Hurley-Walker}, {Morgan}, {Wayth},
   {Hancock}, {Bell}, {Bernardi}, {Bhat}, {Briggs}, {Deshpande}, {Ewall-Wice},
   {Feng}, {Hazelton}, {Hindson}, {Jacobs}, {Kaplan}, {Kudryavtseva}, {Lenc},
@@ -254,6 +262,9 @@ Liu, A., Parsons, A.~R., \& Trott, C.~M. 2014{\natexlab{a}}, Phys. Rev. D, 90,
 
 \bibitem[{Liu {et~al.}(2014{\natexlab{b}})Liu, Parsons, \& Trott}]{Liu:2014b}
 ---. 2014{\natexlab{b}}, Phys. Rev. D, 90, 023019
+
+\bibitem[{Liu \& Tegmark(2011)}]{Liu:2011}
+Liu, A., \& Tegmark, M. 2011, Physical Review D, 83, 103006
 
 \bibitem[{Loeb \& Furlanetto(2013)}]{Loeb:2013}
 Loeb, A., \& Furlanetto, S. 2013, The First Galaxies in the Universe, Princeton
@@ -340,6 +351,10 @@ Offringa, A.~R., Wayth, R.~B., Hurley-Walker, N., {et~al.} 2015, PASA -
   {Thyagarajan}, {Tingay}, {Wayth}, {Webster}, \& {Wyithe}}]{Offringa:2016}
 {Offringa}, A.~R., {Trott}, C.~M., {Hurley-Walker}, N., {et~al.} 2016, \mnras,
   458, 1057
+
+\bibitem[{{Oort} {et~al.}(1988){Oort}, {Steemers}, \& {Windhorst}}]{Oort:1988}
+{Oort}, M.~J.~A., {Steemers}, W.~J.~G., \& {Windhorst}, R.~A. 1988, \aaps, 73,
+  103
 
 \bibitem[{Ord {et~al.}(2010)Ord, Mitchell, Wayth, Greenhill, Bernardi, Gleadow,
   Edgar, Clark, Allen, Arcus, Benkevitch, Bowman, Briggs, Bunton, Burns,

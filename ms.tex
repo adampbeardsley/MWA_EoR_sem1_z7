@@ -563,8 +563,13 @@ at the edge of the MWA field of view. Above the wedge we see horizontal lines of
 contamination due to the periodic frequency sampling function. These lines are often 
 referred to as the coarse band harmonics. We see vertical streaks at high $k_{||}$ and high 
 $k_{\perp}$. These are due to sparse $(u,v)$ sampling beyond the dense core of the MWA 
-(starting $\sim70\lambda$), and the foreground power mixing to high spectral 
-modes \citep{Bowman:2009}. 
+(starting $\sim70\lambda$), 
+\textbf{which results in non-uniform spectral sampling after gridding. This in turn
+causes foreground power to mix to high spectral modes} \citep{Bowman:2009}. 
+\textbf{The frequency dependent sampling creates a point spread function in the $k_{||}$
+for each $(u,v)$ cell. In principle covariance weighting along the frequency dimension
+may be able to mitigate this leakage \citep[e.g.][]{Liu:2011}, and an \eppsilon implementation 
+is under development.}
 \textbf{We provide axes more closely related to the measurements to assist in connecting
 these instrumental effects. The right axis shows delay (Fourier dual to frequency), and the
 top axis shows baseline length measured in wavelengths.}
@@ -784,7 +789,9 @@ redundant sources, using a 3.5 arcmin neighborhood radius, then select the flux 
 highest priority catalog. Spectral indices were obtained from the MWACS and Culgoora 
 catalogs when available, otherwise a two-point spectral index was estimated for Culgoora-
 MRC matches or MRC-SUMSS matches. All other sources were given a spectral index of 
-$-0.8$. The spectral index was used to extrapolate the flux density from the catalog frequency to 
+$-0.8$, \textbf{the previously determined median spectral index of sources below 1.4 GHz
+\citep{Oort:1988, Hunstead:1991, DeBreuck:2000, Mauch:2003}.}
+The spectral index was used to extrapolate the flux density from the catalog frequency to 
 182 MHz, but a uniform spectral index of $-0.8$ is used within our band when forming 
 model visibilities for calibration and foreground subtraction.
 
@@ -815,7 +822,9 @@ accurate calibration and foreground subtraction.
 
 Because we use the input foreground model to calibrate our visibilities, the gain estimates 
 for our two runs differed. In particular we saw the overall flux scale of the calibrated 
-visibilities was higher when using the full hierarchical catalog. In order to put both residual 
+visibilities was higher when using the full hierarchical catalog,
+\textbf{owing to a more complete sky model requiring lower amplitude gains to describe the data.}
+In order to put both residual 
 2D power spectra onto the same scale for comparison, we first divide each 
 \textbf{$(k_{\perp},k_{||})$ cell}
 by the 
@@ -1017,6 +1026,8 @@ Figures~\ref{fig:jackknife} and \ref{fig:wedge_cut}. Looking South, a field tran
 East (left), and the telescope begins observing about 5 pointings before zenith (-5). As the
 field drifts overhead, we periodically repoint the telescope to recenter the field. Each shift
 increments the pointing label by one, and the zenith pointing is defined as zero.
+\textbf{While a +5 pointing (and beyond) is possible with the MWA, this observing campaign
+did not contain any such data because we instead switched to the EoR1 field at that time.}
 \label{fig:pointing}
 }
 \end{center}
@@ -1483,6 +1494,15 @@ enable more sophisticated parameterizations of the antenna bandpasses. This will
 an overhaul of the data flow depicted in Figure~\ref{fig:pipe} because snapshots will need
 to be combined in the calibration step, but preliminary investigations have shown that the
 gains are stable enough to be fit across several hours of observation.
+
+\textbf{Between 2013 and the time of writing, the MWA has collected over two thousand 
+hours of data targeting the EoR fields. These observations include the three designated sky 
+fields and two frequency bands. In addition, observations are underway to further 
+characterize the sources in the instrument sidelobes. The second phase of the MWA
+will be commissioned in the latter half of 2016, and will include two sets of highly redundant
+cores of antennas. This hybrid configuration will enable a unique opportunity to study
+the calibration techniques used in imaging and delay spectrum analyses, furthering
+our understanding of the systematics limiting our current results.}
 
 While the analysis presented here has not reached full potential, it represents the deepest power spectrum 
 integration to date produced by an imaging pipeline. Imaging involves many difficulties (e.g. 
