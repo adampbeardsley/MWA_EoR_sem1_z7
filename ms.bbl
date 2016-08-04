@@ -1,4 +1,4 @@
-\begin{thebibliography}{97}
+\begin{thebibliography}{98}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Ali {et~al.}(2015)Ali, Parsons, Zheng, Pober, Liu, Aguirre, Bradley,
@@ -16,7 +16,7 @@ Ali, Z.~S., Parsons, A.~R., Zheng, H., {et~al.} 2015, The Astrophysical
 \bibitem[{{Barry} {et~al.}(2016){Barry}, {Hazelton}, {Sullivan}, {Morales}, \&
   {Pober}}]{Barry:2016}
 {Barry}, N., {Hazelton}, B., {Sullivan}, I., {Morales}, M.~F., \& {Pober},
-  J.~C. 2016, {ArXiv e-prints, arXiv:1603.00607}
+  J.~C. 2016, \mnras, 461, 3135
 
 \bibitem[{Beardsley {et~al.}(2015)Beardsley, Morales, Lidz, Malloy, \&
   Sutter}]{Beardsley:2015}
@@ -233,8 +233,8 @@ Hazelton, B.~J., Morales, M.~F., \& Sullivan, I.~S. 2013, The Astrophysical
   {Roshi}, {Udaya Shankar}, {Sethi}, {Srivani}, {Subrahmanyan}, {Tegmark},
   {Tingay}, {Waterson}, {Wayth}, {Webster}, {Whitney}, {Williams}, {Williams},
   {Wu}, \& {Wyithe}}]{Jacobs:2016}
-{Jacobs}, D.~C., {Hazelton}, B.~J., {Trott}, C.~M., {et~al.} 2016, {ArXiv
-  e-prints, arXiv:1605.06978}
+{Jacobs}, D.~C., {Hazelton}, B.~J., {Trott}, C.~M., {et~al.} 2016, \apj, 825,
+  114
 
 \bibitem[{Komatsu {et~al.}(2011)Komatsu, Smith, Dunkley, Bennett, Gold,
   Hinshaw, Jarosik, Larson, Nolta, Page, Spergel, Halpern, Hill, Kogut, Limon,
@@ -251,6 +251,21 @@ Komatsu, E., Smith, K.~M., Dunkley, J., {et~al.} 2011, The Astrophysical
   {Sutton}}]{Large:1981}
 {Large}, M.~I., {Mills}, B.~Y., {Little}, A.~G., {Crawford}, D.~F., \&
   {Sutton}, J.~M. 1981, \mnras, 194, 693
+
+\bibitem[{{Lenc} {et~al.}(2016){Lenc}, {Gaensler}, {Sun}, {Sadler}, {Willis},
+  {Barry}, {Beardsley}, {Bell}, {Bernardi}, {Bowman}, {Briggs}, {Callingham},
+  {Cappallo}, {Carroll}, {Corey}, {de Oliveira-Costa}, {Deshpande}, {Dillon},
+  {Dwarkanath}, {Emrich}, {Ewall-Wice}, {Feng}, {For}, {Goeke}, {Greenhill},
+  {Hancock}, {Hazelton}, {Hewitt}, {Hindson}, {Hurley-Walker},
+  {Johnston-Hollitt}, {Jacobs}, {Kapinska}, {Kaplan}, {Kasper}, {Kim},
+  {Kratzenberg}, {Line}, {Loeb}, {Lonsdale}, {Lynch}, {McKinley}, {McWhirter},
+  {Mitchell}, {Morales}, {Morgan}, {Morgan}, {Murphy}, {Neben}, {Oberoi},
+  {Offringa}, {Ord}, {Paul}, {Pindor}, {Pober}, {Prabu}, {Procopio}, {Riding},
+  {Rogers}, {Roshi}, {Udaya Shankar}, {Sethi}, {Srivani}, {Staveley-Smith},
+  {Subrahmanyan}, {Sullivan}, {Tegmark}, {Thyagarajan}, {Tingay}, {Trott},
+  {Waterson}, {Wayth}, {Webster}, {Whitney}, {Williams}, {Williams}, {Wu},
+  {Wyithe}, \& {Zheng}}]{Lenc:2016}
+{Lenc}, E., {Gaensler}, B.~M., {Sun}, X.~H., {et~al.} 2016, ArXiv e-prints
 
 \bibitem[{{Lidz} {et~al.}(2009){Lidz}, {Zahn}, {Furlanetto}, {McQuinn},
   {Hernquist}, \& {Zaldarriaga}}]{Lidz:2009}
@@ -521,8 +536,8 @@ Sutinjo, A., O'Sullivan, J., Lenc, E., {et~al.} 2015, Radio Science, 50, 52
 
 \bibitem[{{Thyagarajan} {et~al.}(2016){Thyagarajan}, {Parsons}, {DeBoer},
   {Bowman}, {Ewall-Wice}, {Neben}, \& {Patra}}]{Thyagarajan:2016}
-{Thyagarajan}, N., {Parsons}, A., {DeBoer}, D., {et~al.} 2016, {ArXiv e-prints,
-  arXiv:1603.08958}
+{Thyagarajan}, N., {Parsons}, A.~R., {DeBoer}, D.~R., {et~al.} 2016, \apj, 825,
+  9
 
 \bibitem[{Thyagarajan {et~al.}(2013)Thyagarajan, Shankar, Subrahmanyan, Arcus,
   Bernardi, Bowman, Briggs, Bunton, Cappallo, Corey, deSouza, Emrich, Gaensler,
