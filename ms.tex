@@ -461,6 +461,9 @@ coupling between dipoles within an antenna.
 At this stage we also average in frequency by 
 a factor of two by gridding pairs of frequency channels to the same $(u,v)$ plane, resulting in 
 a frequency resolution of 160 kHz. 
+\textbf{This is done to reduce the data volume, and has little impact on our results because
+our sensitivity to the EoR is extremely low at the corresponding line-of-sight $k$ modes
+\citep{Beardsley:2013}}
 
 The data are gridded into separate cubes for even/odd interleaved time samples. 
 The sum of the even and odd cubes contains power from the sky as well as noise,
@@ -594,14 +597,14 @@ As the $(u,v)$ density of the array decreases at longer baselines, the noise inc
 The noise is mostly constant across $k_{||}$ because the Fourier transform distributes
 the noise in frequency to all modes equally \citep{Morales:2004}.
 The exception is the second $k_{||}$ bin, which has slightly lower noise than the rest of the 
-$k_{||}$ modes. This is a result of the Lomb-Scargle periodogram interacting with the
-Blackman-Harris window function we apply to the data. In the case of $k_{||}=0$
-(shown as the bottom bin on the log plot), the
-cosine term carries all the information and has a noise level $\sqrt{2}$ lower than any other
-sine or cosine term individually. The first non-zero $k_{||}$ mode is highly covariant with the 
-bottom bin due to the window function. Therefore the noise on this mode's cosine term is 
-lower than other higher order cosines. With the added contribution from the sine term, this
-mode contains the lowest level of noise.
+$k_{||}$ modes. 
+As explained in Hazelton et al. (in prep.) this is a result of the Lomb-Scargle periodogram 
+interacting with the Blackman-Harris window function we apply to the data. Most of the bins 
+have the noise equally distributed between cosine and sine terms, with the exception of the 
+$k_{||}=0$ bin where the cosine term carries all the information. Due to the correlations 
+introduced by the Blackman-Harris window function the first non-zero $k_{||}$ mode is highly 
+covariant with the bottom bin ? therefore the noise on this mode's cosine term is lower than 
+other higher order cosines.
 }
 
 \section{Analysis Methods for Testing Data Quality}\label{sec:techniques}
@@ -645,7 +648,11 @@ where the reflection term can be further decomposed as
 R_i(\nu) = R_{i,0} e^{-2\pi i \tau_{i} \nu}.
 \end{equation}
 The reflection coefficient, $R_{i,0}$ is allowed to be complex, while the reflection delay, 
-$\tau_i$ is real. After fitting for all other parameters, we fit for the reflection mode. This is 
+$\tau_i$ is real. After fitting for all other parameters, we fit for the reflection mode. 
+\textbf{We found that if we did not first fit and remove the polynomial terms, our reflection
+fits would be dominated by the large power in the smooth structure, resulting in solutions that
+did not match physical reality.
+The reflection fitting is}
 done for antennas with suspected reflections, the most offensive of which is seen in the 
 antennas with cables of 150 meters. Because the cables were not cut at exact lengths 
 (variations on order tens of centimeters), we solve for both the reflection coefficient and 
@@ -724,6 +731,13 @@ into the window and a relatively strong harmonic at the frequency of the shiftin
 line in the upper left of the window). While we illustrate this effect with a model power 
 spectrum, the same problem exists in the data, but is below the noise levels at three hours 
 of integration.
+
+\textbf{This effect is distinct from more fundamental wedge effects 
+\citep[e.g.][]{Morales:2012, Hazelton:2013} in that it is a result of the computational limitation
+of the analysis. The primary contribution to the foreground mode mixing is due to
+the loss of information as each baseline samples a range of $(u,v)$ modes. On the other
+hand, the effect discussed here is due to small positional offsets in the gridding kernel
+and only exists after gridding.}
 
 We resolved this issue by increasing the resolution at which we form the kernel. While the 
 most accurate answer is to model at infinite resolution, it is not computationally feasible to do 
@@ -1361,7 +1375,11 @@ Due to the logarithmic binning used by CHIPS, some bins are empty, resulting in 
 spectra.
 CHIPS does not 
 excise the coarse band harmonic lines, and so we see their strong effect where there are 
-gaps in the magenta lines. The most notable differences are the ability of the RTS$+$CHIPS pipe
+gaps in the magenta lines. 
+\textbf{The RTS$+$CHIPS pipeline accesses larger $k$ modes because the data is
+processed at 80~kHz, whereas the FHD$+$\eppsilon pipeline averages to 160~kHz when
+gridding.}
+The most notable differences are the ability of the RTS$+$CHIPS pipe
 to access lower $k$ modes, while the FHD$+$\eppsilon pipe suppresses more power before and
 after the first coarse band harmonic. While the different analysis methods result in slightly
 different upper limits, they are generally in agreement. 

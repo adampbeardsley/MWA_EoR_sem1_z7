@@ -8,13 +8,19 @@ We have added an error plot in Section 3.3 (now Figure 3), along with a paragrap
 
 ---11th paragraph of Section 3.1. "At this stage we also average in frequency by a factor of two..." Is there a specific motivation for this? Or is it just a convenient way to reduce the data volume?
 
+Yes, this is done to reduce data volume. We have added a sentence explaining this, and pointing out that it does not affect our sensitivity.
+
 ======================================================================
 
 ---After Eq. (5): "After fitting for all other parameters, we fit for the reflection mode". Why do this instead of a global fit for all the parameters, which would presumably give a better overall fit? I've noticed that with the form of the g-hat, if A_i,1 and A_i,2 are zero, the reflection mode parameters are degenerate with the "normal" calibration parameters. Is the separate fit a desire to avoid the near-degeneracy that results when A_i,1 and A_i,2 are small?
 
+That’s essentially it. We found that if we don’t first subtract the polynomial fit, our reflection fits were dominated by the low order terms, and the results did not make physical sense. Even though the degeneracy should be low (the reflection ripple is quite fine compared to other parameters), the relatively huge amount of power in the polynomial terms was completely obscuring the reflection fits. We have added a sentence to this effect in the text.
+
 ======================================================================
 
 ---Penultimate paragraph of Section 4.2. This reminds me of the Hazelton et al. (2013) paper about multi-baseline wedge effects. It would seem like the current paper is suggesting that the Hazelton et al. effect can be reduced with a fine kernel resolution. However, Hazelton et al. seem to imply that their effect is fundamental and unavoidable. Can the authors explicitly clarify this?
+
+This effect is distinct from other wedge features discussed in the literature, and we have added a paragraph (3rd paragraph of Sec 4.2) pointing this out. The main difference is that this effect is due to the computational limits of the analysis itself, whereas other effects are inherent in the data. In the specific case of Hazelton et al. (2013), the effect is due to multiple baselines migrating in and out of uv cells, and the effective weighting of a given cell is frequency dependent. While the exact mixing would be dependent on the gridding kernel used, it would still exist in the limit of infinitely precise models because the frequency dependent weighting is due to the inherent chromaticity of the instrument.
 
 ======================================================================
 
@@ -47,6 +53,8 @@ We have added an error plot in Section 3.3 (now Figure 3), along with a paragrap
 ======================================================================
 
 ---Figure 15. Why does the FHD + eppsilon pipeline not go to as high k as RTS + CHIPS? Is there some limitation that prevents the highest k regions from being explored?
+
+This is simply due to the frequency averaging FHD+eppsilon does at the gridding step, which RTS+CHIPS does not do. This is now explained in the caption of Fig. 15.
 
 ======================================================================
 
