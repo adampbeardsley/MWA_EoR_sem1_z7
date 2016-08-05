@@ -8,7 +8,7 @@ We have added an error plot in Section 3.3 (now Figure 3), along with a paragrap
 
 ---11th paragraph of Section 3.1. "At this stage we also average in frequency by a factor of two..." Is there a specific motivation for this? Or is it just a convenient way to reduce the data volume?
 
-Yes, this is done to reduce data volume. We have added a sentence explaining this, and pointing out that it does not affect our sensitivity.
+Yes, this is done to reduce data volume. We have added a sentence explaining this, and pointing out that it does not affect our sensitivity. (It does however, effect the kpar modes we access, which is the cause of the different k modes shown for FHD+eppsilon and RTS+CHIPS that you point out below.)
 
 ======================================================================
 
@@ -74,7 +74,7 @@ This is simply due to the frequency averaging FHD+eppsilon does at the gridding 
 
 ---It would be helpful in the discussion section to give a sense for what data and results we can look forward to. As an outsider, for example, I am curious as to whether there is more data "in the can" that is just waiting to be analyzed, or whether any new results will come from data taken once the MWA expansion is past its construction/commissioning phase.
 
-We have injected a paragraph (2nd to last of the paper) providing this information. There is plenty of data available, but real progress will be made through understanding the systematics discussed in the paper.
+We have injected a paragraph (2nd to last of the paper) providing this information. There is plenty of data available, but real progress will be made through understanding the systematics discussed in the paper. 
 
 ======================================================================
 
@@ -153,6 +153,10 @@ Our understanding is that unpublished references should include the initials, wh
 ======================================================================
 
 ---Penultimate paragraph of Section 4.4. What does "total residual power" mean? Can we be more precise? Is it the power integrated over the whole kperp-kpara plane? If so, the relevant k scales of integration need to be specified.
+
+First, the 90% number turned out to be not quite right. When we returned to our calculation to answer this question, we realized we had mistakenly included the number from another test we did after “locking in” the analysis for this paper, where we included a Stokes Q model. The correct number should have been 70%, and has been updated in the paper (in all places it is mentioned).
+
+To answer the question at hand, the total residual power is calculated by squaring and summing the residual image cube. This is a naturally weighted image, so the weighting is exactly the inverse of our error figure (now Fig. 2). While we include all scales measured by the instrument, it is dominated by the large perpendicular scales. This is now described in the paper.
 
 ======================================================================
 

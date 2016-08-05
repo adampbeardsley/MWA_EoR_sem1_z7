@@ -608,7 +608,7 @@ interacting with the Blackman-Harris window function we apply to the data. Most 
 have the noise equally distributed between cosine and sine terms, with the exception of the 
 $k_{||}=0$ bin where the cosine term carries all the information. Due to the correlations 
 introduced by the Blackman-Harris window function the first non-zero $k_{||}$ mode is highly 
-covariant with the bottom bin ? therefore the noise on this mode's cosine term is lower than 
+covariant with the bottom bin -- therefore the noise on this mode's cosine term is lower than 
 other higher order cosines.
 }
 
@@ -911,8 +911,14 @@ For this iteration of analysis we only use the diffuse model for subtraction, an
 calibration. At the time of writing short baselines were not producing reliable results in the 
 calibration loop. Instead we chose to omit the diffuse model and mask baselines shorter 
 than 50 wavelengths for calibration purposes. However, we add the diffuse model and 
-unmask short baselines when performing foreground subtraction, and have seen a 90\% 
-decrease in total residual power -- a strong indication that our diffuse model improves our 
+unmask short baselines when performing foreground subtraction.
+\textbf{We compare the total residual power in the images by squaring and summing
+the residual image cube from before and after the diffuse subtraction. 
+This includes all scales measured by the instrument, but because the image cubes are
+naturally weighted, the $\mathbf{k}$ space weighting is the inverse of 
+Figure~\ref{fig:example_2derror}, meaning $k_\perp \lesssim 0.05$ h Mpc$^{-1}$ dominates the
+average. We saw a 70\% reduction in residual power when including our diffuse model}
+ -- a strong indication that our diffuse model improves our 
 subtraction. Future iterations will incorporate the model in calibration and gradually improve 
 the model itself. 
 
@@ -963,7 +969,7 @@ the diffuse model, so the dirty power spectra are identical.
 model. The bottom panel shows the residual power spectrum difference is positive in the 
 wedge (blue), demonstrating a successful subtraction.}
 While this first attempt at a diffuse model was rudimentary, it 
-\textbf{successfully removed 90\% of the residual power. }
+\textbf{successfully removed 70\% of the residual power. }
 \label{fig:diffuse_diff}
 }
 \end{center}
@@ -1457,7 +1463,7 @@ into our analysis will improve both the foreground subtraction and the calibrati
 
 \textbf{Diffuse emission model.} The diffuse model here contained no spectral information
 and represented only the Stokes I polarization. Nevertheless subtracting this model removed
-90\% of the residual power in the foreground wedge. Adding a spectral index and multiple
+70\% of the residual power in the foreground wedge. Adding a spectral index and multiple
 polarization components to the model will improve this subtraction even further.
 As \textbf{\citet{Lenc:2016}} demonstrated, substantial polarized diffuse structure
 exists in the EoR0 field. The contributions to Stokes Q and U depend on the ionospheric
@@ -1501,8 +1507,8 @@ fields and two frequency bands. In addition, observations are underway to furthe
 characterize the sources in the instrument sidelobes. The second phase of the MWA
 will be commissioned in the latter half of 2016, and will include two sets of highly redundant
 cores of antennas. This hybrid configuration will enable a unique opportunity to study
-the calibration techniques used in imaging and delay spectrum analyses, furthering
-our understanding of the systematics limiting our current results.}
+the calibration techniques used in imaging and delay spectrum analyses, providing
+another view of the systematics limiting our current results.}
 
 While the analysis presented here has not reached full potential, it represents the deepest power spectrum 
 integration to date produced by an imaging pipeline. Imaging involves many difficulties (e.g. 
