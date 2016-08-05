@@ -583,7 +583,7 @@ EoR window in the three hour integration.
 \includegraphics[width=\columnwidth]{example_2derror.pdf}
 \caption{
 \textbf{
-Error level corresponding to Figure~\ref{fig:example_ps}. The noise is relatively low at
+Uncertainty level corresponding to Figure~\ref{fig:example_ps}. The noise is relatively low at
 short baseline length (low $k_{\perp}$) due to the dense MWA core. The array is more
 sparse at longer baselines, and the noise increases. The second $k_{||}$ bin has slightly
 lower noise than the rest of the $k_{||}$ modes due to the interaction between the
@@ -594,13 +594,14 @@ Lomb-Scargle periodogram with the Blackman-Harris window function applied to the
 \end{center}
 \end{figure}
 
-\textbf{Figure~\ref{fig:example_2derror} shows the error level corresponding to the two 
-dimensional power spectrum in Figure~\ref{fig:example_ps}. These errors
+\textbf{Figure~\ref{fig:example_2derror} shows the uncertainty level corresponding to the two 
+dimensional power spectrum in Figure~\ref{fig:example_ps}. These levels
 are found by propagating noise measured from calibrated visibilities through the entire
 pipeline. The dense core of the MWA results in relatively low noise at low $k_\perp$.
 As the $(u,v)$ density of the array decreases at longer baselines, the noise increases.
-The noise is mostly constant across $k_{||}$ because the Fourier transform distributes
-the noise in frequency to all modes equally \citep{Morales:2004}.
+The noise is mostly constant across $k_{||}$ because the thermal noise amplitude is
+relatively constant over frequency and the Fourier transform distributes the noise power
+across all modes \citep{Morales:2004}.
 The exception is the second $k_{||}$ bin, which has slightly lower noise than the rest of the 
 $k_{||}$ modes. 
 As explained in Hazelton et al. (in prep.) this is a result of the Lomb-Scargle periodogram 

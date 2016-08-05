@@ -156,7 +156,7 @@ Our understanding is that unpublished references should include the initials, wh
 
 First, the 90% number turned out to be not quite right. When we returned to our calculation to answer this question, we realized we had mistakenly included the number from another test we did after “locking in” the analysis for this paper, where we included a Stokes Q model. The correct number should have been 70%, and has been updated in the paper (in all places it is mentioned).
 
-To answer the question at hand, the total residual power is calculated by squaring and summing the residual image cube. This is a naturally weighted image, so the weighting is exactly the inverse of our error figure (now Fig. 2). While we include all scales measured by the instrument, it is dominated by the large perpendicular scales. This is now described in the paper.
+To answer the question at hand, the total residual power is calculated by squaring and summing the residual image cube. This is a naturally weighted image, so the weighting is exactly the inverse of our error figure (now Fig. 3). While we include all scales measured by the instrument, it is dominated by the large perpendicular scales. This is now described in the paper.
 
 ======================================================================
 
