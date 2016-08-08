@@ -63,7 +63,7 @@
 \DeclareAffil{BCCP}{Berkeley Center for Cosmological Physics, Berkeley, CA 94720, USA}
 
 \affilauthorlist{
-A.~P.~Beardsley\affils{ASU,email},
+A.~P.~Beardsley\affils{ASU,UW,email},
 B.~J.~Hazelton\affils{UW,UWeSci},
 I.~S.~Sullivan\affils{UW},
 P.~Carroll\affils{UW},
@@ -183,7 +183,7 @@ the full three dimensional space of the epoch. (For reviews, see \citealt{Furlan
 \citealt{Morales:2010}, \citealt{Zaroubi:2013}, \citealt{Loeb:2013}, and \citealt{Pritchard:2012}) The first generation of instruments with primary science goals 
 to detect the highly redshift 21cm signal have been built, including the GMRT (Giant Metrewave 
 Radio Telescope, \citealt{Paciga:2013}), LOFAR (LOw Frequency Array\footnote{http://
-www.lofar.org}, \citealt{vanHaarlem:2013, Yatawatta:2013}), PAPER (Precision Array for Probing the Epoch of 
+www.lofar.org}, \citealt{vanHaarlem:2013, Yatawatta:2013}), PAPER (\textbf{Donald C. Backer} Precision Array for Probing the Epoch of 
 Reionization\footnote{http://eor.berkeley.edu}, \citealt{Parsons:2010}), and the MWA 
 (Murchison Widefield Array\footnote{http://www.mwatelescope.org}, \citealt{Tingay:2013, Bowman:2013}). 
 Due to relatively low signal to noise, these instruments aim for a statistical measurement of 
@@ -604,7 +604,7 @@ relatively constant over frequency and the Fourier transform distributes the noi
 across all modes \citep{Morales:2004}.
 The exception is the second $k_{||}$ bin, which has slightly lower noise than the rest of the 
 $k_{||}$ modes. 
-As explained in Hazelton et al. (in prep.) this is a result of the Lomb-Scargle periodogram 
+As explained in B.~J.~Hazelton et al. (in prep.) this is a result of the Lomb-Scargle periodogram 
 interacting with the Blackman-Harris window function we apply to the data. Most of the bins 
 have the noise equally distributed between cosine and sine terms, with the exception of the 
 $k_{||}=0$ bin where the cosine term carries all the information. Due to the correlations 
@@ -824,7 +824,9 @@ accurate calibration and foreground subtraction.
 Because we use the input foreground model to calibrate our visibilities, the gain estimates 
 for our two runs differed. In particular we saw the overall flux scale of the calibrated 
 visibilities was higher when using the full hierarchical catalog,
-\textbf{owing to a more complete sky model requiring lower amplitude gains to describe the data.}
+\textbf{owing to a more complete sky model requiring lower amplitude gains to describe the data. 
+This difference is on order a part in $10^3$ in mK$^2$ units, but is largely amplified
+when observing the difference in the power spectra.}
 In order to put both residual 
 2D power spectra onto the same scale for comparison, we first divide each 
 \textbf{$(k_{\perp},k_{||})$ cell}
