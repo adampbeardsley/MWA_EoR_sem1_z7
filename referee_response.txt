@@ -2,12 +2,12 @@ Dear Editor and Referee,
 
 We would like to thank the referee for providing a helpful review of our manuscript “First Season MWA EoR Power Spectrum Results at Redshift 7” by myself and others (Submission AAS01756). Below we provide responses to all comments from the referee. The most significant changes are:
 
-- A new figure showing the 2D noise levels to correspond to the 2D power plots we show (Fig. 2).
+- A new figure showing the 2D noise levels to correspond to the 2D power plots we show (Fig. 3).
 - A correction to the residual power improvement when using a diffuse model (discussed below).
 - Updated references.
 - Many expanded explanations on items pointed out by the referee.
 
-We feel the changes have strengthened the article and made it more accessible to the intended audience. 
+All changes are bolded in the revised manuscript. We feel the changes have strengthened the article and made it more accessible to the intended audience. 
 
 On behalf of the coauthors,
 
