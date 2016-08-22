@@ -183,7 +183,7 @@ the full three dimensional space of the epoch. (For reviews, see \citealt{Furlan
 \citealt{Morales:2010}, \citealt{Zaroubi:2013}, \citealt{Loeb:2013}, and \citealt{Pritchard:2012}) The first generation of instruments with primary science goals 
 to detect the highly redshift 21cm signal have been built, including the GMRT (Giant Metrewave 
 Radio Telescope, \citealt{Paciga:2013}), LOFAR (LOw Frequency Array\footnote{http://
-www.lofar.org}, \citealt{vanHaarlem:2013, Yatawatta:2013}), PAPER (\textbf{Donald C. Backer} Precision Array for Probing the Epoch of 
+www.lofar.org}, \citealt{vanHaarlem:2013, Yatawatta:2013}), PAPER (Donald C. Backer Precision Array for Probing the Epoch of 
 Reionization\footnote{http://eor.berkeley.edu}, \citealt{Parsons:2010}), and the MWA 
 (Murchison Widefield Array\footnote{http://www.mwatelescope.org}, \citealt{Tingay:2013, Bowman:2013}). 
 Due to relatively low signal to noise, these instruments aim for a statistical measurement of 
@@ -201,7 +201,7 @@ capable of imaging the ionized bubbles of reionization in its later stages
 
 Using the first generation of instruments, several upper limits have been placed on the 21 
 cm EoR signal \citep{Ali:2015, Dillon:2014, Parsons:2014, Jacobs:2015, Paciga:2013}.
-\textbf{Furthermore,} \citet{Pober:2015} \textbf{and \citet{Greig:2016} were} able to place constraints on physical reionization models. 
+Furthermore, \citet{Pober:2015} and \citet{Greig:2016} were able to place constraints on physical reionization models. 
 However, much work is to be done to understand the data produced by these arrays. 
 Foreground subtraction and isolation has emerged as a priority in the field. Central to most 
 analysis strategies is the concept of an ``EoR window" -- the region of Fourier space where 
@@ -214,7 +214,7 @@ Hazelton:2013, Pober:2013, Thyagarajan:2013, Vedantham:2012, Morales:2012, Datta
 while others are investigating the spectral structure of point sources themselves \cite[e.g.][]{Offringa:2016}.
 The EoR window is still expected to be preserved above the wedge, and 
 several analysis pipelines are under active development 
-\textbf{to exploit this foreground isolation}
+to exploit this foreground isolation
 \citep[e.g. B.~J.~Hazelton et al. 2016, in 
 prep; D.~A.~Mitchell et al. 2016, in prep; ][]{Jacobs:2016, Trott:2016, 
 Dillon:2015b, Dillon:2013, Trott:2014}.
@@ -318,7 +318,7 @@ The data for this work includes two sets. First we use a set of 94 two-minute hi
 the EoR0 field from August 23, 2013, which were taken early in telescope operations and 
 found to be particularly well behaved. The MWA EoR collaboration has designated this set 
 as a ``golden data set'', which is used to build analysis tools and compare early results 
-\textbf{\cite[e.g.][]{Jacobs:2016, Trott:2016, Pober:2016, Dillon:2015}.} All 
+\cite[e.g.][]{Jacobs:2016, Trott:2016, Pober:2016, Dillon:2015}. All 
 techniques demonstrated here will use this golden data set. In Section~\ref{sec:deep} we 
 will use a larger data set to move toward a deep integration. This data set consists of all 
 EoR0 high band observations beginning August 23, 2013 (including the golden data set), 
@@ -398,7 +398,7 @@ foregrounds in LOFAR images after calibration and subtraction of bright discrete
 foreground sources. They suggested a multi-frequency calibration solution as a potential
 solution to these systematics, similar to the scheme implemented here. Indeed we have
 not seen evidence of these systematics through simulations and direct propagation of
-our noise \citep[\textbf{B.~J.}~Hazelton et al. 2016, in prep.]{Barry:2016}.
+our noise \citep[B.~J.~Hazelton et al. 2016, in prep.]{Barry:2016}.
 
 In the first calibration step we allow our complex gains to account for any direction-independent 
 response on a per antenna, per 80~kHz frequency channel, per polarization basis. To 
@@ -418,7 +418,7 @@ V'_{ij}(\nu) \approx g_i(\nu)g^*_j(\nu)V_{ij}(\nu),
 \end{equation}
 where $g_i(\nu)$ and $g_j(\nu)$ are the complex gains for antennas $i$ and $j$ 
 respectively,
-\textbf{and $V_{ij}(\nu)$ is the true visibility which we aim to recover through calibration.}
+and $V_{ij}(\nu)$ is the true visibility which we aim to recover through calibration.
 Because we are treating polarizations independently, we allow the antenna 
 subscript to run over both East-West (E-W) and North-South (N-S) polarizations.
 
@@ -452,7 +452,7 @@ and diagnostic purposes.
 
 After calibration, we form snapshot image cubes (frequency mapping to line-of-sight 
 direction). The visibilities are gridded using the primary beam as the gridding kernel, placing 
-the data in the \textbf{``holographic frame,"} which has been shown to be the optimal \textbf{weighting scheme} for 
+the data in the ``holographic frame," which has been shown to be the optimal weighting scheme for 
 combining images in the sense that it preserves all information for parameter estimation 
 \citep{Morales:2009,Bhatnagar:2008}. We use a simulation-based primary beam model for MWA 
 antennas developed by \citet{Sutinjo:2015} 
@@ -461,9 +461,9 @@ coupling between dipoles within an antenna.
 At this stage we also average in frequency by 
 a factor of two by gridding pairs of frequency channels to the same $(u,v)$ plane, resulting in 
 a frequency resolution of 160 kHz. 
-\textbf{This is done to reduce the data volume, and has little impact on our results because
+This is done to reduce the data volume, and has little impact on our results because
 our sensitivity to the EoR is extremely low at the corresponding line-of-sight $k$ modes
-\citep{Beardsley:2013}}
+\citep{Beardsley:2013}.
 
 The data are gridded into separate cubes for even/odd interleaved time samples. 
 The sum of the even and odd cubes contains power from the sky as well as noise,
@@ -520,10 +520,10 @@ expected EoR signal, we apply a Blackman-Harris window function prior to the $r_
 $k_{||}$ transform. This has the effect of trading lower effective bandwidth for higher 
 dynamic range \citep[e.g.][]{Thyagarajan:2016, Thyagarajan:2013}.
 
-\textbf{The pipeline as described up to this point is applied to both the calibrated data
+The pipeline as described up to this point is applied to both the calibrated data
 and the foreground model. At this point we subtract the model from the data to form
 residual data as well. All three sets of data (dirty, model, and residual) are carried through 
-the remaining steps to form corresponding power spectra.}
+the remaining steps to form corresponding power spectra.
 
 After squaring and dividing by our observation window function \citep{Bowman:2006}, we 
 arrive in three dimensional power spectrum space. We use the even/odd interleaved cubes 
@@ -531,7 +531,7 @@ to form a signal (odd plus even) and noise (odd minus even) power spectrum, whic
 subtract from one another to form an unbiased estimate of our signal power. This is 
 mathematically equivalent to cross multiplying the even and odd cubes. The three 
 dimensional power spectrum cube can next be averaged in annuli 
-\textbf{of constant $k_{\perp}$ and $k_{||}$ (i.e. orthogonal to the $k_{||}$ axis)}
+of constant $k_{\perp}$ and $k_{||}$ (i.e. orthogonal to the $k_{||}$ axis)
 to form two dimensional 
 power spectra, or spherical shells to form one dimensional power spectra where we will 
 ultimately constrain the EoR.
@@ -547,9 +547,9 @@ black horizon line, while regions above are mostly noise-like with the exception
 coarse band harmonic lines. 
 The vertical streaks at high $k_{||}$ and high $k_{\perp}$ are due to sparse $(u,v)$ sampling
 beyond the dense core of the MWA.
-\textbf{The right axis shows the delay (Fourier dual to frequency) corresponding to the 
+The right axis shows the delay (Fourier dual to frequency) corresponding to the 
 $k_||$ axis, and the top axis shows the baseline length (in wavelengths) corresponding
-to the $k_{\perp}$ axis.}
+to the $k_{\perp}$ axis.
 \label{fig:example_ps}
 }
 \end{center}
@@ -564,15 +564,15 @@ contamination due to the periodic frequency sampling function. These lines are o
 referred to as the coarse band harmonics. We see vertical streaks at high $k_{||}$ and high 
 $k_{\perp}$. These are due to sparse $(u,v)$ sampling beyond the dense core of the MWA 
 (starting $\sim70\lambda$), 
-\textbf{which results in non-uniform spectral sampling after gridding. This in turn
-causes foreground power to mix to high spectral modes} \citep{Bowman:2009}. 
-\textbf{The frequency dependent sampling creates a point spread function in the $k_{||}$
+which results in non-uniform spectral sampling after gridding. This in turn
+causes foreground power to mix to high spectral modes \citep{Bowman:2009}. 
+The frequency dependent sampling creates a point spread function in the $k_{||}$
 for each $(u,v)$ cell. In principle covariance weighting along the frequency dimension
 may be able to mitigate this leakage \citep[e.g.][]{Liu:2011}, and an \eppsilon implementation 
-is under development.}
-\textbf{We provide axes more closely related to the measurements to assist in connecting
+is under development.
+We provide axes more closely related to the measurements to assist in connecting
 these instrumental effects. The right axis shows delay (Fourier dual to frequency), and the
-top axis shows baseline length measured in wavelengths.}
+top axis shows baseline length measured in wavelengths.
 Between the coarse band lines and to the left of the vertical streaks we see regions 
 which contain both positive and negative (indicated by blue on the color bar) pixels. These 
 regions are where we have successfully isolated the foregrounds and retained a noise-like 
@@ -582,19 +582,17 @@ EoR window in the three hour integration.
 \begin{center}
 \includegraphics[width=\columnwidth]{example_2derror.pdf}
 \caption{
-\textbf{
 Uncertainty level corresponding to Figure~\ref{fig:example_ps}. The noise is relatively low at
 short baseline length (low $k_{\perp}$) due to the dense MWA core. The array is more
 sparse at longer baselines, and the noise increases. The second $k_{||}$ bin has slightly
 lower noise than the rest of the $k_{||}$ modes due to the interaction between the
 Lomb-Scargle periodogram with the Blackman-Harris window function applied to the data.
-}
 \label{fig:example_2derror}
 }
 \end{center}
 \end{figure}
 
-\textbf{Figure~\ref{fig:example_2derror} shows the uncertainty level corresponding to the two 
+Figure~\ref{fig:example_2derror} shows the uncertainty level corresponding to the two 
 dimensional power spectrum in Figure~\ref{fig:example_ps}. These levels
 are found by propagating noise measured from calibrated visibilities through the entire
 pipeline. The dense core of the MWA results in relatively low noise at low $k_\perp$.
@@ -611,7 +609,6 @@ $k_{||}=0$ bin where the cosine term carries all the information. Due to the cor
 introduced by the Blackman-Harris window function the first non-zero $k_{||}$ mode is highly 
 covariant with the bottom bin -- therefore the noise on this mode's cosine term is lower than 
 other higher order cosines.
-}
 
 \section{Analysis Methods for Testing Data Quality}\label{sec:techniques}
 
@@ -655,10 +652,10 @@ R_i(\nu) = R_{i,0} e^{-2\pi i \tau_{i} \nu}.
 \end{equation}
 The reflection coefficient, $R_{i,0}$ is allowed to be complex, while the reflection delay, 
 $\tau_i$ is real. After fitting for all other parameters, we fit for the reflection mode. 
-\textbf{We found that if we did not first fit and remove the polynomial terms, our reflection
+We found that if we did not first fit and remove the polynomial terms, our reflection
 fits would be dominated by the large power in the smooth structure, resulting in solutions that
 did not match physical reality.
-The reflection fitting is}
+The reflection fitting is
 done for antennas with suspected reflections, the most offensive of which is seen in the 
 antennas with cables of 150 meters. Because the cables were not cut at exact lengths 
 (variations on order tens of centimeters), we solve for both the reflection coefficient and 
@@ -738,12 +735,12 @@ line in the upper left of the window). While we illustrate this effect with a mo
 spectrum, the same problem exists in the data, but is below the noise levels at three hours 
 of integration.
 
-\textbf{This effect is distinct from more fundamental wedge effects 
+This effect is distinct from more fundamental wedge effects 
 \citep[e.g.][]{Morales:2012, Hazelton:2013} in that it is a result of the computational limitation
 of the analysis. The primary contribution to the foreground mode mixing is due to
 the loss of information as each baseline samples a range of $(u,v)$ modes. On the other
 hand, the effect discussed here is due to small positional offsets in the gridding kernel
-and only exists after gridding.}
+and only exists after gridding.
 
 We resolved this issue by increasing the resolution at which we form the kernel. While the 
 most accurate answer is to model at infinite resolution, it is not computationally feasible to do 
@@ -768,9 +765,9 @@ observation from the MWA is computationally not feasible, we currently restrict 
 the golden data set to build our model. The process of building the catalog is presented in 
 \citet{Carroll:2016}. They applied machine learning classification methods 
 to select reliable detections from the full deconvolution FHD mode, culminating in the KGS 
-catalog\footnote{\textbf{KGS is an abbreviation of KATALOGSS, the KDD (Knowledge 
+catalog\footnote{KGS is an abbreviation of KATALOGSS, the KDD (Knowledge 
 Discovery in Databases) Astrometry, Trueness, and Apparent Luminosity of Galaxies in 
-Snapshot Surveys}}. The work here uses an early iteration of the KGS catalog that was available at the 
+Snapshot Surveys}. The work here uses an early iteration of the KGS catalog that was available at the 
 time of analysis.
 
 It has been shown that subtracting a foreground model strictly within the main lobe of the 
@@ -781,7 +778,7 @@ MWA observations pointed away from our field of interest.
 Until that work is complete we supplement the extent of 
 our point source model using additional catalogs. We accomplish this through a hierarchical 
 catalog pulling from our early KGS catalog, the MWA Commissioning Survey\footnote{The 
-more complete GLEAM Survey \citep[][\textbf{N.}~Hurley-Walker et al., in review]
+more complete GLEAM Survey \citep[][N.~Hurley-Walker et al., in review]
 {Wayth:2015} was not available at the time of analysis.} \citep[MWACS, ][]
 {Hurley-Walker:2014}, the Culgoora catalog \citep{Slee:1977}, and the Molonglo Reference Catalog 
 \citep[MRC, ][]{Large:1981}. Source flux densities are prioritized in this order based on our 
@@ -790,8 +787,8 @@ redundant sources, using a 3.5 arcmin neighborhood radius, then select the flux 
 highest priority catalog. Spectral indices were obtained from the MWACS and Culgoora 
 catalogs when available, otherwise a two-point spectral index was estimated for Culgoora-
 MRC matches or MRC-SUMSS matches. All other sources were given a spectral index of 
-$-0.8$, \textbf{the previously determined median spectral index of sources below 1.4 GHz
-\citep{Oort:1988, Hunstead:1991, DeBreuck:2000, Mauch:2003}.}
+$-0.8$, the previously determined median spectral index of sources below 1.4 GHz
+\citep{Oort:1988, Hunstead:1991, DeBreuck:2000, Mauch:2003}.
 The spectral index was used to extrapolate the flux density from the catalog frequency to 
 182 MHz, but a uniform spectral index of $-0.8$ is used within our band when forming 
 model visibilities for calibration and foreground subtraction.
@@ -824,12 +821,12 @@ accurate calibration and foreground subtraction.
 Because we use the input foreground model to calibrate our visibilities, the gain estimates 
 for our two runs differed. In particular we saw the overall flux scale of the calibrated 
 visibilities was higher when using the full hierarchical catalog,
-\textbf{owing to a more complete sky model requiring lower amplitude gains to describe the data. 
+owing to a more complete sky model requiring lower amplitude gains to describe the data. 
 This difference is on order a part in $10^3$ in mK$^2$ units, but is largely amplified
-when observing the difference in the power spectra.}
+when observing the difference in the power spectra.
 In order to put both residual 
 2D power spectra onto the same scale for comparison, we first divide each 
-\textbf{$(k_{\perp},k_{||})$ cell}
+$(k_{\perp},k_{||})$ cell
 by the 
 corresponding dirty power spectrum pixel, then subtract to arrive at a ratio difference. 
 \begin{equation}\label{eq:diff_ratio}
@@ -882,7 +879,7 @@ This first iteration of modeling the diffuse structure within our primary field 
 simply using output point-source subtracted residual images of FHD from the three hour 
 golden data set. We combine the images from three hours to leverage the rotation of the 
 earth to improve the point spread function (PSF) of the instrument. This integrating of 
-images is done \textbf{with uniform weighted data} to minimize the effect of double instrument 
+images is done with uniform weighted data to minimize the effect of double instrument 
 convolution (once when the data are taken, again when we use the output as a model). We 
 then form a pseudo Stokes I image by adding beam-weighted East-West and North-South 
 polarizations. We also integrate in frequency to form a single continuum image for our 
@@ -891,7 +888,7 @@ subtracting cosmological signal.
 
 Future iterations of this model will contain a spectral index 
 and multiple polarization components.
-\textbf{\citet{Lenc:2016}} demonstrated the presence of strong polarized large-scale structures 
+\citet{Lenc:2016} demonstrated the presence of strong polarized large-scale structures 
 in the EoR0 field at 154 MHz with varying Faraday depths. They observed rotations in the
 Stokes Q--U plane due to ionospheric conditions, which will need to be taken into account
 in our future diffuse models.
@@ -915,12 +912,12 @@ calibration. At the time of writing short baselines were not producing reliable 
 calibration loop. Instead we chose to omit the diffuse model and mask baselines shorter 
 than 50 wavelengths for calibration purposes. However, we add the diffuse model and 
 unmask short baselines when performing foreground subtraction.
-\textbf{We compare the total residual power in the images by squaring and summing
+We compare the total residual power in the images by squaring and summing
 the residual image cube from before and after the diffuse subtraction. 
 This includes all scales measured by the instrument, but because the image cubes are
 naturally weighted, the $\mathbf{k}$ space weighting is the inverse of 
 Figure~\ref{fig:example_2derror}, meaning $k_\perp \lesssim 0.05$ h Mpc$^{-1}$ dominates the
-average. We saw a 70\% reduction in residual power when including our diffuse model}
+average. We saw a 70\% reduction in residual power when including our diffuse model
  -- a strong indication that our diffuse model improves our 
 subtraction. Future iterations will incorporate the model in calibration and gradually improve 
 the model itself. 
@@ -945,8 +942,8 @@ foreground models used for calibration in the two runs are identical (diffuse is
 calibration), the calibration solutions were identical and therefore the dirty power spectra 
 were identical as well. We compare the model and residual power spectra by direct 
 subtraction in Figure~\ref{fig:diffuse_diff}. 
-The top panel shows \textbf{our point source foreground model power spectrum
-minus the model power spectrum when including diffuse}. 
+The top panel shows our point source foreground model power spectrum
+minus the model power spectrum when including diffuse. 
 Because our diffuse model added power to the full foreground model, the entire plot is
 negative (red).
 Even the EoR window is red (albeit at a much lower level than the wedge) because of power
@@ -967,12 +964,12 @@ the differences in the foreground model in this region are below the three hour 
 Single polarization (E-W) power spectrum differences from the golden data set showing the 
 effect of subtracting a diffuse foreground model. The calibration is identical with and without 
 the diffuse model, so the dirty power spectra are identical. 
-\textbf{In the top panel the model power spectrum difference is almost entirely negative 
+In the top panel the model power spectrum difference is almost entirely negative 
 (red), indicating that the diffuse model added a large amount of power to the foreground 
 model. The bottom panel shows the residual power spectrum difference is positive in the 
-wedge (blue), demonstrating a successful subtraction.}
+wedge (blue), demonstrating a successful subtraction.
 While this first attempt at a diffuse model was rudimentary, it 
-\textbf{successfully removed 70\% of the residual power. }
+successfully removed 70\% of the residual power. 
 \label{fig:diffuse_diff}
 }
 \end{center}
@@ -1035,8 +1032,8 @@ Figures~\ref{fig:jackknife} and \ref{fig:wedge_cut}. Looking South, a field tran
 East (left), and the telescope begins observing about 5 pointings before zenith (-5). As the
 field drifts overhead, we periodically repoint the telescope to recenter the field. Each shift
 increments the pointing label by one, and the zenith pointing is defined as zero.
-\textbf{While a +5 pointing (and beyond) is possible with the MWA, this observing campaign
-did not contain any such data because we instead switched to the EoR1 field at that time.}
+While a +5 pointing (and beyond) is possible with the MWA, this observing campaign
+did not contain any such data because we instead switched to the EoR1 field at that time.
 \label{fig:pointing}
 }
 \end{center}
@@ -1396,9 +1393,9 @@ spectra.
 CHIPS does not 
 excise the coarse band harmonic lines, and so we see their strong effect where there are 
 gaps in the magenta lines. 
-\textbf{The RTS$+$CHIPS pipeline accesses larger $k$ modes because the data is
+The RTS$+$CHIPS pipeline accesses larger $k$ modes because the data is
 processed at 80~kHz, whereas the FHD$+$\eppsilon pipeline averages to 160~kHz when
-gridding.}
+gridding.
 The most notable differences are the ability of the RTS$+$CHIPS pipe
 to access lower $k$ modes, while the FHD$+$\eppsilon pipe suppresses more power before and
 after the first coarse band harmonic. While the different analysis methods result in slightly
@@ -1468,7 +1465,7 @@ into our analysis will improve both the foreground subtraction and the calibrati
 and represented only the Stokes I polarization. Nevertheless subtracting this model removed
 70\% of the residual power in the foreground wedge. Adding a spectral index and multiple
 polarization components to the model will improve this subtraction even further.
-As \textbf{\citet{Lenc:2016}} demonstrated, substantial polarized diffuse structure
+As \citet{Lenc:2016} demonstrated, substantial polarized diffuse structure
 exists in the EoR0 field. The contributions to Stokes Q and U depend on the ionospheric
 conditions, which will be accounted for in future analyses to appropriately model this
 emission. 
@@ -1490,7 +1487,7 @@ primary beam model is continuously improving to incorporate mutual coupling betw
 phased dipoles, and embedded element patterns for each of the 32 dipoles on each antenna 
 \citep{Sutinjo:2015}. Other methods are also being pursued to directly measure the full beam 
 response in situ using the ORBCOMM satellite constellation \citep{Neben:2015}, and 
-drone-flown calibrator sources (\textbf{D.~C.}~Jacobs, et al. in prep). The latter method is similar to
+drone-flown calibrator sources (D.~C.~Jacobs, et al. in prep). The latter method is similar to
 the strategy \citet{Virone:2014} used to verify SKA beam patterns.
 
 \textbf{Calibration.} The most limiting factor in our analysis is likely to be insufficiently
@@ -1504,14 +1501,14 @@ an overhaul of the data flow depicted in Figure~\ref{fig:pipe} because snapshots
 to be combined in the calibration step, but preliminary investigations have shown that the
 gains are stable enough to be fit across several hours of observation.
 
-\textbf{Between 2013 and the time of writing, the MWA has collected over two thousand 
+Between 2013 and the time of writing, the MWA has collected over two thousand 
 hours of data targeting the EoR fields. These observations include the three designated sky 
 fields and two frequency bands. In addition, observations are underway to further 
 characterize the sources in the instrument sidelobes. The second phase of the MWA
 will be commissioned in the latter half of 2016, and will include two sets of highly redundant
 cores of antennas. This hybrid configuration will enable a unique opportunity to study
 the calibration techniques used in imaging and delay spectrum analyses, providing
-another view of the systematics limiting our current results.}
+another view of the systematics limiting our current results.
 
 While the analysis presented here has not reached full potential, it represents the deepest power spectrum 
 integration to date produced by an imaging pipeline. Imaging involves many difficulties (e.g. 
